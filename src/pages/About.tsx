@@ -20,8 +20,6 @@ import {
   Shield,
   Lightbulb,
   Target,
-  CheckCircle,
-  ExternalLink,
   Calendar
 } from "lucide-react";
 
@@ -180,41 +178,7 @@ const About = () => {
     "JPMorgan Chase Strategic Investments", "Citi Ventures", "Wells Fargo Strategic Capital"
   ];
 
-  const openPositions = [
-    {
-      title: "Senior AI Engineer",
-      department: "Engineering",
-      location: "San Francisco, CA / Remote",
-      type: "Full-time"
-    },
-    {
-      title: "Compliance Solutions Architect", 
-      department: "Solutions",
-      location: "New York, NY / Remote",
-      type: "Full-time"
-    },
-    {
-      title: "Product Manager - AI Platform",
-      department: "Product",
-      location: "San Francisco, CA / Remote", 
-      type: "Full-time"
-    },
-    {
-      title: "Enterprise Sales Director",
-      department: "Sales",
-      location: "London, UK / Remote",
-      type: "Full-time"
-    }
-  ];
 
-  const benefits = [
-    "Competitive salary and equity packages",
-    "Comprehensive health, dental, and vision insurance",
-    "Unlimited PTO and flexible working arrangements",
-    "Annual learning and development budget ($5,000)",
-    "Top-tier equipment and home office setup",
-    "Quarterly team retreats and company offsites"
-  ];
 
   const offices = [
     {
@@ -459,69 +423,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Careers & Culture */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
-                Join Our Team
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Help us build the future of financial compliance. We're looking for passionate 
-                individuals who want to make a meaningful impact in the financial services industry.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              {/* Open Positions */}
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-foreground">Open Positions</h3>
-                <div className="space-y-4">
-                  {openPositions.map((position, index) => (
-                    <Card key={index} className="bg-white shadow-sm border-0">
-                      <CardContent className="p-6">
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <h4 className="font-semibold text-foreground mb-1">{position.title}</h4>
-                            <p className="text-sm text-gray-600 mb-2">{position.department}</p>
-                            <p className="text-sm text-gray-500">{position.location}</p>
-                          </div>
-                          <Badge variant="secondary" className="text-xs">{position.type}</Badge>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-                <Button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white">
-                  View All Positions
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-
-              {/* Benefits & Culture */}
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-foreground">Benefits & Perks</h3>
-                <div className="space-y-3 mb-8">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-gray-600">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="bg-blue-50 rounded-lg p-6">
-                  <h4 className="font-semibold text-foreground mb-3">Our Culture</h4>
-                  <p className="text-gray-600 text-sm">
-                    We foster a collaborative, innovative environment where every team member 
-                    can make a meaningful impact. We believe in work-life balance, continuous 
-                    learning, and building technology that makes a difference in the world.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Contact Information */}
         <section className="py-20 bg-white">
