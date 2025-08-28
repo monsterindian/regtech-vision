@@ -82,7 +82,10 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
+				'headline': ['Montserrat', 'system-ui', 'sans-serif'],
+				'body': ['Open Sans', 'system-ui', 'sans-serif'],
+				'accent': ['Montserrat', 'system-ui', 'sans-serif'],
+				sans: ['Open Sans', 'system-ui', 'sans-serif'],
 				mono: ['JetBrains Mono', 'monospace'],
 			},
 			animation: {

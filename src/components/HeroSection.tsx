@@ -4,10 +4,10 @@ import { ArrowRight, Shield, TrendingUp, Clock, CheckCircle } from "lucide-react
 
 const HeroSection = () => {
   const stats = [
-    { icon: TrendingUp, label: "Reduce Compliance Costs", value: "60%" },
-    { icon: Shield, label: "Prevent Financial Crimes", value: "80%" },
-    { icon: CheckCircle, label: "Regulatory Accuracy", value: "100%" },
-    { icon: Clock, label: "Faster Customer Onboarding", value: "70%" },
+    { icon: TrendingUp, label: "Reduce Compliance Costs by", value: "60%" },
+    { icon: Shield, label: "Prevent", value: "80%", suffix: "of Financial Crimes" },
+    { icon: CheckCircle, label: "Achieve", value: "100%", suffix: "Regulatory Accuracy" },
+    { icon: Clock, label: "Onboard Customers", value: "70%", suffix: "Faster" },
   ];
 
   return (
@@ -33,8 +33,7 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            AI-Powered Compliance Automation for Financial Institutions. 
-            Reduce costs, prevent crimes, and achieve regulatory excellence with our comprehensive platform.
+            AI-Powered Compliance Automation for Financial Institutions
           </p>
 
           {/* CTA Buttons */}
@@ -62,7 +61,7 @@ const HeroSection = () => {
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {stat.label}
+                  {stat.label} {stat.suffix && stat.suffix}
                 </div>
               </div>
             ))}

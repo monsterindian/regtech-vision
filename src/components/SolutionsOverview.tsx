@@ -21,42 +21,42 @@ const SolutionsOverview = () => {
     {
       icon: UserCheck,
       title: "Identity & Onboarding",
-      description: "Digital identity verification with biometric authentication and cross-border validation",
+      description: "Digital identity verification with biometric authentication and cross-border identity validation",
       badge: "Core",
       color: "bg-blue-50 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400"
     },
     {
       icon: BarChart3,
       title: "Risk Management",
-      description: "Credit risk scoring, market risk analysis, and operational risk assessment with explainable AI",
+      description: "Credit risk scoring with explainable AI, market risk analysis (VaR calculations), operational risk assessment, and ESG climate risk integration",
       badge: "Advanced",
       color: "bg-purple-50 dark:bg-purple-950/20 text-purple-600 dark:text-purple-400"
     },
     {
       icon: Shield,
       title: "Financial Crime Prevention",
-      description: "Real-time transaction monitoring, fraud detection, and sanctions screening",
+      description: "Real-time transaction monitoring, fraud detection and prevention, money laundering prevention, sanctions and PEP screening",
       badge: "Critical",
       color: "bg-red-50 dark:bg-red-950/20 text-red-600 dark:text-red-400"
     },
     {
       icon: FileText,
       title: "Regulatory Reporting",
-      description: "CCAR, CECL, MiFID II, EMIR automation with 100% accuracy guarantee",
+      description: "CCAR, CECL, LCR, NSFR automation, MiFID II, EMIR, FATCA/CRS reporting, SFDR and sustainable finance disclosure",
       badge: "Essential",
       color: "bg-green-50 dark:bg-green-950/20 text-green-600 dark:text-green-400"
     },
     {
       icon: Leaf,
       title: "ESG & Sustainability",
-      description: "Green taxonomy classification, carbon footprint calculation, and climate stress testing",
+      description: "Green taxonomy classification, carbon footprint calculation, climate stress testing, impact measurement and management",
       badge: "Innovation",
       color: "bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400"
     },
     {
       icon: Users,
       title: "Customer Intelligence",
-      description: "AI-powered segmentation, personalized recommendations, and churn prediction",
+      description: "AI-powered customer segmentation, personalized product recommendations, churn prediction and retention, credit limit optimization",
       badge: "Growth",
       color: "bg-orange-50 dark:bg-orange-950/20 text-orange-600 dark:text-orange-400"
     }
