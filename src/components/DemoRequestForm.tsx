@@ -16,8 +16,11 @@ const DemoRequestForm = () => {
     email: "",
     company: "",
     role: "",
-    companySize: "",
-    challenges: [],
+    organizationType: "",
+    primaryUseCase: "",
+    complianceChallenges: "",
+    regulatoryFrameworks: [],
+    transactionVolume: "",
     message: ""
   });
 
@@ -31,31 +34,46 @@ const DemoRequestForm = () => {
     "Other"
   ];
 
-  const companySizes = [
-    "1-50 employees",
-    "51-200 employees", 
-    "201-1,000 employees",
-    "1,001-5,000 employees",
-    "5,000+ employees"
+  const organizationTypes = [
+    "Bank",
+    "Insurance", 
+    "Lending",
+    "Fintech",
+    "Other"
   ];
 
-  const complianceChallenges = [
-    { id: "reporting", label: "Regulatory Reporting" },
-    { id: "monitoring", label: "Transaction Monitoring" },
-    { id: "kyc", label: "KYC/AML Compliance" },
-    { id: "risk", label: "Risk Management" },
-    { id: "esg", label: "ESG & Sustainability" },
-    { id: "fraud", label: "Fraud Prevention" },
-    { id: "automation", label: "Process Automation" },
-    { id: "costs", label: "Compliance Costs" }
+  const primaryUseCases = [
+    "KYC Automation",
+    "Fraud Detection",
+    "Transaction Monitoring", 
+    "Risk Management",
+    "Regulatory Compliance"
   ];
 
-  const handleChallengeChange = (challengeId: string, checked: boolean) => {
+  const regulatoryFrameworkOptions = [
+    { id: "basel3", label: "Basel III" },
+    { id: "gdpr", label: "GDPR" },
+    { id: "pcidss", label: "PCI-DSS" },
+    { id: "aml", label: "AML/CFT" },
+    { id: "sox", label: "SOX" },
+    { id: "ffiec", label: "FFIEC" },
+    { id: "sebi", label: "SEBI" },
+    { id: "coso", label: "COSO" }
+  ];
+
+  const transactionVolumes = [
+    "<10K daily",
+    "10K-100K daily",
+    "100K-1M daily", 
+    ">1M daily"
+  ];
+
+  const handleFrameworkChange = (frameworkId: string, checked: boolean) => {
     setFormData(prev => ({
       ...prev,
-      challenges: checked 
-        ? [...prev.challenges, challengeId]
-        : prev.challenges.filter(id => id !== challengeId)
+      regulatoryFrameworks: checked 
+        ? [...prev.regulatoryFrameworks, frameworkId]
+        : prev.regulatoryFrameworks.filter(id => id !== frameworkId)
     }));
   };
 
@@ -72,11 +90,11 @@ const DemoRequestForm = () => {
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="mb-4 text-foreground">
-              See ComplianceAI in Action
+              Request <span className="text-gradient">Agentic AI Demo</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Request a personalized demo tailored to your compliance challenges. 
-              Our experts will show you how to transform your compliance operations.
+              See how our AI agents can transform your compliance operations in 30 minutes. 
+              Get a personalized demonstration tailored to your specific BFSI use cases.
             </p>
           </div>
 
@@ -94,19 +112,19 @@ const DemoRequestForm = () => {
                   <ul className="space-y-3 text-sm text-muted-foreground">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2"></div>
-                      <span>Customized demo based on your needs</span>
+                      <span>Live agentic AI demonstrations</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2"></div>
-                      <span>Live AI agent demonstrations</span>
+                      <span>BFSI use case scenarios</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2"></div>
-                      <span>ROI calculation for your institution</span>
+                      <span>Regulatory compliance walkthrough</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2"></div>
-                      <span>Q&A with compliance experts</span>
+                      <span>ROI analysis for your organization</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -205,34 +223,80 @@ const DemoRequestForm = () => {
                       </div>
                     </div>
 
+                    {/* BFSI Specific Fields */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="organizationType">Organization Type *</Label>
+                        <Select onValueChange={(value) => setFormData(prev => ({ ...prev, organizationType: value }))}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select organization type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {organizationTypes.map((type) => (
+                              <SelectItem key={type} value={type}>
+                                {type}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="primaryUseCase">Primary Use Case *</Label>
+                        <Select onValueChange={(value) => setFormData(prev => ({ ...prev, primaryUseCase: value }))}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select primary use case" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {primaryUseCases.map((useCase) => (
+                              <SelectItem key={useCase} value={useCase}>
+                                {useCase}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <Label htmlFor="companySize">Company Size *</Label>
-                      <Select onValueChange={(value) => setFormData(prev => ({ ...prev, companySize: value }))}>
+                      <Label htmlFor="transactionVolume">Transaction Volume *</Label>
+                      <Select onValueChange={(value) => setFormData(prev => ({ ...prev, transactionVolume: value }))}>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select company size" />
+                          <SelectValue placeholder="Select daily transaction volume" />
                         </SelectTrigger>
                         <SelectContent>
-                          {companySizes.map((size) => (
-                            <SelectItem key={size} value={size}>
-                              {size}
+                          {transactionVolumes.map((volume) => (
+                            <SelectItem key={volume} value={volume}>
+                              {volume}
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
                     </div>
 
-                    {/* Compliance Challenges */}
+                    {/* Current Compliance Challenges */}
+                    <div className="space-y-2">
+                      <Label htmlFor="complianceChallenges">Current Compliance Challenges</Label>
+                      <Textarea
+                        id="complianceChallenges"
+                        placeholder="Describe your current compliance challenges and pain points..."
+                        value={formData.complianceChallenges}
+                        onChange={(e) => setFormData(prev => ({ ...prev, complianceChallenges: e.target.value }))}
+                        rows={3}
+                      />
+                    </div>
+
+                    {/* Regulatory Frameworks */}
                     <div className="space-y-3">
-                      <Label>Primary Compliance Challenges (Select all that apply)</Label>
+                      <Label>Regulatory Frameworks (Select all that apply)</Label>
                       <div className="grid grid-cols-2 gap-3">
-                        {complianceChallenges.map((challenge) => (
-                          <div key={challenge.id} className="flex items-center space-x-2">
+                        {regulatoryFrameworkOptions.map((framework) => (
+                          <div key={framework.id} className="flex items-center space-x-2">
                             <Checkbox
-                              id={challenge.id}
-                              onCheckedChange={(checked) => handleChallengeChange(challenge.id, checked as boolean)}
+                              id={framework.id}
+                              onCheckedChange={(checked) => handleFrameworkChange(framework.id, checked as boolean)}
                             />
-                            <Label htmlFor={challenge.id} className="text-sm font-normal">
-                              {challenge.label}
+                            <Label htmlFor={framework.id} className="text-sm font-normal">
+                              {framework.label}
                             </Label>
                           </div>
                         ))}
@@ -244,16 +308,16 @@ const DemoRequestForm = () => {
                       <Label htmlFor="message">Additional Information</Label>
                       <Textarea
                         id="message"
-                        placeholder="Tell us more about your compliance needs..."
+                        placeholder="Tell us more about your specific requirements or questions..."
                         value={formData.message}
                         onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                        rows={4}
+                        rows={3}
                       />
                     </div>
 
                     {/* Submit Button */}
                     <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90">
-                      Request Demo
+                      Request Agentic AI Demo
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </form>

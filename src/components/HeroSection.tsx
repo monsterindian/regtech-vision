@@ -1,13 +1,13 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, TrendingUp, Clock, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, Clock, CheckCircle, Bot, Zap, Eye, Activity } from "lucide-react";
 
 const HeroSection = () => {
   const stats = [
-    { icon: TrendingUp, label: "Reduce Compliance Costs by", value: "60%" },
-    { icon: Shield, label: "Prevent", value: "80%", suffix: "of Financial Crimes" },
-    { icon: CheckCircle, label: "Achieve", value: "100%", suffix: "Regulatory Accuracy" },
-    { icon: Clock, label: "Onboard Customers", value: "70%", suffix: "Faster" },
+    { icon: TrendingUp, label: "Reduce False Positives by", value: "80%" },
+    { icon: Eye, label: "Autonomous Detection of", value: "95%", suffix: "of Financial Crimes" },
+    { icon: Zap, label: "Real-time Risk Assessment in", value: "Milliseconds" },
+    { icon: Activity, label: "24/7 Continuous Compliance", value: "Monitoring" },
   ];
 
   return (
@@ -26,14 +26,14 @@ const HeroSection = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Main headline */}
           <h1 className="mb-6 text-foreground">
-            Transform Compliance from{" "}
-            <span className="text-gradient">Cost Center</span> to{" "}
-            <span className="text-gradient">Competitive Advantage</span>
+            <span className="text-gradient">Autonomous AI Agents</span>{" "}
+            Revolutionizing{" "}
+            <span className="text-gradient">BFSI Compliance</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            AI-Powered Compliance Automation for Financial Institutions
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            Deploy intelligent AI agents that autonomously handle KYC, fraud detection, transaction monitoring, and regulatory compliance across insurance, lending, and banking operations
           </p>
 
           {/* CTA Buttons */}
@@ -65,6 +65,74 @@ const HeroSection = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Agentic AI vs Traditional AI Section */}
+          <div className="mt-20 max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+              <span className="text-gradient">Agentic AI</span> vs Traditional AI
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Traditional AI */}
+              <div className="bg-card/50 border border-border rounded-lg p-6 backdrop-blur-sm">
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 bg-muted-foreground rounded-full mr-3"></div>
+                  <h3 className="text-xl font-semibold text-muted-foreground">Traditional AI</h3>
+                </div>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">×</span>
+                    Requires constant human oversight
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">×</span>
+                    Rule-based decision making
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">×</span>
+                    High false positive rates
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">×</span>
+                    Limited adaptability to new threats
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-2">×</span>
+                    Reactive compliance approach
+                  </li>
+                </ul>
+              </div>
+
+              {/* Agentic AI */}
+              <div className="bg-accent/10 border border-accent/30 rounded-lg p-6 backdrop-blur-sm">
+                <div className="flex items-center mb-4">
+                  <Bot className="w-6 h-6 text-accent mr-3" />
+                  <h3 className="text-xl font-semibold text-accent">Agentic AI</h3>
+                </div>
+                <ul className="space-y-3 text-foreground">
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    Fully autonomous decision making
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    Self-learning and adaptive algorithms
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    80% reduction in false positives
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    Proactive threat identification
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    Continuous 24/7 monitoring & response
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
