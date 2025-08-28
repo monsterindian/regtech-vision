@@ -33,8 +33,8 @@ const CTASection = ({
 }: CTASectionProps) => {
   const bgClass = {
     white: 'bg-white',
-    gray: 'bg-gray-50',
-    blue: 'bg-blue-50'
+    gray: 'bg-neutral-light',
+    blue: 'bg-neutral-light'
   }[backgroundVariant];
 
   const paddingClass = {
@@ -71,7 +71,7 @@ const CTASection = ({
                   size="lg" 
                   className={`px-8 py-4 text-lg ${
                     isPrimary 
-                      ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                      ? 'bg-primary hover:bg-secondary text-white' 
                       : 'border border-gray-300 hover:border-gray-400 text-gray-700 bg-white'
                   }`}
                   onClick={button.onClick}
@@ -89,7 +89,7 @@ const CTASection = ({
                 const BenefitIcon = benefit.icon || CheckCircle;
                 return (
                   <div key={index} className="flex items-center space-x-2">
-                    <BenefitIcon className="h-4 w-4 text-blue-600" />
+                    <BenefitIcon className="h-4 w-4 text-primary" />
                     <span>{benefit.text}</span>
                   </div>
                 );

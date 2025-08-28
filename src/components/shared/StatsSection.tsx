@@ -26,8 +26,8 @@ const StatsSection = ({
 }: StatsSectionProps) => {
   const bgClass = {
     white: 'bg-white',
-    gray: 'bg-gray-50',
-    blue: 'bg-blue-50'
+    gray: 'bg-neutral-light',
+    blue: 'bg-neutral-light'
   }[backgroundVariant];
 
   const gridClass = {
@@ -66,10 +66,10 @@ const StatsSection = ({
             <div key={index} className="text-center">
               {stat.icon && (
                 <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto shadow-sm">
-                  <stat.icon className="h-8 w-8 text-gray-600" />
+                  <stat.icon className="h-8 w-8 text-primary hover:text-secondary transition-colors" />
                 </div>
               )}
-              <div className={`${textSize} font-bold text-blue-600 mb-2`}>
+              <div className={`${textSize} font-bold text-secondary bg-secondary text-white rounded-full px-4 py-1 inline-block mb-2`}>
                 {stat.metric}
               </div>
               <div className="text-lg font-semibold text-foreground mb-1">

@@ -32,28 +32,28 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-50 py-16">
+    <footer className="bg-neutral-dark text-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-bold text-foreground mb-4">RegTech AI</h3>
-            <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+            <h3 className="text-lg font-bold text-white mb-4">RegTech AI</h3>
+            <p className="text-sm text-gray-300 mb-6 leading-relaxed">
               Autonomous AI agents for financial compliance excellence. 
               Transforming BFSI operations with intelligent automation.
             </p>
             
             <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Mail className="h-4 w-4" />
                 <span>hello@regtech-ai.com</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Phone className="h-4 w-4" />
                 <span>+1 (555) 123-4567</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4" />
                 <span>New York • London • Singapore</span>
               </div>
@@ -63,11 +63,11 @@ const Footer = () => {
           {/* Footer Links */}
           {footerSections.map((section, index) => (
             <div key={index}>
-              <h4 className="text-sm font-semibold text-foreground mb-4">{section.title}</h4>
+              <h4 className="text-sm font-semibold text-white mb-4">{section.title}</h4>
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors">
+                    <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">
                       {link}
                     </a>
                   </li>
@@ -78,19 +78,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-8">
+        <div className="border-t border-gray-600 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-300">
               © 2024 RegTech AI. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors">
+              <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors">
+              <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-sm text-gray-600 hover:text-foreground transition-colors">
+              <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">
                 Security
               </a>
             </div>

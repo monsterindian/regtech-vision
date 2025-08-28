@@ -21,7 +21,7 @@ const HeroSection = () => {
           
           {/* Primary CTA */}
           <div className="mb-16">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
+            <Button size="lg" className="bg-primary hover:bg-secondary text-white px-8 py-4 text-lg">
               Request Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

@@ -56,7 +56,7 @@ const Header = () => {
             <div className="flex-shrink-0">
               <Link 
                 to="/" 
-                className="text-xl font-bold text-foreground hover:text-blue-600 transition-colors"
+                className="text-xl font-bold text-foreground hover:text-primary transition-colors"
               >
                 RegTech AI
               </Link>
@@ -70,13 +70,13 @@ const Header = () => {
                   to={item.href}
                   className={`text-sm font-medium transition-colors relative py-2 ${
                     isActivePath(item.href)
-                      ? 'text-blue-600'
+                      ? 'text-primary'
                       : 'text-gray-600 hover:text-foreground'
                   }`}
                 >
                   {item.name}
                   {isActivePath(item.href) && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full" />
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
                   )}
                 </Link>
               ))}
@@ -84,7 +84,7 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:flex">
-              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 transition-all duration-200 hover:shadow-md">
+              <Button size="sm" className="bg-primary hover:bg-secondary text-white px-4 py-2 transition-all duration-200 hover:shadow-md">
                 Request Demo
               </Button>
             </div>
@@ -127,7 +127,7 @@ const Header = () => {
                   to={item.href}
                   className={`block px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg mx-2 ${
                     isActivePath(item.href)
-                      ? 'text-blue-600 bg-blue-50'
+                      ? 'text-primary bg-neutral-light'
                       : 'text-gray-600 hover:text-foreground hover:bg-gray-50'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -135,7 +135,7 @@ const Header = () => {
                   <div className="flex items-center justify-between">
                     {item.name}
                     {isActivePath(item.href) && (
-                      <div className="w-2 h-2 bg-blue-600 rounded-full" />
+                      <div className="w-2 h-2 bg-primary rounded-full" />
                     )}
                   </div>
                 </Link>
@@ -143,7 +143,7 @@ const Header = () => {
               <div className="px-4 pt-4">
                 <Button 
                   size="sm" 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-all duration-200 hover:shadow-md"
+                  className="w-full bg-primary hover:bg-secondary text-white transition-all duration-200 hover:shadow-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Request Demo
@@ -178,7 +178,7 @@ const Header = () => {
                     ) : (
                       <Link
                         to={crumb.href}
-                        className="text-gray-500 hover:text-blue-600 transition-colors"
+                        className="text-gray-500 hover:text-primary transition-colors"
                       >
                         {crumb.name}
                       </Link>

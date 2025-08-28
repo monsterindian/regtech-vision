@@ -22,10 +22,10 @@ const TestimonialCard = ({ testimonial, variant = 'default' }: TestimonialCardPr
   const isFeatured = variant === 'featured';
 
   return (
-    <Card className={`bg-white shadow-sm border-0 ${isFeatured ? 'border-l-4 border-l-blue-600' : ''}`}>
+    <Card className={`bg-white shadow-sm border-0 ${isFeatured ? 'border-l-4 border-l-primary' : ''}`}>
       <CardContent className={`${isCompact ? 'p-6' : 'p-8'}`}>
         {!isCompact && (
-          <Quote className="h-8 w-8 text-blue-600 mb-4 opacity-60" />
+          <Quote className="h-8 w-8 text-primary mb-4 opacity-60" />
         )}
         
         <blockquote className={`text-gray-600 ${isCompact ? 'text-sm' : 'text-base'} ${isFeatured ? 'text-lg' : ''} leading-relaxed mb-6 italic`}>
@@ -90,7 +90,7 @@ const TestimonialsSection = ({
   variant = 'grid',
   backgroundVariant = 'gray'
 }: TestimonialsSectionProps) => {
-  const bgClass = backgroundVariant === 'gray' ? 'bg-gray-50' : 'bg-white';
+  const bgClass = backgroundVariant === 'gray' ? 'bg-neutral-light' : 'bg-white';
 
   return (
     <section className={`py-20 ${bgClass}`}>
