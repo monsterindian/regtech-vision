@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -8,19 +7,19 @@ const Header = () => {
 
   const navigation = [
     { name: "Solutions", href: "#solutions" },
-    { name: "Technology", href: "#technology" },
+    { name: "Platform", href: "#platform" },
     { name: "Resources", href: "#resources" },
-    { name: "About", href: "#about" },
+    { name: "About", href: "#about" }
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-      <div className="container mx-auto px-4">
+    <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="text-2xl font-bold text-gradient font-headline">
-              ComplianceAI
+            <div className="text-xl font-bold text-foreground">
+              RegTech AI
             </div>
           </div>
 
@@ -30,19 +29,16 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="text-gray-600 hover:text-foreground transition-colors text-sm font-medium"
               >
                 {item.name}
               </a>
             ))}
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Sign In
-            </Button>
-            <Button size="sm" className="bg-accent hover:bg-accent/90">
+          {/* CTA Button */}
+          <div className="hidden md:flex">
+            <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2">
               Request Demo
             </Button>
           </div>
@@ -53,6 +49,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-gray-600"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -61,22 +58,20 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
+          <div className="md:hidden border-t border-gray-200">
+            <div className="py-4 space-y-1">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-200"
+                  className="block px-4 py-3 text-gray-600 hover:text-foreground transition-colors text-sm font-medium"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="flex flex-col space-y-2 px-3 pt-4">
-                <Button variant="ghost" size="sm">
-                  Sign In
-                </Button>
-                <Button size="sm" className="bg-accent hover:bg-accent/90">
+              <div className="px-4 pt-4">
+                <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                   Request Demo
                 </Button>
               </div>
