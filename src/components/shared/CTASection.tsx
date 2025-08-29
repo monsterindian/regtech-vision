@@ -70,10 +70,10 @@ const CTASection = ({
                 <Button 
                   key={index}
                   size="lg" 
-                  className={`px-8 py-4 text-lg ${
+                  className={`px-8 py-4 text-lg font-semibold transition-all duration-300 ${
                     isPrimary 
-                      ? 'bg-primary hover:bg-secondary text-white' 
-                      : 'border border-gray-300 hover:border-gray-400 text-gray-700 bg-white'
+                      ? 'bg-[#FF7A00] hover:bg-[#E56A00] text-white shadow-lg hover:shadow-xl hover:scale-105' 
+                      : 'border-2 border-[#0052CC] hover:border-[#003d99] text-[#0052CC] bg-white hover:bg-[#0052CC] hover:text-white'
                   }`}
                   onClick={button.onClick}
                 >

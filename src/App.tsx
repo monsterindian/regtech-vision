@@ -10,6 +10,10 @@ import Resources from "./pages/Resources";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import KYCAutomation from "./pages/solutions/KYCAutomation";
+import LendingCompliance from "./pages/solutions/LendingCompliance";
+import TransactionMonitoring from "./pages/solutions/TransactionMonitoring";
+import RiskManagement from "./pages/solutions/RiskManagement";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +26,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/solutions/kyc-automation" element={<KYCAutomation />} />
+          <Route path="/solutions/lending-compliance" element={<LendingCompliance />} />
+          <Route path="/solutions/transaction-monitoring" element={<TransactionMonitoring />} />
+          <Route path="/solutions/risk-management" element={<RiskManagement />} />
           <Route path="/platform" element={<Platform />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/about" element={<About />} />

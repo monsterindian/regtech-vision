@@ -87,7 +87,7 @@ const Header = () => {
             {/* CTA Button */}
             <div className="hidden md:flex">
               <Link to="/contact">
-                <Button size="sm" className="bg-primary hover:bg-secondary text-white px-4 py-2 transition-all duration-200 hover:shadow-md">
+                <Button size="sm" className="bg-[#FF7A00] hover:bg-[#E56A00] text-white px-4 py-2 transition-all duration-200 hover:shadow-md font-semibold">
                   Request Demo
                 </Button>
               </Link>
@@ -148,7 +148,7 @@ const Header = () => {
                 <Link to="/contact">
                   <Button 
                     size="sm" 
-                    className="w-full bg-primary hover:bg-secondary text-white transition-all duration-200 hover:shadow-md"
+                    className="w-full bg-[#FF7A00] hover:bg-[#E56A00] text-white transition-all duration-200 hover:shadow-md font-semibold"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Request Demo
