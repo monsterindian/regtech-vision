@@ -6,9 +6,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Loader2 } from "lucide-react";
+import { submitDemoRequest } from "@/lib/api";
+import SuccessModal from "./SuccessModal";
+import { useToast } from "@/hooks/use-toast";
 
 const DemoRequestForm = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -18,7 +25,7 @@ const DemoRequestForm = () => {
     organizationType: "",
     primaryUseCase: "",
     complianceChallenges: "",
-    regulatoryFrameworks: [],
+    regulatoryFrameworks: [] as string[],
     transactionVolume: "",
     message: ""
   });
@@ -77,9 +84,61 @@ const DemoRequestForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Demo request submitted:", formData);
+    
+    // Validate required fields
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.company) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Submit demo request
+      const result = await submitDemoRequest(formData);
+
+      if (result.success) {
+        // Show success modal
+        setShowSuccessModal(true);
+        
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          company: "",
+          role: "",
+          organizationType: "",
+          primaryUseCase: "",
+          complianceChallenges: "",
+          regulatoryFrameworks: [],
+          transactionVolume: "",
+          message: ""
+        });
+      } else {
+        // Show error toast
+        toast({
+          title: "Submission Failed",
+          description: result.error || "Failed to send demo request. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const demoBenefits = [
@@ -221,13 +280,19 @@ const DemoRequestForm = () => {
                     <Label className="text-sm font-medium text-gray-700 mb-3 block">Regulatory Frameworks</Label>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                       {regulatoryFrameworkOptions.map((framework) => (
-                        <div key={framework} className="flex items-center space-x-2">
+                        <div key={framework} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 transition-colors">
                           <Checkbox
                             id={framework}
                             checked={formData.regulatoryFrameworks.includes(framework)}
                             onCheckedChange={(checked) => handleFrameworkChange(framework, checked as boolean)}
+                            className="data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
                           />
-                          <Label htmlFor={framework} className="text-sm text-gray-600">{framework}</Label>
+                          <Label 
+                            htmlFor={framework} 
+                            className="text-sm text-gray-700 cursor-pointer font-medium select-none"
+                          >
+                            {framework}
+                          </Label>
                         </div>
                       ))}
                     </div>
@@ -245,9 +310,23 @@ const DemoRequestForm = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                    Request Agentic AI Demo
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        Sending Request...
+                      </>
+                    ) : (
+                      <>
+                        Request Agentic AI Demo
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
@@ -294,6 +373,12 @@ const DemoRequestForm = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      <SuccessModal 
+        isOpen={showSuccessModal} 
+        onClose={() => setShowSuccessModal(false)} 
+      />
     </section>
   );
 };

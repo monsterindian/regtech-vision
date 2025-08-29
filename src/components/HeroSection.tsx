@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -21,25 +22,14 @@ const HeroSection = () => {
           
           {/* Primary CTA */}
           <div className="mb-16">
-            <Button size="lg" className="bg-primary hover:bg-secondary text-white px-8 py-4 text-lg">
-              Request Demo
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="bg-primary hover:bg-secondary text-white px-8 py-4 text-lg">
+                Request Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
-          
-          {/* Trust Indicator */}
-          <div className="text-center">
-            <p className="text-sm text-gray-500 mb-4">
-              Trusted by 500+ financial institutions worldwide
-            </p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-gray-400 font-semibold">HSBC</div>
-              <div className="text-gray-400 font-semibold">JPMorgan</div>
-              <div className="text-gray-400 font-semibold">Deutsche Bank</div>
-              <div className="text-gray-400 font-semibold">Wells Fargo</div>
-              <div className="text-gray-400 font-semibold">Citibank</div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>

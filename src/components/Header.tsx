@@ -11,7 +11,8 @@ const Header = () => {
     { name: "Solutions", href: "/solutions" },
     { name: "Platform", href: "/platform" },
     { name: "Resources", href: "/resources" },
-    { name: "About", href: "/about" }
+    { name: "About", href: "/about" },
+    { name: "Contact Us", href: "/contact" }
   ];
 
   // Close mobile menu when route changes
@@ -84,9 +85,11 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:flex">
-              <Button size="sm" className="bg-primary hover:bg-secondary text-white px-4 py-2 transition-all duration-200 hover:shadow-md">
-                Request Demo
-              </Button>
+              <Link to="/contact">
+                <Button size="sm" className="bg-primary hover:bg-secondary text-white px-4 py-2 transition-all duration-200 hover:shadow-md">
+                  Request Demo
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -141,13 +144,15 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-4 pt-4">
-                <Button 
-                  size="sm" 
-                  className="w-full bg-primary hover:bg-secondary text-white transition-all duration-200 hover:shadow-md"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Request Demo
-                </Button>
+                <Link to="/contact">
+                  <Button 
+                    size="sm" 
+                    className="w-full bg-primary hover:bg-secondary text-white transition-all duration-200 hover:shadow-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Request Demo
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
