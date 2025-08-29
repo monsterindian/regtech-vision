@@ -8,6 +8,7 @@ const Header = () => {
   const location = useLocation();
 
   const navigation = [
+    { name: "Home", href: "/" },
     { name: "Solutions", href: "/solutions" },
     { name: "Platform", href: "/platform" },
     { name: "Resources", href: "/resources" },
