@@ -60,7 +60,7 @@ const Header = () => {
                 to="/" 
                 className="text-xl font-bold text-foreground hover:text-primary transition-colors"
               >
-                RegTech AI
+                Gaigentic AI
               </Link>
             </div>
 

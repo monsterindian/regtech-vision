@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">RegTech AI</h3>
+            <h3 className="text-lg font-bold text-white mb-4">Gaigentic AI</h3>
             <p className="text-sm text-gray-300 mb-6 leading-relaxed">
               Autonomous AI agents for financial compliance excellence. 
               Transforming BFSI operations with intelligent automation.
@@ -47,15 +47,15 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Mail className="h-4 w-4" />
-                <span>hello@regtech-ai.com</span>
+                <span>info@gaigentic.ai</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+31 6 20343034 / +91 9841206769</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4" />
-                <span>New York • London • Singapore</span>
+                <span>Amsterdam • Chennai</span>
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@ const Footer = () => {
         <div className="border-t border-gray-600 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-300">
-              © 2024 RegTech AI. All rights reserved.
+              © 2025 Gaigentic AI. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">

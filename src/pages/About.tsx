@@ -116,7 +116,7 @@ const About = () => {
 
   const testimonials = [
     {
-      quote: "RegTech AI has transformed our compliance operations. The autonomous agents have reduced our KYC processing time by 85% while improving accuracy.",
+      quote: "Gaigentic AI has transformed our compliance operations. The autonomous agents have reduced our KYC processing time by 85% while improving accuracy.",
       author: "Chief Compliance Officer",
       company: "Global Investment Bank",
       industry: "Investment Banking"
@@ -180,24 +180,18 @@ const About = () => {
 
 
 
-  const offices = [
+    const offices = [
     {
-      city: "San Francisco",
-      address: "123 Market Street, Suite 500, San Francisco, CA 94105",
-      phone: "+1 (415) 555-0100",
-      email: "sf@regtech-ai.com"
+      city: "Amsterdam",
+      address: "Zuiderpark 123, 1082 LM Amsterdam, Netherlands",
+      phone: "+31 6 20343034",
+      email: "amsterdam@gaigentic.ai"
     },
     {
-      city: "New York", 
-      address: "456 Park Avenue, 25th Floor, New York, NY 10016",
-      phone: "+1 (212) 555-0200",
-      email: "ny@regtech-ai.com"
-    },
-    {
-      city: "London",
-      address: "789 Canary Wharf, Level 15, London E14 5AB, UK",
-      phone: "+44 20 7555 0300",
-      email: "london@regtech-ai.com"
+      city: "Chennai",
+      address: "IT Highway, Rajiv Gandhi Salai, Chennai 600113, India",
+      phone: "+91 9841206769",
+      email: "chennai@gaigentic.ai"
     }
   ];
 

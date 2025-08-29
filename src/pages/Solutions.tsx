@@ -116,7 +116,7 @@ const Solutions = () => {
   // 4. PROOF - Client Success Stories
   const successStories = [
     {
-      quote: "RegTech AI transformed our KYC operations completely. We reduced processing time by 85% while improving accuracy to 99.2%. Customer satisfaction increased dramatically.",
+      quote: "Gaigentic AI transformed our KYC operations completely. We reduced processing time by 85% while improving accuracy to 99.2%. Customer satisfaction increased dramatically.",
       author: "Sarah Johnson",
       title: "Chief Compliance Officer",
       company: "Global Investment Bank",
