@@ -45,7 +45,7 @@ const TechnicalSpecs = ({ title, specs, accentColor }: TechnicalSpecsProps) => {
                       className="w-12 h-12 rounded-lg flex items-center justify-center mr-4"
                       style={{ backgroundColor: `${accentColor}20` }}
                     >
-                      <IconComponent className="w-6 h-6" style={{ color: accentColor }} />
+                      <IconComponent className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900">
                       {spec.category}
