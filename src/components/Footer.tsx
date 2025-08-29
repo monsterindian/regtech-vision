@@ -1,32 +1,31 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footerSections = [
     {
       title: "Solutions",
       links: [
-        "KYC Automation",
-        "Lending Compliance", 
-        "Transaction Monitoring",
-        "Risk Management"
+        { name: "KYC Automation", href: "/solutions" },
+        { name: "Lending Compliance", href: "/solutions" }, 
+        { name: "Transaction Monitoring", href: "/solutions" },
+        { name: "Risk Management", href: "/solutions" }
       ]
     },
     {
       title: "Resources",
       links: [
-        "Documentation",
-        "API Reference",
-        "Case Studies",
-        "Security"
+        { name: "Documentation", href: "/resources" },
+        { name: "API Reference", href: "/resources" },
+        { name: "Case Studies", href: "/resources" },
+        { name: "Security", href: "/resources" }
       ]
     },
     {
       title: "Company",
       links: [
-        "About Us",
-        "Careers",
-        "Partners",
-        "Contact"
+        { name: "About Us", href: "/about" },
+        { name: "Contact", href: "/contact" }
       ]
     }
   ];
@@ -67,9 +66,9 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">
-                      {link}
-                    </a>
+                    <Link to={link.href} className="text-sm text-gray-300 hover:text-primary transition-colors">
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
