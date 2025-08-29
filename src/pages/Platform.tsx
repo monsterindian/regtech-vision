@@ -198,19 +198,56 @@ const Platform = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-28">
-        {/* 1. OVERVIEW - Hero with Platform Metrics */}
-        <PageHero
-          title="Enterprise-Ready Agentic AI Platform"
-          subtitle="Built for scale, security, and performance. Our platform delivers enterprise-grade agentic AI capabilities with bank-level security and compliance."
-          description="Trusted by 500+ financial institutions worldwide for mission-critical compliance operations."
-        >
-          <StatsSection
-            stats={platformMetrics}
-            columns={4}
-            backgroundVariant="white"
-            size="md"
-          />
-        </PageHero>
+        {/* 1. ENHANCED HERO SECTION */}
+        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#0052CC] to-[#00A3CC]">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-24 h-24 bg-white rounded-full blur-2xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white rounded-full blur-3xl animate-pulse delay-2000"></div>
+            <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-white rounded-full blur-2xl animate-pulse delay-500"></div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-6xl mx-auto text-center">
+              <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight animate-fade-in-up">
+                Enterprise-Ready
+                <br />
+                <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                  Agentic AI Platform
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+                Built for scale, security, and performance. Our platform delivers enterprise-grade agentic AI 
+                capabilities with bank-level security and compliance.
+              </p>
+              
+              {/* Platform Metrics */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12 animate-fade-in-up delay-400">
+                {platformMetrics.map((metric, index) => (
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="w-10 h-10 bg-[#FF7A00] rounded-lg flex items-center justify-center mr-3">
+                        <metric.icon className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                    <div className="text-2xl font-bold text-white mb-1">{metric.metric}</div>
+                    <div className="text-blue-100 text-sm font-medium mb-2">{metric.label}</div>
+                    <div className="text-blue-200 text-xs">{metric.description}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Trust Indicator */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 max-w-md mx-auto animate-fade-in-up delay-600">
+                <div className="text-blue-100 text-sm">
+                  Trusted by 500+ financial institutions worldwide for mission-critical compliance operations
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* 2. ARCHITECTURE - Multi-Agent System */}
         <AgenticArchitecture />
@@ -226,13 +263,13 @@ const Platform = () => {
         />
 
         {/* 4. SECURITY - Bank-Grade Security */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-[#1E293B]">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
+            <div className="text-center mb-16 animate-fade-in-up">
+              <h2 className="text-4xl font-bold mb-6 text-white">
                 Bank-Grade Security & Compliance
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-blue-200 max-w-3xl mx-auto">
                 Our platform is built with security-first principles, meeting the most stringent 
                 requirements of global financial institutions and regulatory bodies.
               </p>
@@ -240,28 +277,28 @@ const Platform = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {securityFeatures.map((feature, index) => (
-                <Card key={index} className="bg-white shadow-sm border-0">
+                <Card key={index} className="bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center">
-                        <feature.icon className="h-6 w-6 text-gray-600" />
+                      <div className="w-12 h-12 bg-[#FF7A00] rounded-lg flex items-center justify-center">
+                        <feature.icon className="h-6 w-6 text-white" />
                       </div>
-                      <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
+                      <CardTitle className="text-xl font-semibold text-white">{feature.title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{feature.description}</p>
+                    <p className="text-blue-200 mb-4">{feature.description}</p>
                     <div className="space-y-2 mb-4">
                       {feature.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-blue-600 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">{benefit}</span>
+                          <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
+                          <span className="text-sm text-blue-100">{benefit}</span>
                         </div>
                       ))}
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {feature.tags.map((tag, tagIndex) => (
-                        <Badge key={tagIndex} variant="secondary" className="text-xs">
+                        <Badge key={tagIndex} className="bg-white/20 text-white border-white/30 text-xs">
                           {tag}
                         </Badge>
                       ))}
@@ -272,22 +309,27 @@ const Platform = () => {
             </div>
 
             {/* Security Certifications */}
-            <div className="bg-gray-50 rounded-lg p-12 text-center">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">
-                Security Certifications & Standards
-              </h3>
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                {securityCertifications.map((cert, index) => (
-                  <Badge key={index} variant="secondary" className="bg-white text-gray-700 px-4 py-2 text-sm border border-gray-200">
-                    <Award className="h-3 w-3 mr-2" />
-                    {cert}
-                  </Badge>
-                ))}
+            <div className="relative bg-gradient-to-r from-[#FF7A00] to-[#E56A00] rounded-2xl p-12 text-center overflow-hidden animate-fade-in-up delay-400">
+              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="absolute top-4 right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+              <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold mb-6 text-white">
+                  Security Certifications & Standards
+                </h3>
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  {securityCertifications.map((cert, index) => (
+                    <Badge key={index} className="bg-white/20 backdrop-blur-sm text-white border-white/30 px-4 py-2 text-sm">
+                      <Award className="h-3 w-3 mr-2" />
+                      {cert}
+                    </Badge>
+                  ))}
+                </div>
+                <p className="text-orange-100 max-w-2xl mx-auto text-lg">
+                  Independently verified security controls and compliance frameworks ensure 
+                  your data and operations meet the highest industry standards.
+                </p>
               </div>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Independently verified security controls and compliance frameworks ensure 
-                your data and operations meet the highest industry standards.
-              </p>
             </div>
           </div>
         </section>

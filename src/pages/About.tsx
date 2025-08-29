@@ -199,28 +199,41 @@ const About = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-28">
-        {/* Hero Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h1 className="text-5xl font-bold mb-6 text-foreground">
-                Leading the Future of Financial Compliance
+        {/* Enhanced Hero Section */}
+        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#0052CC] to-[#00A3CC]">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-24 h-24 bg-white rounded-full blur-2xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white rounded-full blur-3xl animate-pulse delay-2000"></div>
+            <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-white rounded-full blur-2xl animate-pulse delay-500"></div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-6xl mx-auto text-center">
+              <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight animate-fade-in-up">
+                Leading the Future of
+                <br />
+                <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                  Financial Compliance
+                </span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              
+              <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
                 We're pioneering autonomous AI agents that transform how financial institutions 
                 approach compliance, making regulatory adherence seamless, intelligent, and cost-effective.
               </p>
-            </div>
 
-            {/* Company Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-              {companyStats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">{stat.metric}</div>
-                  <div className="text-sm font-semibold text-foreground mb-1">{stat.label}</div>
-                  <div className="text-xs text-gray-600">{stat.description}</div>
-                </div>
-              ))}
+              {/* Company Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 animate-fade-in-up delay-400">
+                {companyStats.map((stat, index) => (
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center">
+                    <div className="text-3xl font-bold text-white mb-2">{stat.metric}</div>
+                    <div className="text-sm font-semibold text-blue-100 mb-1">{stat.label}</div>
+                    <div className="text-xs text-blue-200">{stat.description}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

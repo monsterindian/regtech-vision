@@ -414,84 +414,148 @@ const Resources = () => {
                               Read More
                             </Button>
                           </DialogTrigger>
-                          <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                            <DialogHeader>
-                              <DialogTitle className="text-2xl font-bold text-gray-900 mb-2">
-                                {resource.title}
-                              </DialogTitle>
-                              <div className="flex items-center space-x-3 mb-4">
-                                <Badge 
-                                  variant="secondary" 
-                                  className="text-xs"
-                                  style={{ backgroundColor: '#0052CC20', color: '#0052CC' }}
-                                >
-                                  {resource.category}
-                                </Badge>
-                                <Badge variant="outline" className="text-xs">
-                                  {resource.type}
-                                </Badge>
-                                <span className="text-sm text-gray-500">{resource.pages}</span>
+                          <DialogContent className="max-w-5xl max-h-[85vh] overflow-y-auto bg-gradient-to-br from-white to-blue-50/30 border-0 shadow-2xl">
+                            {/* Enhanced Header with Gradient Background */}
+                            <div className="relative -m-6 mb-6 p-8 bg-gradient-to-r from-[#0052CC] to-[#00A3CC] text-white rounded-t-lg">
+                              <div className="absolute inset-0 bg-black/10 rounded-t-lg"></div>
+                              <div className="relative z-10">
+                                <DialogHeader>
+                                  <DialogTitle className="text-3xl font-bold text-white mb-3 leading-tight">
+                                    {resource.title}
+                                  </DialogTitle>
+                                  <div className="flex items-center space-x-3 mb-4">
+                                    <Badge 
+                                      className="bg-white/20 backdrop-blur-sm text-white border-white/30 text-sm px-3 py-1"
+                                    >
+                                      {resource.category}
+                                    </Badge>
+                                    <Badge className="bg-[#FF7A00] text-white border-0 text-sm px-3 py-1">
+                                      {resource.type}
+                                    </Badge>
+                                    <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                                      <FileText className="w-4 h-4 text-white" />
+                                      <span className="text-sm text-white font-medium">{resource.pages}</span>
+                                    </div>
+                                  </div>
+                                  <p className="text-blue-100 font-medium text-lg">{resource.source}</p>
+                                  <p className="text-blue-100 mt-3 leading-relaxed">{resource.description}</p>
+                                </DialogHeader>
                               </div>
-                              <p className="text-gray-600 font-medium">{resource.source}</p>
-                            </DialogHeader>
+                            </div>
                             
-                            <div className="space-y-6 mt-6">
+                            <div className="space-y-8 px-2">
                               {/* Executive Summary */}
-                              <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-3">Executive Summary</h3>
-                                <p className="text-gray-700 leading-relaxed">{resource.detailedContent.executiveSummary}</p>
+                              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+                                <div className="flex items-center mb-4">
+                                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+                                    <FileText className="w-5 h-5 text-white" />
+                                  </div>
+                                  <h3 className="text-xl font-bold text-gray-900">Executive Summary</h3>
+                                </div>
+                                <p className="text-gray-700 leading-relaxed text-lg">{resource.detailedContent.executiveSummary}</p>
                               </div>
 
                               {/* Key Findings */}
-                              <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Findings</h3>
-                                <div className="space-y-2">
+                              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+                                <div className="flex items-center mb-4">
+                                  <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+                                    <BarChart3 className="w-5 h-5 text-white" />
+                                  </div>
+                                  <h3 className="text-xl font-bold text-gray-900">Key Findings</h3>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                   {resource.detailedContent.keyFindings.map((finding, findingIndex) => (
-                                    <div key={findingIndex} className="flex items-start space-x-3">
-                                      <div className="flex-shrink-0 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mt-0.5">
-                                        <CheckCircle className="w-3 h-3 text-white" />
+                                    <div key={findingIndex} className="bg-white rounded-lg p-4 shadow-sm border border-green-200">
+                                      <div className="flex items-start space-x-3">
+                                        <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-0.5">
+                                          <CheckCircle className="w-4 h-4 text-white" />
+                                        </div>
+                                        <p className="text-gray-700 font-medium leading-relaxed">{finding}</p>
                                       </div>
-                                      <p className="text-gray-700 font-medium">{finding}</p>
                                     </div>
                                   ))}
                                 </div>
                               </div>
 
                               {/* Detailed Sections */}
-                              <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-4">Detailed Analysis</h3>
-                                <div className="space-y-4">
+                              <div className="bg-gradient-to-r from-purple-50 to-violet-50 rounded-xl p-6 border border-purple-100">
+                                <div className="flex items-center mb-6">
+                                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-violet-600 rounded-lg flex items-center justify-center mr-3">
+                                    <BookOpen className="w-5 h-5 text-white" />
+                                  </div>
+                                  <h3 className="text-xl font-bold text-gray-900">Detailed Analysis</h3>
+                                </div>
+                                <div className="space-y-6">
                                   {resource.detailedContent.sections.map((section, sectionIndex) => (
-                                    <div key={sectionIndex} className="border-l-4 border-blue-500 pl-4">
-                                      <h4 className="font-semibold text-gray-800 mb-2">{section.title}</h4>
-                                      <p className="text-gray-700 leading-relaxed">{section.content}</p>
+                                    <div key={sectionIndex} className="bg-white rounded-lg p-6 shadow-sm border border-purple-200">
+                                      <div className="flex items-start space-x-4">
+                                        <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
+                                          <span className="text-white font-bold text-sm">{sectionIndex + 1}</span>
+                                        </div>
+                                        <div className="flex-1">
+                                          <h4 className="font-bold text-gray-900 mb-3 text-lg">{section.title}</h4>
+                                          <p className="text-gray-700 leading-relaxed">{section.content}</p>
+                                        </div>
+                                      </div>
                                     </div>
                                   ))}
                                 </div>
                               </div>
 
                               {/* Methodology */}
-                              <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-3">Methodology</h3>
-                                <p className="text-gray-700 leading-relaxed">{resource.detailedContent.methodology}</p>
+                              <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 border border-orange-100">
+                                <div className="flex items-center mb-4">
+                                  <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-amber-600 rounded-lg flex items-center justify-center mr-3">
+                                    <Target className="w-5 h-5 text-white" />
+                                  </div>
+                                  <h3 className="text-xl font-bold text-gray-900">Methodology</h3>
+                                </div>
+                                <div className="bg-white rounded-lg p-4 shadow-sm border border-orange-200">
+                                  <p className="text-gray-700 leading-relaxed text-lg">{resource.detailedContent.methodology}</p>
+                                </div>
                               </div>
 
                               {/* Conclusions */}
-                              <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-3">Conclusions</h3>
-                                <p className="text-gray-700 leading-relaxed">{resource.detailedContent.conclusions}</p>
+                              <div className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 border border-teal-100">
+                                <div className="flex items-center mb-4">
+                                  <div className="w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center mr-3">
+                                    <Award className="w-5 h-5 text-white" />
+                                  </div>
+                                  <h3 className="text-xl font-bold text-gray-900">Conclusions</h3>
+                                </div>
+                                <div className="bg-white rounded-lg p-4 shadow-sm border border-teal-200">
+                                  <p className="text-gray-700 leading-relaxed text-lg">{resource.detailedContent.conclusions}</p>
+                                </div>
                               </div>
 
-                              {/* CTA */}
-                              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mt-6">
-                                <h4 className="font-semibold text-gray-900 mb-2">Interested in Learning More?</h4>
-                                <p className="text-gray-700 mb-4">Contact our experts to discuss how these insights apply to your organization.</p>
-                                <Link to="/contact">
-                                  <Button className="bg-[#FF7A00] hover:bg-[#E56A00] text-white">
-                                    Schedule Consultation
-                                    <ArrowRight className="ml-2 h-4 w-4" />
-                                  </Button>
-                                </Link>
+                              {/* Enhanced CTA */}
+                              <div className="relative bg-gradient-to-r from-[#0052CC] to-[#00A3CC] rounded-xl p-8 text-white overflow-hidden">
+                                <div className="absolute inset-0 bg-black/10"></div>
+                                <div className="absolute top-4 right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+                                <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+                                <div className="relative z-10">
+                                  <div className="flex items-center mb-4">
+                                    <div className="w-12 h-12 bg-[#FF7A00] rounded-lg flex items-center justify-center mr-4">
+                                      <Users className="w-6 h-6 text-white" />
+                                    </div>
+                                    <h4 className="text-2xl font-bold text-white">Interested in Learning More?</h4>
+                                  </div>
+                                  <p className="text-blue-100 mb-6 text-lg leading-relaxed">Contact our experts to discuss how these insights apply to your organization and explore implementation strategies.</p>
+                                  <div className="flex flex-col sm:flex-row gap-4">
+                                    <Link to="/contact">
+                                      <Button size="lg" className="bg-[#FF7A00] hover:bg-[#E56A00] text-white px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                                        Schedule Consultation
+                                        <ArrowRight className="ml-2 h-5 w-5" />
+                                      </Button>
+                                    </Link>
+                                    <Link to="/contact">
+                                      <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-6 py-3 font-semibold hover:bg-white hover:text-[#0052CC] transition-all duration-300">
+                                        <Calendar className="mr-2 h-5 w-5" />
+                                        Book Expert Call
+                                      </Button>
+                                    </Link>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </DialogContent>
