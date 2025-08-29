@@ -261,8 +261,8 @@ const Solutions = () => {
           title="Ready to Transform Your Compliance Operations?"
           subtitle="Join 500+ financial institutions that have revolutionized their compliance with autonomous AI agents. See our solutions in action with a personalized demo."
           buttons={[
-            { text: "Request Solutions Demo", variant: 'primary', icon: ArrowRight },
-            { text: "Speak with Solutions Expert", variant: 'secondary' }
+            { text: "Request Solutions Demo", variant: 'primary', icon: ArrowRight, href: '/contact' },
+            { text: "Speak with Solutions Expert", variant: 'secondary', href: '/contact' }
           ]}
           benefits={[
             { text: "30-minute personalized demo" },

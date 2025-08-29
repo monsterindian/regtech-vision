@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface CTAButton {
   text: string;
@@ -65,7 +66,7 @@ const CTASection = ({
               const ButtonIcon = button.icon || ArrowRight;
               const isPrimary = button.variant !== 'secondary';
               
-              return (
+              const buttonElement = (
                 <Button 
                   key={index}
                   size="lg" 
@@ -79,6 +80,14 @@ const CTASection = ({
                   {button.text}
                   <ButtonIcon className="ml-2 h-5 w-5" />
                 </Button>
+              );
+
+              return button.href ? (
+                <Link key={index} to={button.href}>
+                  {buttonElement}
+                </Link>
+              ) : (
+                buttonElement
               );
             })}
           </div>

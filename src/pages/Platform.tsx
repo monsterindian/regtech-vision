@@ -372,8 +372,8 @@ const Platform = () => {
           title="Ready to Deploy Enterprise Agentic AI?"
           subtitle="See our platform in action with a technical deep-dive demo. Our solutions architects will show you how to integrate agentic AI into your infrastructure."
           buttons={[
-            { text: "Schedule Platform Demo", variant: 'primary', icon: Calendar },
-            { text: "Speak with Solutions Architect", variant: 'secondary' }
+            { text: "Schedule Platform Demo", variant: 'primary', icon: Calendar, href: '/contact' },
+            { text: "Speak with Solutions Architect", variant: 'secondary', href: '/contact' }
           ]}
           benefits={[
             { text: "Technical architecture review" },
