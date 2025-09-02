@@ -25,10 +25,11 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				primary: '#0052CC',
-				secondary: '#FF7A00',
-				'neutral-light': '#F5F7FA',
-				'neutral-dark': '#333333',
+				primary: '#1a365d', // Dark blue like Persona
+				secondary: '#e2e8f0', // Light gray
+				'neutral-light': '#f8fafc',
+				'neutral-dark': '#1e293b',
+				'accent-green': '#10b981', // Green accent
 				'primary-original': {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

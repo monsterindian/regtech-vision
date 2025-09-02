@@ -38,21 +38,21 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-lg font-bold text-white mb-4">Gaigentic AI</h3>
-            <p className="text-sm text-gray-300 mb-6 leading-relaxed">
+            <p className="text-sm text-neutral-dark/70 mb-6 leading-relaxed">
               Autonomous AI agents for financial compliance excellence. 
               Transforming BFSI operations with intelligent automation.
             </p>
             
             <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <div className="flex items-center space-x-2 text-sm text-neutral-dark/70">
                 <Mail className="h-4 w-4" />
                 <span>info@gaigentic.ai</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <div className="flex items-center space-x-2 text-sm text-neutral-dark/70">
                 <Phone className="h-4 w-4" />
                 <span>+31 6 20343034 / +91 9841206769</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <div className="flex items-center space-x-2 text-sm text-neutral-dark/70">
                 <MapPin className="h-4 w-4" />
                 <span>Amsterdam • Chennai</span>
               </div>
@@ -66,7 +66,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <Link to={link.href} className="text-sm text-gray-300 hover:text-primary transition-colors">
+                    <Link to={link.href} className="text-sm text-neutral-dark/70 hover:text-primary transition-colors">
                       {link.name}
                     </Link>
                   </li>
@@ -77,19 +77,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-600 pt-8">
+        <div className="border-t border-neutral-dark/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-neutral-dark/70">
               © 2025 Gaigentic AI. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">
+              <a href="#" className="text-sm text-neutral-dark/70 hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">
+              <a href="#" className="text-sm text-neutral-dark/70 hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-sm text-gray-300 hover:text-primary transition-colors">
+              <a href="#" className="text-sm text-neutral-dark/70 hover:text-primary transition-colors">
                 Security
               </a>
             </div>

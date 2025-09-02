@@ -73,7 +73,7 @@ const Header = () => {
                   className={`text-sm font-medium transition-colors relative py-2 ${
                     isActivePath(item.href)
                       ? 'text-primary'
-                      : 'text-gray-600 hover:text-foreground'
+                      : 'text-neutral-dark/60 hover:text-neutral-dark'
                   }`}
                 >
                   {item.name}
@@ -87,8 +87,8 @@ const Header = () => {
             {/* CTA Button */}
             <div className="hidden md:flex">
               <Link to="/contact">
-                <Button size="sm" className="bg-[#FF7A00] hover:bg-[#E56A00] text-white px-4 py-2 transition-all duration-200 hover:shadow-md font-semibold">
-                  Request Demo
+                <Button size="sm" className="bg-primary hover:bg-primary/90 text-white px-4 py-2 transition-all duration-200 hover:shadow-md font-semibold">
+                  Get a Demo
                 </Button>
               </Link>
             </div>
@@ -99,7 +99,7 @@ const Header = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-600 hover:text-foreground hover:bg-gray-100 transition-all duration-200 p-2"
+                className="text-neutral-dark/60 hover:text-neutral-dark hover:bg-neutral-light/50 transition-all duration-200 p-2"
                 aria-label="Toggle menu"
               >
                 <div className="relative w-5 h-5">
@@ -132,7 +132,7 @@ const Header = () => {
                   className={`block px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg mx-2 ${
                     isActivePath(item.href)
                       ? 'text-primary bg-neutral-light'
-                      : 'text-gray-600 hover:text-foreground hover:bg-gray-50'
+                      : 'text-neutral-dark/60 hover:text-neutral-dark hover:bg-neutral-light/50'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -148,10 +148,10 @@ const Header = () => {
                 <Link to="/contact">
                   <Button 
                     size="sm" 
-                    className="w-full bg-[#FF7A00] hover:bg-[#E56A00] text-white transition-all duration-200 hover:shadow-md font-semibold"
+                    className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-200 hover:shadow-md font-semibold"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Request Demo
+                    Get a Demo
                   </Button>
                 </Link>
               </div>
@@ -162,29 +162,29 @@ const Header = () => {
 
       {/* Breadcrumbs */}
       {breadcrumbs && breadcrumbs.length > 1 && (
-        <div className="fixed top-16 w-full bg-gray-50 border-b border-gray-200 z-40">
+        <div className="fixed top-16 w-full bg-neutral-light border-b border-neutral-light z-40">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center py-3 text-sm">
               <nav className="flex items-center space-x-2">
                 {breadcrumbs.map((crumb, index) => (
                   <div key={crumb.href} className="flex items-center">
                     {index > 0 && (
-                      <ChevronRight className="h-4 w-4 text-gray-400 mx-2" />
+                      <ChevronRight className="h-4 w-4 text-neutral-dark/40 mx-2" />
                     )}
                     {index === 0 ? (
                       <Link
                         to={crumb.href}
-                        className="flex items-center text-gray-500 hover:text-blue-600 transition-colors"
+                        className="flex items-center text-neutral-dark/60 hover:text-primary transition-colors"
                       >
                         <Home className="h-4 w-4 mr-1" />
                         {crumb.name}
                       </Link>
                     ) : index === breadcrumbs.length - 1 ? (
-                      <span className="text-gray-900 font-medium">{crumb.name}</span>
+                      <span className="text-neutral-dark font-medium">{crumb.name}</span>
                     ) : (
                       <Link
                         to={crumb.href}
-                        className="text-gray-500 hover:text-primary transition-colors"
+                        className="text-neutral-dark/60 hover:text-primary transition-colors"
                       >
                         {crumb.name}
                       </Link>

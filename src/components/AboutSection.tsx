@@ -55,12 +55,13 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-4 text-foreground">
-            Leading the Future of Compliance
+          <h2 className="mb-4 text-neutral-dark">
+            Security and privacy at our core
           </h2>
-          <p className="text-lg text-muted-foreground">
-            ComplianceAI transforms how financial institutions approach regulatory compliance, 
-            turning complex requirements into competitive advantages through intelligent automation.
+          <p className="text-lg text-neutral-dark/70">
+            Trust is built on security and privacy. That's why we adhere to the
+            highest industry standards, maintaining compliance and certifications to safeguard you
+            and your customers.
           </p>
         </div>
 
@@ -77,7 +78,7 @@ const AboutSection = () => {
                 <div className="text-3xl font-bold text-primary mb-2">
                   {achievement.value}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm text-neutral-dark/60">
                   {achievement.label}
                 </div>
               </CardContent>
@@ -95,10 +96,10 @@ const AboutSection = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-dark">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-neutral-dark/60">
                   {value.description}
                 </p>
               </div>
@@ -109,10 +110,10 @@ const AboutSection = () => {
         {/* Trust Indicators */}
         <div className="bg-muted/30 rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold mb-2 text-foreground">
+            <h3 className="text-2xl font-semibold mb-2 text-neutral-dark">
               Security & Compliance Certifications
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-neutral-dark/60">
               Trusted by regulators and financial institutions worldwide
             </p>
           </div>
@@ -122,7 +123,7 @@ const AboutSection = () => {
               <div key={index} className="bg-card rounded-lg p-4 border border-border/50 min-w-[160px] text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Award className="h-5 w-5 text-gold mr-2" />
-                  <span className="font-semibold text-foreground">{cert.name}</span>
+                  <span className="font-semibold text-neutral-dark">{cert.name}</span>
                 </div>
                 <Badge variant="secondary" className="bg-success/10 text-success hover:bg-success/20">
                   {cert.status}
