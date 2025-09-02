@@ -112,7 +112,7 @@ const TransactionMonitoring = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen pt-28 bg-gradient-to-br from-slate-50 via-white to-blue-50">
 
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
