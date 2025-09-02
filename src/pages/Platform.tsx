@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// Header is rendered globally from App.tsx
 import Footer from "@/components/Footer";
 import PageHero from "@/components/shared/PageHero";
 import StatsSection from "@/components/shared/StatsSection";
@@ -195,8 +195,7 @@ const Platform = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+  <div className="min-h-screen bg-white">
       <main className="pt-28">
         {/* 1. ENHANCED HERO SECTION */}
         <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#0052CC] to-[#00A3CC]">

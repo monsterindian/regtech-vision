@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GartnerBanner from "./components/GartnerBanner";
+import Header from "./components/Header";
 import Index from "./pages/Index";
 import Solutions from "./pages/Solutions";
 import Platform from "./pages/Platform";
@@ -25,6 +26,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <GartnerBanner />
+  <Header />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/solutions" element={<Solutions />} />

@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Brain, Shield, TrendingUp, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const SolutionsPreview = () => {
@@ -162,14 +163,16 @@ const SolutionsPreview = () => {
                 </div>
 
                 {/* CTA Button */}
-                <Button
-                  className={`w-full bg-gradient-to-r ${solution.color} hover:opacity-90 text-white font-semibold transition-all duration-300 ${
-                    hoveredSolution === solution.id ? 'transform scale-105' : ''
-                  }`}
-                >
-                  Try {solution.title}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link to={solution.demoLink} className="w-full block">
+                  <Button
+                    className={`w-full bg-gradient-to-r ${solution.color} hover:opacity-90 text-white font-semibold transition-all duration-300 ${
+                      hoveredSolution === solution.id ? 'transform scale-105' : ''
+                    }`}
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
 
                 {/* Hover Overlay */}
                 {hoveredSolution === solution.id && (

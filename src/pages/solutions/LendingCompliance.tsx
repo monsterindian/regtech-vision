@@ -1,23 +1,46 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import SolutionHero from "@/components/solutions/SolutionHero";
-import ProblemStatement from "@/components/solutions/ProblemStatement";
-import SolutionDetails from "@/components/solutions/SolutionDetails";
-import CaseStudyCard from "@/components/solutions/CaseStudyCard";
-import MetricsDisplay from "@/components/solutions/MetricsDisplay";
-import TechnicalSpecs from "@/components/solutions/TechnicalSpecs";
-import ComplianceFrameworks from "@/components/solutions/ComplianceFrameworks";
-import GetStartedCTA from "@/components/solutions/GetStartedCTA";
-import { CreditCard, TrendingUp, Shield, Brain, Database, Code, Settings, Lock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle, CreditCard, TrendingUp, Shield, Brain, ArrowRight, Clock, Target, DollarSign, Database, Code } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const LendingCompliance = () => {
-  const breadcrumbs = [
-    { name: "Home", href: "/" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Lending Compliance", href: "/solutions/lending-compliance" }
+  const [demoStep, setDemoStep] = useState(0);
+  const [isDemo, setIsDemo] = useState(false);
+
+  const demoSteps = [
+    {
+      icon: Database,
+      title: "Data Collection",
+      description: "Aggregating applicant data from multiple sources",
+      duration: 300,
+      status: "Processing 100+ data points from 15+ sources"
+    },
+    {
+      icon: Brain,
+      title: "AI Credit Scoring",
+      description: "Advanced ML models analyze creditworthiness",
+      duration: 500,
+      status: "98.5% accuracy in risk assessment"
+    },
+    {
+      icon: Shield,
+      title: "Fraud Detection",
+      description: "Real-time fraud and synthetic identity detection",
+      duration: 200,
+      status: "Multi-layered fraud prevention system"
+    },
+    {
+      icon: CreditCard,
+      title: "Decision Engine",
+      description: "Automated lending decision with compliance checks",
+      duration: 100,
+      status: "70% faster than manual underwriting"
+    }
   ];
 
-  const problems = [
+  const challenges = [
     "Manual underwriting processes take 7-14 days, causing customer frustration and lost opportunities",
     "High default rates due to inadequate risk assessment and limited data sources",
     "Complex regulatory requirements across multiple jurisdictions creating compliance gaps",
@@ -25,214 +48,353 @@ const LendingCompliance = () => {
     "Difficulty in detecting fraudulent applications and synthetic identity fraud"
   ];
 
-  const problemStats = [
-    { value: "12%", label: "Average default rate with traditional underwriting" },
-    { value: "14 days", label: "Average loan processing time" },
-    { value: "$500", label: "Cost per loan application processed" }
-  ];
-
-  const features = [
-    {
-      title: "Multi-Agent Credit Assessment",
-      description: "Specialized AI agents analyze credit history, alternative data, and behavioral patterns to provide comprehensive risk scoring in real-time.",
-      icon: Brain
-    },
-    {
-      title: "Alternative Data Analysis",
-      description: "Leverage non-traditional data sources including social media, utility payments, and transaction patterns for more accurate risk assessment.",
-      icon: TrendingUp
-    },
-    {
-      title: "Real-time Fraud Detection",
-      description: "Advanced machine learning models detect synthetic identities, application fraud, and suspicious patterns before loan approval.",
-      icon: Shield
-    },
-    {
-      title: "Automated Compliance Checking",
-      description: "Continuous monitoring ensures all lending decisions comply with FCRA, ECOA, Fair Lending, and local regulatory requirements.",
-      icon: CreditCard
-    }
-  ];
-
-  const metrics = [
-    {
-      value: "70%",
-      label: "Faster Decisions",
-      description: "Reduce loan processing time from weeks to hours"
-    },
-    {
-      value: "45%",
-      label: "Lower Defaults",
-      description: "Significant reduction in default rates through better risk assessment"
-    },
-    {
-      value: "98.5%",
-      label: "Compliance Rate",
-      description: "Maintain regulatory compliance across all jurisdictions"
-    }
-  ];
-
-  const technicalSpecs = [
+  const technicalCapabilities = [
     {
       category: "Credit Scoring Models",
-      items: [
+      features: [
         "Advanced ML algorithms with 500+ variables",
         "Alternative data integration and analysis",
         "Real-time credit bureau API connections",
         "Behavioral pattern recognition systems"
-      ],
-      icon: Brain
+      ]
     },
     {
       category: "Risk Assessment",
-      items: [
+      features: [
         "Multi-layered fraud detection algorithms",
         "Synthetic identity detection systems",
         "Income and employment verification",
         "Debt-to-income ratio optimization"
-      ],
-      icon: Shield
+      ]
     },
     {
       category: "Data Processing",
-      items: [
+      features: [
         "Real-time data aggregation from 100+ sources",
         "Bank statement analysis and categorization",
         "Social media and digital footprint analysis",
         "Open banking API integrations"
-      ],
-      icon: Database
+      ]
     },
     {
       category: "Compliance Engine",
-      items: [
+      features: [
         "Automated regulatory rule enforcement",
         "Fair lending compliance monitoring",
         "Audit trail generation and reporting",
         "Regulatory change management system"
-      ],
-      icon: Settings
-    }
-  ];
-
-  const complianceFrameworks = [
-    {
-      name: "Basel III Requirements",
-      description: "Advanced capital adequacy and risk management frameworks for international banking operations.",
-      requirements: [
-        "Capital conservation buffer maintenance",
-        "Liquidity coverage ratio compliance",
-        "Credit risk assessment standards",
-        "Operational risk management protocols"
-      ]
-    },
-    {
-      name: "FCRA Compliance",
-      description: "Fair Credit Reporting Act compliance ensuring proper use and handling of consumer credit information.",
-      requirements: [
-        "Permissible purpose verification",
-        "Adverse action notice automation",
-        "Consumer rights notification",
-        "Data accuracy and dispute handling"
-      ]
-    },
-    {
-      name: "ECOA & Fair Lending",
-      description: "Equal Credit Opportunity Act compliance preventing discrimination in lending practices.",
-      requirements: [
-        "Prohibited basis monitoring",
-        "Disparate impact analysis",
-        "Fair lending statistical testing",
-        "Corrective action implementation"
-      ]
-    },
-    {
-      name: "State Lending Laws",
-      description: "Automated compliance with varying state and local lending regulations across jurisdictions.",
-      requirements: [
-        "Interest rate cap enforcement",
-        "Licensing requirement verification",
-        "State-specific disclosure requirements",
-        "Consumer protection law compliance"
       ]
     }
   ];
 
-  const ctaBenefits = [
-    "45-day implementation with comprehensive staff training",
-    "Integration with existing loan origination systems",
-    "24/7 monitoring with real-time compliance alerts",
-    "Scalable architecture supporting high-volume lending",
-    "Comprehensive reporting and audit trail capabilities"
+  const regulatoryFrameworks = [
+    { name: "Basel III", description: "Capital conservation buffer, Liquidity coverage ratio, Credit risk assessment, Operational risk management" },
+    { name: "FCRA", description: "Permissible purpose verification, Adverse action notices, Consumer rights notification, Data accuracy" },
+    { name: "ECOA", description: "Prohibited basis monitoring, Disparate impact analysis, Fair lending testing, Corrective actions" },
+    { name: "Fair Lending", description: "Interest rate cap enforcement, Licensing verification, State-specific disclosures, Consumer protection" }
   ];
+
+  const runDemo = () => {
+    setIsDemo(true);
+    setDemoStep(0);
+
+    demoSteps.forEach((step, index) => {
+      setTimeout(() => {
+        setDemoStep(index + 1);
+        if (index === demoSteps.length - 1) {
+          setTimeout(() => {
+            setIsDemo(false);
+            setDemoStep(0);
+          }, 2000);
+        }
+      }, demoSteps.slice(0, index + 1).reduce((acc, curr) => acc + curr.duration, 1000));
+    });
+  };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main className="pt-16">
-        <SolutionHero
-          title="Intelligent Lending & Credit Assessment"
-          description="Transform your lending operations with AI agents that deliver faster, more accurate credit decisions while maintaining strict regulatory compliance."
-          backgroundColor="#3B82F6"
-          breadcrumbs={breadcrumbs}
-        />
-        
-        <ProblemStatement
-          title="The Lending Challenge"
-          problems={problems}
-          stats={problemStats}
-        />
-        
-        <SolutionDetails
-          title="How Our AI Agents Solve It"
-          description="Our intelligent lending agents combine advanced credit scoring, alternative data analysis, and automated compliance to revolutionize your lending process."
-          features={features}
-          accentColor="#3B82F6"
-        />
-        
-        <CaseStudyCard
-          title="Success Story"
-          company="Digital Fintech Lender"
-          industry="Financial Technology & Lending"
-          challenge="A fast-growing fintech needed to scale their lending operations 10x while maintaining low default rates and regulatory compliance. Manual processes were limiting growth and increasing operational costs."
-          solution="We deployed our multi-agent lending platform with advanced credit scoring, alternative data analysis, and automated compliance monitoring. The system integrated with their existing technology stack and provided real-time decision making."
-          results={[
-            "Scaled loan processing from 100 to 10,000 applications per day",
-            "Reduced default rates from 12% to 6.8%",
-            "Decreased processing time from 14 days to 4 hours",
-            "Achieved 99.2% regulatory compliance across 25 states",
-            "Increased loan approval rates by 28% through better risk assessment"
-          ]}
-          accentColor="#3B82F6"
-        />
-        
-        <MetricsDisplay
-          title="Lending Performance Metrics"
-          subtitle="Proven results from fintech and traditional lenders using our platform"
-          metrics={metrics}
-          accentColor="#3B82F6"
-        />
-        
-        <TechnicalSpecs
-          title="Technical Capabilities"
-          specs={technicalSpecs}
-          accentColor="#3B82F6"
-        />
-        
-        <ComplianceFrameworks
-          title="Regulatory Compliance"
-          frameworks={complianceFrameworks}
-          accentColor="#3B82F6"
-        />
-        
-        <GetStartedCTA
-          title="Ready to Scale Your Lending Operations?"
-          description="Join innovative lenders who have transformed their operations with our intelligent lending platform. Start with a personalized assessment of your current processes."
-          accentColor="#3B82F6"
-          benefits={ctaBenefits}
-        />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+
+      {/* Hero Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+            {/* Content */}
+            <div>
+              <Badge variant="outline" className="mb-4 px-4 py-2 text-blue-600 border-blue-200">
+                🧠 Intelligent Lending Solution
+              </Badge>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Intelligent Lending &
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Credit Assessment</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Transform your lending operations with AI agents that deliver faster, more accurate credit decisions while maintaining strict regulatory compliance and reducing default rates.
+              </p>
+
+              {/* Key Benefits */}
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+                  <Clock className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900">70%</div>
+                  <div className="text-sm text-gray-600">Faster Decisions</div>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+                  <Target className="h-8 w-8 text-indigo-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900">45%</div>
+                  <div className="text-sm text-gray-600">Lower Defaults</div>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+                  <DollarSign className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900">300%</div>
+                  <div className="text-sm text-gray-600">Loan Volume Increase</div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/contact">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600 font-semibold px-8 py-4 rounded-xl"
+                  >
+                    Schedule Consultation
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Interactive Demo */}
+            <div className="relative">
+              <Card className="bg-white shadow-2xl border-0 overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-lg font-semibold text-gray-900">Live Credit Assessment</h3>
+                    <div className="flex space-x-2">
+                      <div className={`w-3 h-3 rounded-full ${isDemo ? 'bg-green-400' : 'bg-red-400'}`}></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                    </div>
+                  </div>
+
+                  {/* Demo Steps */}
+                  <div className="space-y-4">
+                    {demoSteps.map((step, index) => (
+                      <div
+                        key={index}
+                        className={`flex items-center p-4 rounded-lg border-2 transition-all duration-500 ${
+                          demoStep > index
+                            ? 'border-green-200 bg-green-50'
+                            : demoStep === index + 1 && isDemo
+                            ? 'border-blue-200 bg-blue-50 animate-pulse'
+                            : 'border-gray-200 bg-gray-50'
+                        }`}
+                      >
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 transition-all duration-300 ${
+                          demoStep > index
+                            ? 'bg-green-500 text-white'
+                            : demoStep === index + 1 && isDemo
+                            ? 'bg-blue-500 text-white'
+                            : 'bg-gray-300 text-gray-600'
+                        }`}>
+                          {demoStep > index ? (
+                            <CheckCircle size={20} />
+                          ) : (
+                            <step.icon size={20} />
+                          )}
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-gray-900">{step.title}</div>
+                          <div className="text-sm text-gray-600">{step.description}</div>
+                          <div className="text-xs text-blue-600 font-medium mt-1">{step.status}</div>
+                        </div>
+                        {demoStep > index && (
+                          <div className="text-xs text-green-600 font-semibold">
+                            ✓ Completed in {step.duration}ms
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Demo Progress */}
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <div className="flex justify-between text-sm text-gray-600 mb-2">
+                      <span>Assessment Progress</span>
+                      <span>{Math.round((demoStep / demoSteps.length) * 100)}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-gradient-to-r from-blue-600 to-indigo-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${(demoStep / demoSteps.length) * 100}%` }}
+                      ></div>
+                    </div>
+                    {demoStep === demoSteps.length && (
+                      <div className="mt-4 text-center">
+                        <Badge variant="outline" className="text-green-600 border-green-200 bg-green-50">
+                          ✓ Assessment Complete - 1.1 seconds total
+                        </Badge>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">The Lending Challenge</h2>
+            <p className="text-xl text-gray-600">Traditional underwriting is failing to meet modern lending demands</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {challenges.map((challenge, index) => (
+              <Card key={index} className="border-l-4 border-l-red-500 hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-start">
+                    <div className="bg-red-100 text-red-600 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 text-sm font-bold">
+                      {index + 1}
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">{challenge}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Cost of Inaction */}
+          <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">The Cost of Inaction</h3>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-red-600 mb-2">12%</div>
+                  <p className="text-gray-700">Average default rate with traditional underwriting</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-red-600 mb-2">14 days</div>
+                  <p className="text-gray-700">Average loan processing time</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-red-600 mb-2">$500</div>
+                  <p className="text-gray-700">Cost per loan application processed</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Technical Capabilities */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Technical Capabilities</h2>
+            <p className="text-xl text-gray-600">Enterprise-grade technology for intelligent credit assessment</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {technicalCapabilities.map((capability, index) => (
+              <Card key={index} className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-6">{capability.category}</h3>
+                  <div className="space-y-4">
+                    {capability.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Regulatory Compliance */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Regulatory Compliance</h2>
+            <p className="text-xl text-gray-600">Built-in compliance with global lending and credit regulations</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {regulatoryFrameworks.map((framework, index) => (
+              <Card key={index} className="border-2 border-blue-200 hover:border-blue-400 transition-colors">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Shield className="h-8 w-8 text-blue-600 mr-4" />
+                    <h3 className="text-xl font-bold text-gray-900">{framework.name}</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">{framework.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Scale Your Lending Operations?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+            Join innovative lenders who have transformed their operations with our intelligent lending platform. Start with a personalized assessment of your current processes.
+          </p>
+
+          <div className="grid md:grid-cols-5 gap-4 max-w-5xl mx-auto mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <CheckCircle className="h-8 w-8 text-white mx-auto mb-2" />
+              <p className="text-white text-sm font-semibold">45-day implementation</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <Shield className="h-8 w-8 text-white mx-auto mb-2" />
+              <p className="text-white text-sm font-semibold">Multi-jurisdictional compliance</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <Target className="h-8 w-8 text-white mx-auto mb-2" />
+              <p className="text-white text-sm font-semibold">Real-time fraud detection</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <TrendingUp className="h-8 w-8 text-white mx-auto mb-2" />
+              <p className="text-white text-sm font-semibold">Scalable architecture</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <CreditCard className="h-8 w-8 text-white mx-auto mb-2" />
+              <p className="text-white text-sm font-semibold">24/7 monitoring</p>
+            </div>
+          </div>
+
+          <Button
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-xl mr-4"
+          >
+            Get Started Today
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-4 rounded-xl"
+          >
+            Schedule Demo
+          </Button>
+        </div>
+      </section>
+
     </div>
   );
 };

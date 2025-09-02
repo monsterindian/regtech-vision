@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// Header is rendered globally from App.tsx
 import HeroSection from "@/components/HeroSection";
 import SolutionsPreview from "@/components/SolutionsPreview";
 import ProcessSection from "@/components/ProcessSection";
@@ -8,8 +8,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+  <div className="min-h-screen bg-white">
       <main>
         <HeroSection />
         <SolutionsPreview />

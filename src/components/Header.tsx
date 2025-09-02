@@ -84,14 +84,7 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden md:flex">
-              <Link to="/contact">
-                <Button size="sm" className="bg-primary hover:bg-primary/90 text-white px-4 py-2 transition-all duration-200 hover:shadow-md font-semibold">
-                  Get a Demo
-                </Button>
-              </Link>
-            </div>
+            {/* CTA Button removed as requested */}
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -144,17 +137,7 @@ const Header = () => {
                   </div>
                 </Link>
               ))}
-              <div className="px-4 pt-4">
-                <Link to="/contact">
-                  <Button 
-                    size="sm" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white transition-all duration-200 hover:shadow-md font-semibold"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Get a Demo
-                  </Button>
-                </Link>
-              </div>
+              {/* Mobile CTA removed by request */}
             </div>
           </div>
         </div>

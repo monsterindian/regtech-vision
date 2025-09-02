@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// Header is rendered globally from App.tsx
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -149,8 +149,7 @@ const Solutions = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+  <div className="min-h-screen bg-white">
       <main className="pt-16">
         
         {/* 1. ENHANCED HERO SECTION */}

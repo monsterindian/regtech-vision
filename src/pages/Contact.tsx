@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// Header is rendered globally from App.tsx
 import DemoRequestForm from "@/components/DemoRequestForm";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -66,8 +66,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+  <div className="min-h-screen bg-white">
       <main className="pt-16">
         
         {/* Enhanced Hero Section */}

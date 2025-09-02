@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, CheckCircle } from "lucide-react";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -48,21 +49,16 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up delay-600">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Watch Live Demo
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-gray-300 hover:border-purple-600 hover:text-purple-600 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
-              >
-                Schedule Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/contact">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-gray-300 hover:border-purple-600 hover:text-purple-600 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+                >
+                  Schedule Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
 
             {/* Trust Indicators with Animation */}
