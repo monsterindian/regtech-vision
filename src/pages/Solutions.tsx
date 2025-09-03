@@ -78,7 +78,7 @@ const Solutions = () => {
         "Regulatory rule engines",
         "Automated decision documentation"
       ],
-      regulatory: ["Basel III", "FCRA", "ECOA", "TILA", "Fair Lending Laws"],
+      regulatory: ["Capital Requirements", "Fair Lending", "Credit Assessment", "Consumer Protection", "Anti-Discrimination"],
       industries: ["Banks", "Credit Unions", "Fintech Lenders", "NBFC"],
       demoLink: "/solutions/lending-compliance"
     },
@@ -100,7 +100,7 @@ const Solutions = () => {
         "Audit trail immutability",
         "Compliance workflow orchestration"
       ],
-      regulatory: ["SOX", "COSO", "ISO 27001", "PCI-DSS", "All major frameworks"],
+      regulatory: ["Financial Controls", "Risk Frameworks", "Security Standards", "Payment Security", "Industry Best Practices"],
       industries: ["All BFSI sectors requiring regulatory compliance"],
       demoLink: "/solutions/risk-management"
     }

@@ -236,7 +236,7 @@ const Security = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Certification Roadmap</h4>
-                    <p className="text-gray-600 text-sm">We're actively working towards industry-standard certifications including ISO 27001, NIST frameworks, and other relevant compliance standards as we scale.</p>
+                    <p className="text-gray-600 text-sm">We're building our security practices from the ground up, implementing industry best practices and preparing for future compliance requirements as we grow.</p>
                   </div>
                 </div>
 

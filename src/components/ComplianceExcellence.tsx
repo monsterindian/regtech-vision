@@ -22,16 +22,16 @@ const ComplianceExcellence = () => {
   const frameworks = [
     { name: "AML", region: "Global", color: "bg-blue-100 text-blue-700" },
     { name: "KYC", region: "Global", color: "bg-blue-100 text-blue-700" },
-    { name: "GDPR", region: "EU", color: "bg-green-100 text-green-700" },
-    { name: "Basel III", region: "Global", color: "bg-blue-100 text-blue-700" },
-    { name: "SOX", region: "US", color: "bg-red-100 text-red-700" },
-    { name: "PCI-DSS", region: "Global", color: "bg-blue-100 text-blue-700" },
-    { name: "FFIEC", region: "US", color: "bg-red-100 text-red-700" },
-    { name: "SEBI", region: "India", color: "bg-orange-100 text-orange-700" },
-    { name: "IAIS", region: "Global", color: "bg-blue-100 text-blue-700" },
-    { name: "Solvency II", region: "EU", color: "bg-green-100 text-green-700" },
-    { name: "FCRA", region: "US", color: "bg-red-100 text-red-700" },
-    { name: "BSA", region: "US", color: "bg-red-100 text-red-700" }
+    { name: "Data Privacy", region: "Global", color: "bg-green-100 text-green-700" },
+    { name: "Risk Management", region: "Global", color: "bg-blue-100 text-blue-700" },
+    { name: "Financial Reporting", region: "Global", color: "bg-red-100 text-red-700" },
+    { name: "Payment Security", region: "Global", color: "bg-blue-100 text-blue-700" },
+    { name: "Banking Compliance", region: "Global", color: "bg-red-100 text-red-700" },
+    { name: "Market Regulation", region: "Global", color: "bg-orange-100 text-orange-700" },
+    { name: "Insurance Standards", region: "Global", color: "bg-blue-100 text-blue-700" },
+    { name: "Capital Requirements", region: "Global", color: "bg-green-100 text-green-700" },
+    { name: "Credit Reporting", region: "Global", color: "bg-red-100 text-red-700" },
+    { name: "Financial Crime Prevention", region: "Global", color: "bg-red-100 text-red-700" }
   ];
 
   const features = [

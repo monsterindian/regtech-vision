@@ -88,7 +88,7 @@ const LendingCompliance = () => {
   ];
 
   const regulatoryFrameworks = [
-    { name: "Basel III", description: "Capital conservation buffer, Liquidity coverage ratio, Credit risk assessment, Operational risk management" },
+    { name: "Capital Standards", description: "Capital conservation buffer, Liquidity coverage ratio, Credit risk assessment, Operational risk management" },
     { name: "FCRA", description: "Permissible purpose verification, Adverse action notices, Consumer rights notification, Data accuracy" },
     { name: "ECOA", description: "Prohibited basis monitoring, Disparate impact analysis, Fair lending testing, Corrective actions" },
     { name: "Fair Lending", description: "Interest rate cap enforcement, Licensing verification, State-specific disclosures, Consumer protection" }

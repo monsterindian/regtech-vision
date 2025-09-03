@@ -39,7 +39,7 @@ const UseCaseScenarios = () => {
         { icon: CheckCircle, metric: "98.5%", label: "Compliance Rate" },
         { icon: Clock, metric: "2min", label: "Avg Decision Time" }
       ],
-      frameworks: ["Basel III", "FCRA", "ECOA", "TILA"]
+      frameworks: ["Capital Requirements", "Fair Lending", "Credit Assessment", "Consumer Protection"]
     },
     {
       id: "transaction-monitoring",
@@ -53,7 +53,7 @@ const UseCaseScenarios = () => {
         { icon: CheckCircle, metric: "99.9%", label: "Uptime" },
         { icon: Clock, metric: "<1sec", label: "Response Time" }
       ],
-      frameworks: ["AML", "BSA", "FATF", "PCI-DSS"]
+      frameworks: ["AML", "Financial Crime Prevention", "International Standards", "Payment Security"]
     },
     {
       id: "risk-management",
@@ -67,7 +67,7 @@ const UseCaseScenarios = () => {
         { icon: CheckCircle, metric: "100%", label: "Audit Readiness" },
         { icon: Clock, metric: "Real-time", label: "Monitoring" }
       ],
-      frameworks: ["SOX", "COSO", "ISO 27001", "GDPR"]
+      frameworks: ["Financial Controls", "Risk Management", "Information Security", "Data Privacy"]
     }
   ];
 

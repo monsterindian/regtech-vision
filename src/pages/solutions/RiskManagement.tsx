@@ -88,10 +88,10 @@ const RiskManagement = () => {
   ];
 
   const regulatoryFrameworks = [
-    { name: "SOX", description: "Internal controls, Financial reporting, Management assessment, External auditor attestation" },
-    { name: "COSO", description: "Control environment, Risk assessment, Control activities, Information & communication" },
-    { name: "ISO 27001", description: "Information security policy, Risk assessment, Security controls, Continuous improvement" },
-    { name: "Basel III", description: "Capital conservation, Liquidity coverage, Operational risk, Stress testing" }
+    { name: "Financial Controls", description: "Internal controls, Financial reporting, Management assessment, External auditor attestation" },
+    { name: "Risk Management", description: "Control environment, Risk assessment, Control activities, Information & communication" },
+    { name: "Information Security", description: "Information security policy, Risk assessment, Security controls, Continuous improvement" },
+    { name: "Capital Standards", description: "Capital conservation, Liquidity coverage, Operational risk, Stress testing" }
   ];
 
   const runDemo = () => {

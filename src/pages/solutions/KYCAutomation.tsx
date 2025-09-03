@@ -82,7 +82,7 @@ const KYCAutomation = () => {
         "End-to-end encryption (AES-256)",
         "Zero-knowledge architecture",
         "GDPR-compliant data handling",
-        "ISO 27001 certified infrastructure"
+        "Enterprise-grade secure infrastructure"
       ]
     }
   ];

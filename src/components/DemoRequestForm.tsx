@@ -57,7 +57,7 @@ const DemoRequestForm = () => {
   ];
 
   const regulatoryFrameworkOptions = [
-    "AML", "KYC", "GDPR", "Basel III", "SOX", "PCI-DSS", "FFIEC", "SEBI", "Other"
+    "AML", "KYC", "Data Privacy", "Capital Standards", "Financial Controls", "Payment Security", "Banking Compliance", "Market Regulation", "Other"
   ];
 
   const transactionVolumes = [
