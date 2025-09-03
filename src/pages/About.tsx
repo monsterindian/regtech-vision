@@ -66,16 +66,6 @@ const About = () => {
   image: "https://i.ibb.co/MyprDcTj/Krishna.jpg",
       linkedin: "https://www.linkedin.com/in/krishnakumarkr/"
     }
-    ,
-    {
-      name: "Artificial Intelligence",
-      title: "CTO & Co-Founder",
-      background: "An agentic AI system that drives product engineering, rapid prototyping, and automation across our stack. Acts as a virtual technical co-founder, assisting with architecture decisions, code generation, and continuous improvement.",
-      education: "Trained on proprietary and public datasets",
-      expertise: ["Agentic AI", "ML Ops", "System Architecture", "Autonomous Agents"],
-      image: "/placeholder.svg",
-      linkedin: ""
-    }
   ];
 
   const advisors = [
