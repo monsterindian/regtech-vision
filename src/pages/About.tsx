@@ -177,7 +177,7 @@ const About = () => {
 
   return (
   <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      <main className="pt-28">
+      <main className="pt-16 md:pt-28">
         {/* Enhanced Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
           {/* Animated Background Elements */}

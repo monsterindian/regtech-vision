@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <>
-  <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50 overflow-x-hidden">
+  <header className="fixed top-0 left-0 right-0 w-full bg-white border-b border-gray-200 z-50 overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -107,7 +107,7 @@ const Header = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-neutral-dark/60 hover:text-neutral-dark hover:bg-neutral-light/50 transition-all duration-200 p-2"
+                className="text-neutral-dark/60 hover:text-neutral-dark hover:bg-neutral-light/50 transition-all duration-200 p-2 bg-white border border-gray-200"
                 aria-label="Toggle menu"
               >
                 <div className="relative w-5 h-5">
@@ -127,17 +127,17 @@ const Header = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div 
-            className={`md:hidden border-t border-gray-200 overflow-hidden transition-all duration-300 ease-in-out ${
+          <div
+            className={`md:hidden border-t border-gray-200 overflow-hidden transition-all duration-300 ease-in-out bg-white ${
               isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <div className="py-4 space-y-1">
+            <div className="py-4 space-y-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 sm:px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg ${
+                  className={`block px-4 py-4 text-base font-medium transition-all duration-200 rounded-lg touch-manipulation ${
                     isActivePath(item.href)
                       ? 'text-primary bg-neutral-light'
                       : 'text-neutral-dark/60 hover:text-neutral-dark hover:bg-neutral-light/50'

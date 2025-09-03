@@ -7,7 +7,7 @@ import AboutSection from "@/components/AboutSection";
 const Index = () => {
   return (
   <div className="min-h-screen bg-white">
-      <main>
+      <main className="pt-16 md:pt-0">
         <HeroSection />
         <SolutionsPreview />
         <ProcessSection />
