@@ -141,6 +141,16 @@ const TermsOfService = () => {
                   Response times vary based on support tier and issue severity.
                 </p>
               </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">Claims and metrics</h4>
+                <p className="text-gray-600">
+                  Any percentages, accuracy rates, performance metrics, or other quantitative claims published by Gaigentic AI
+                  are based on controlled datasets and testing conditions used during development. These figures are provided
+                  for informational purposes and do not constitute a guarantee or warranty of future results; actual performance
+                  may vary in production depending on factors such as data quality, data volume, configuration, integration,
+                  and the operating environment.
+                </p>
+              </div>
             </CardContent>
           </Card>
 

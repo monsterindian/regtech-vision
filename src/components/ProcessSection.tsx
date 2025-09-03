@@ -12,7 +12,7 @@ const ProcessSection = () => {
       icon: Search,
       title: "Collect",
       description: "Understand user risk better by dynamically collecting a wide variety of passive, active, and behavioral signals while providing legitimate users best-in-class experiences and deterring fraudsters.",
-      color: "#1a365d"
+      color: "#10b981"
     },
     {
       icon: CheckCircle,
@@ -24,7 +24,7 @@ const ProcessSection = () => {
       icon: Eye,
       title: "Understand and investigate",
       description: "Easily spot connections between users to proactively discover and block fraud rings, and streamline investigations with a hyper-customizable manual review hub.",
-      color: "#1a365d"
+      color: "#10b981"
     },
     {
       icon: Database,

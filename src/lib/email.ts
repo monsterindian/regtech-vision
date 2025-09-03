@@ -69,7 +69,7 @@ export const sendDemoRequestEmail = async (formData: DemoRequestData): Promise<{
 
 export const sendContactFormEmail = async (formData: ContactFormData): Promise<{ success: boolean; error?: string }> => {
   try {
-    const response = await fetch('http://localhost:3001/api/contact', {
+  const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
