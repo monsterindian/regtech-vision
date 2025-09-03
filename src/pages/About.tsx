@@ -66,6 +66,16 @@ const About = () => {
   image: "https://i.ibb.co/MyprDcTj/Krishna.jpg",
       linkedin: "https://www.linkedin.com/in/krishnakumarkr/"
     }
+    ,
+    {
+      name: "Artificial Intelligence",
+      title: "CTO & Co-Founder",
+      background: "An agentic AI system that drives product engineering, rapid prototyping, and automation across our stack. Acts as a virtual technical co-founder, assisting with architecture decisions, code generation, and continuous improvement.",
+      education: "Trained on proprietary and public datasets",
+      expertise: ["Agentic AI", "ML Ops", "System Architecture", "Autonomous Agents"],
+      image: "/placeholder.svg",
+      linkedin: ""
+    }
   ];
 
   const advisors = [
@@ -84,6 +94,15 @@ const About = () => {
       expertise: "Banking Operations, Compliance, Payment Systems, Regulatory Reporting",
   image: "https://i.ibb.co/1GMYRLsB/Marco-Bosma.jpg",
       linkedin: "https://www.linkedin.com/in/marco-bosma-9827333/"
+    }
+    ,
+    {
+      name: "Bert Daniel",
+      title: "Senior Advisor - Trade Finance",
+      background: "Experienced trade finance professional with deep expertise in trade operations, letters of credit, and cross-border payments.",
+      expertise: "Trade Finance, Payment Systems, Letters of Credit, Trade Risk",
+      image: "https://i.ibb.co/BHhcMvCH/bert.jpg",
+      linkedin: "https://www.linkedin.com/in/bert-daniel-7a809039/"
     }
   ];
 
