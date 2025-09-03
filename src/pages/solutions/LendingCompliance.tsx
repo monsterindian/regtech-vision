@@ -378,20 +378,15 @@ const LendingCompliance = () => {
             </div>
           </div>
 
-          <Button
-            size="lg"
-            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-xl mr-4"
-          >
-            Get Started Today
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold px-8 py-4 rounded-xl"
-          >
-            Schedule Demo
-          </Button>
+          <Link to="/contact">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-white text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-8 py-4 rounded-xl"
+            >
+              Schedule Demo
+            </Button>
+          </Link>
         </div>
       </section>
 

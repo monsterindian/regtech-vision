@@ -1,8 +1,8 @@
 // Header is rendered globally from App.tsx
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
   Users, 
@@ -49,212 +49,261 @@ const About = () => {
 
   const leadership = [
     {
-      name: "Dr. Sarah Chen",
+      name: "Auke D Veenstra",
       title: "CEO & Co-Founder",
-      background: "Former VP of Compliance at Goldman Sachs with 15+ years in financial services. Led digital transformation initiatives across global markets.",
-      education: "MBA Harvard Business School, MS Computer Science Stanford",
-      expertise: ["Financial Compliance", "Digital Transformation", "Regulatory Strategy"],
-      image: "/api/placeholder/150/150"
+      background: "Experienced entrepreneur and business leader with a strong background in technology and financial services. Founded and scaled multiple successful ventures, bringing deep expertise in business development, strategic partnerships, and market expansion. Passionate about leveraging AI to solve complex compliance challenges in the financial sector.",
+      education: "Master Degree in Business Law & Civil Law from University of Groningen",
+      expertise: ["Entrepreneurship", "Business Development", "Strategic Partnerships", "Financial Technology"],
+  image: "https://i.ibb.co/dJXP4JWR/Auke.jpg",
+      linkedin: "https://www.linkedin.com/in/auke-d-veenstra-922311221/"
     },
     {
-      name: "Dr. Michael Rodriguez",
-      title: "CTO & Co-Founder", 
-      background: "Former AI Research Director at Microsoft with 12+ years in machine learning and autonomous systems. Published 50+ papers in top-tier AI conferences.",
-      education: "PhD Machine Learning MIT, MS Computer Science Carnegie Mellon",
-      expertise: ["Machine Learning", "Multi-Agent Systems", "AI Architecture"],
-      image: "/api/placeholder/150/150"
-    },
-    {
-      name: "James Thompson",
-      title: "Chief Compliance Officer",
-      background: "Former Chief Risk Officer at JPMorgan Chase with 20+ years in regulatory compliance across global jurisdictions.",
-      education: "JD Columbia Law School, CPA, CAMS Certified",
-      expertise: ["Regulatory Compliance", "Risk Management", "AML/KYC"],
-      image: "/api/placeholder/150/150"
-    },
-    {
-      name: "Dr. Priya Patel",
-      title: "Chief Product Officer",
-      background: "Former Head of AI Products at Palantir with expertise in enterprise AI deployment and product strategy.",
-      education: "PhD Computer Science UC Berkeley, BS Engineering Stanford",
-      expertise: ["Product Strategy", "Enterprise AI", "User Experience"],
-      image: "/api/placeholder/150/150"
+      name: "Krishna Kumar",
+      title: "CPO & Co-Founder",
+      background: "Experienced product leader with deep expertise in AI-driven solutions and financial technology. Proven track record in building innovative products that solve complex business challenges. Strong background in product strategy, user experience design, and technology implementation across enterprise environments.",
+      education: "MBA from University of Madras",
+      expertise: ["Product Strategy", "AI/ML Products", "User Experience", "Technology Leadership"],
+  image: "https://i.ibb.co/MyprDcTj/Krishna.jpg",
+      linkedin: "https://www.linkedin.com/in/krishnakumarkr/"
     }
   ];
 
   const advisors = [
     {
-      name: "Robert Chen",
-      title: "Former CEO, Standard Chartered Bank",
-      expertise: "Global Banking Strategy"
+      name: "Vincent Bouwens",
+      title: "Senior Advisor - Risk & Compliance",
+      background: "Seasoned risk and compliance professional with extensive experience in financial services regulatory frameworks and risk management.",
+      expertise: "Risk Management, Regulatory Compliance, AML/KYC, Operational Risk",
+  image: "https://i.ibb.co/t71gY3Y/Vincent-Bouwens.jpg",
+      linkedin: "https://www.linkedin.com/in/vincent-bouwens-86b32321/"
     },
     {
-      name: "Dr. Lisa Wang",
-      title: "Former Chief Data Officer, JPMorgan",
-      expertise: "Financial Data & Analytics"
-    },
-    {
-      name: "David Kumar",
-      title: "Former Partner, McKinsey & Company",
-      expertise: "Financial Services Consulting"
-    },
-    {
-      name: "Maria Santos",
-      title: "Former Head of RegTech, HSBC",
-      expertise: "Regulatory Technology"
+      name: "Marco Bosma",
+      title: "Senior Advisor - Banking",
+      background: "Experienced banking professional with comprehensive knowledge of financial operations and compliance requirements.",
+      expertise: "Banking Operations, Compliance, Payment Systems, Regulatory Reporting",
+  image: "https://i.ibb.co/1GMYRLsB/Marco-Bosma.jpg",
+      linkedin: "https://www.linkedin.com/in/marco-bosma-9827333/"
     }
   ];
 
   const companyStats = [
-    { metric: "2021", label: "Founded", description: "Started with a vision to automate compliance" },
-    { metric: "$50M", label: "Series B Funding", description: "Led by Andreessen Horowitz" },
-    { metric: "500+", label: "Financial Institutions", description: "Across 50+ countries worldwide" },
-    { metric: "200+", label: "Team Members", description: "AI experts and compliance professionals" },
+    { metric: "2025", label: "Founded", description: "Started with a vision to automate compliance" },
+    { metric: "Seed", label: "Funding Stage", description: "Early-stage startup focused on innovation" },
+    { metric: "10+", label: "Pilot Programs", description: "Working with select financial institutions" },
+    { metric: "15+", label: "Team Members", description: "AI experts and compliance professionals" },
     { metric: "99.9%", label: "System Uptime", description: "Enterprise-grade reliability" },
     { metric: "75%", label: "Average Cost Savings", description: "For our clients within 12 months" }
   ];
 
   const testimonials = [
     {
-      quote: "Gaigentic AI has transformed our compliance operations. The autonomous agents have reduced our KYC processing time by 85% while improving accuracy.",
-      author: "Chief Compliance Officer",
-      company: "Global Investment Bank",
-      industry: "Investment Banking"
+      quote: "As a pilot partner, we've been impressed with the team's innovative approach and the potential of their AI solution for streamlining our compliance processes.",
+      author: "Compliance Manager",
+      company: "Regional Credit Union",
+      industry: "Banking"
     },
     {
-      quote: "The platform's ability to adapt to new regulations automatically has been game-changing for our multi-jurisdiction operations.",
-      author: "Head of Regulatory Affairs", 
-      company: "International Insurance Group",
-      industry: "Insurance"
-    },
-    {
-      quote: "Implementation was seamless, and the ROI was evident within the first quarter. Their team's expertise in both AI and compliance is unmatched.",
-      author: "CTO",
-      company: "Digital Lending Platform",
+      quote: "The team's deep understanding of both AI technology and financial regulations gives us confidence in their ability to deliver a game-changing solution.",
+      author: "CTO", 
+      company: "Digital Lending Startup",
       industry: "Fintech"
+    },
+    {
+      quote: "Working with this startup has been refreshing - their agile approach and focus on real problems in compliance automation is exactly what the industry needs.",
+      author: "Head of Risk",
+      company: "Community Bank",
+      industry: "Banking"
     }
   ];
 
   const awards = [
     {
-      title: "RegTech Company of the Year 2024",
-      organization: "Financial Technology Awards",
-      year: "2024"
+      title: "TechCrunch Startup Battlefield Finalist",
+      organization: "TechCrunch",
+      year: "2025"
     },
     {
-      title: "Best AI Innovation in Financial Services",
-      organization: "AI Excellence Awards",
-      year: "2024"
-    },
-    {
-      title: "Top 50 Fintech Companies to Watch",
-      organization: "Forbes",
-      year: "2023"
-    },
-    {
-      title: "Compliance Technology Innovation Award",
-      organization: "RegTech Analyst",
-      year: "2023"
+      title: "Fintech Innovation Award",
+      organization: "Local Fintech Association",
+      year: "2025"
     }
   ];
 
   const partners = [
     {
       category: "Technology Partners",
-      companies: ["Microsoft Azure", "AWS", "Google Cloud", "Snowflake", "Databricks", "Neo4j"]
+      companies: ["AWS", "Google Cloud", "Microsoft Azure"]
     },
     {
-      category: "Regulatory Partners", 
-      companies: ["Thomson Reuters", "Refinitiv", "LexisNexis", "Compliance.ai", "RegTech Associates"]
-    },
-    {
-      category: "System Integrators",
-      companies: ["Deloitte", "PwC", "KPMG", "EY", "Accenture", "IBM Consulting"]
+      category: "Industry Partners", 
+      companies: ["Fintech Association", "Compliance Week", "RegTech Network"]
     }
   ];
 
   const investors = [
-    "Andreessen Horowitz", "Sequoia Capital", "Goldman Sachs Principal Strategic Investments", 
-    "JPMorgan Chase Strategic Investments", "Citi Ventures", "Wells Fargo Strategic Capital"
+    "Angel Investors", "Early-stage VC Funds", "Strategic Partners"
   ];
 
 
 
     const offices = [
     {
-      city: "Amsterdam",
-      address: "Zuiderpark 123, 1082 LM Amsterdam, Netherlands",
-      phone: "+31 6 20343034",
-      email: "amsterdam@gaigentic.ai"
-    },
-    {
-      city: "Chennai",
-      address: "IT Highway, Rajiv Gandhi Salai, Chennai 600113, India",
-      phone: "+91 9841206769",
-      email: "chennai@gaigentic.ai"
+      city: "San Francisco",
+      address: "123 Tech Street, San Francisco, CA 94105, USA",
+      phone: "+1 (555) 123-4567",
+      email: "hello@gaigentic.ai"
     }
   ];
 
   return (
-  <div className="min-h-screen bg-white">
+  <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <main className="pt-28">
         {/* Enhanced Hero Section */}
-        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#0052CC] to-[#00A3CC]">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-40 right-20 w-24 h-24 bg-white rounded-full blur-2xl animate-pulse delay-1000"></div>
-            <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white rounded-full blur-3xl animate-pulse delay-2000"></div>
-            <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-white rounded-full blur-2xl animate-pulse delay-500"></div>
+        <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full mix-blend-multiply filter blur-xl animate-float delay-1000"></div>
+            <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full mix-blend-multiply filter blur-xl animate-float delay-2000"></div>
+
+            {/* Grid Pattern */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:14px_24px]"></div>
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-6xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight animate-fade-in-up">
-                Leading the Future of
-                <br />
-                <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                  Financial Compliance
-                </span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-                We're pioneering autonomous AI agents that transform how financial institutions 
-                approach compliance, making regulatory adherence seamless, intelligent, and cost-effective.
-              </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-              {/* Company Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 animate-fade-in-up delay-400">
-                {companyStats.map((stat, index) => (
-                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 text-center">
-                    <div className="text-3xl font-bold text-white mb-2">{stat.metric}</div>
-                    <div className="text-sm font-semibold text-blue-100 mb-1">{stat.label}</div>
-                    <div className="text-xs text-blue-200">{stat.description}</div>
+              {/* Left Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-4 py-2 mb-6 animate-fade-in-up">
+                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold text-sm">
+                    🏢 About Gaigentic AI
+                  </span>
+                </div>
+
+                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up delay-200">
+                  Leading the Future of
+                  <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"> Financial Compliance</span>
+                </h1>
+
+                <p className="text-xl text-gray-600 mb-8 max-w-2xl animate-fade-in-up delay-400">
+                  We're a 2025-founded startup pioneering autonomous AI agents that transform how financial institutions approach compliance, making regulatory adherence <strong>seamless, intelligent, and cost-effective</strong>.
+                </p>
+
+                {/* Trust Indicators with Animation */}
+                <div className="grid grid-cols-3 gap-8 animate-fade-in-up delay-800">
+                  <div className="text-center group">
+                    <div className="text-3xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                      2025
+                    </div>
+                    <p className="text-sm text-gray-600">Founded</p>
                   </div>
-                ))}
+                  <div className="text-center group">
+                    <div className="text-3xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                      10+
+                    </div>
+                    <p className="text-sm text-gray-600">Pilot Programs</p>
+                  </div>
+                  <div className="text-center group">
+                    <div className="text-3xl font-bold text-indigo-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                      15+
+                    </div>
+                    <p className="text-sm text-gray-600">Team Members</p>
+                  </div>
+                </div>
               </div>
+
+              {/* Right Content - Company Highlights */}
+              <div className="relative animate-fade-in-up delay-1000">
+                <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-lg font-semibold text-gray-900">Company Highlights</h3>
+                    <div className="flex space-x-2">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                  </div>
+
+                  {/* Company Stats */}
+                  <div className="space-y-4">
+                    <div className="flex items-center p-4 rounded-lg border-2 border-green-200 bg-green-50">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4 bg-green-500 text-white">
+                        <Award className="w-4 h-4" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-semibold text-gray-900">Early-Stage Startup</div>
+                        <div className="text-sm text-gray-600">Founded in 2025 with innovative vision</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center p-4 rounded-lg border-2 border-blue-200 bg-blue-50">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4 bg-blue-500 text-white">
+                        <Target className="w-4 h-4" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-semibold text-gray-900">Pilot Programs</div>
+                        <div className="text-sm text-gray-600">Working with select institutions</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center p-4 rounded-lg border-2 border-purple-200 bg-purple-50">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4 bg-purple-500 text-white">
+                        <TrendingUp className="w-4 h-4" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-semibold text-gray-900">99.9% Uptime</div>
+                        <div className="text-sm text-gray-600">Enterprise-grade reliability</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center p-4 rounded-lg border-2 border-indigo-200 bg-indigo-50">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4 bg-indigo-500 text-white">
+                        <Shield className="w-4 h-4" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-semibold text-gray-900">Bank-Grade Security</div>
+                        <div className="text-sm text-gray-600">Enterprise-grade security practices</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link to="/contact">
+                    <Button
+                      size="lg"
+                      className="w-full mt-6 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                    >
+                      Learn More About Us
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
 
         {/* Company Story */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">
                 Our Story & Values
               </h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
               <div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Mission</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Mission</h3>
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
                   To transform financial compliance through autonomous AI agents that eliminate manual processes, 
-                  reduce operational costs, and ensure perfect regulatory adherence across all BFSI operations.
+                  reduce operational costs, and ensure perfect regulatory adherence across BFSI operations.
+                  As a 2025-founded startup, we're building the future of compliance automation from the ground up.
                 </p>
                 
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Vision</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Vision</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   A world where every financial institution operates with autonomous compliance systems that 
                   adapt in real-time to regulatory changes, enabling them to focus on serving customers 
@@ -263,15 +312,15 @@ const About = () => {
               </div>
               
               <div>
-                <h3 className="text-2xl font-bold mb-6 text-foreground">Our Values</h3>
+                <h3 className="text-2xl font-bold mb-6 text-gray-900">Our Values</h3>
                 <div className="space-y-6">
                   {companyValues.map((value, index) => (
                     <div key={index} className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                        <value.icon className="h-6 w-6 text-blue-600" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <value.icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-foreground mb-2">{value.title}</h4>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h4>
                         <p className="text-gray-600">{value.description}</p>
                       </div>
                     </div>
@@ -283,34 +332,68 @@ const About = () => {
         </section>
 
         {/* Team & Expertise */}
-        <section className="py-20 bg-white">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">
                 Leadership Team
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                World-class experts in AI, financial services, and regulatory compliance 
-                leading the transformation of financial compliance operations.
+                Experienced professionals in AI, financial services, and regulatory compliance 
+                driving innovation in compliance automation for the modern financial industry.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {leadership.map((leader, index) => (
-                <Card key={index} className="bg-white shadow-sm border-0">
+                <Card key={index} className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-8">
                     <div className="flex items-start space-x-6">
-                      <div className="w-24 h-24 bg-gray-200 rounded-full flex-shrink-0"></div>
+                        <div className="w-24 h-24 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full flex-shrink-0 overflow-hidden">
+                          <img
+                            src={leader.image}
+                            alt={leader.name}
+                            className="w-full h-full object-cover rounded-full"
+                            onError={(e) => {
+                              const img = e.target as HTMLImageElement;
+                              img.style.display = 'none';
+                              const parent = img.parentElement;
+                              if (parent) {
+                                parent.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-purple-100 to-blue-100 rounded-full flex items-center justify-center"><span class="text-purple-600 font-bold text-lg">' + leader.name.charAt(0) + '</span></div>';
+                              }
+                            }}
+                          />
+                        </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-foreground mb-1">{leader.name}</h3>
-                        <p className="text-blue-600 font-medium mb-3">{leader.title}</p>
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-xl font-bold text-gray-900">{leader.name}</h3>
+                          {leader.linkedin && (
+                            <a
+                              href={leader.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center w-8 h-8 bg-[#0077B5] hover:bg-[#005885] rounded-md transition-colors duration-200 group"
+                              title={`Connect with ${leader.name} on LinkedIn`}
+                            >
+                              <svg
+                                className="w-4 h-4 text-white"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                              </svg>
+                            </a>
+                          )}
+                        </div>
+                        <p className="text-purple-600 font-medium mb-3">{leader.title}</p>
                         <p className="text-gray-600 text-sm mb-4 leading-relaxed">{leader.background}</p>
                         <div className="mb-3">
                           <p className="text-sm text-gray-500 mb-2">{leader.education}</p>
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {leader.expertise.map((skill, skillIndex) => (
-                            <Badge key={skillIndex} variant="secondary" className="text-xs">
+                            <Badge key={skillIndex} variant="outline" className="text-xs px-3 py-1 text-purple-600 border-purple-200">
                               {skill}
                             </Badge>
                           ))}
@@ -324,15 +407,49 @@ const About = () => {
 
             {/* Advisory Board */}
             <div>
-              <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Advisory Board</h3>
+              <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Advisory Board</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {advisors.map((advisor, index) => (
-                  <Card key={index} className="bg-gray-50 shadow-sm border-0 text-center">
+                  <Card key={index} className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300 text-center">
                     <CardContent className="p-6">
-                      <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                      <h4 className="font-semibold text-foreground mb-1">{advisor.name}</h4>
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                        <img
+                          src={advisor.image}
+                          alt={advisor.name}
+                          className="w-full h-full object-cover rounded-full"
+                          onError={(e) => {
+                            const img = e.target as HTMLImageElement;
+                            img.style.display = 'none';
+                            const parent = img.parentElement;
+                            if (parent) {
+                              parent.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-purple-100 to-blue-100 rounded-full flex items-center justify-center"><span class="text-purple-600 font-bold text-lg">' + advisor.name.charAt(0) + '</span></div>';
+                            }
+                          }}
+                        />
+                      </div>
+                      <div className="flex items-center justify-center mb-2">
+                        <h4 className="font-semibold text-gray-900 mr-2">{advisor.name}</h4>
+                        {advisor.linkedin && (
+                          <a
+                            href={advisor.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center w-6 h-6 bg-[#0077B5] hover:bg-[#005885] rounded-md transition-colors duration-200 group"
+                            title={`Connect with ${advisor.name} on LinkedIn`}
+                          >
+                            <svg
+                              className="w-3 h-3 text-white"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          </a>
+                        )}
+                      </div>
                       <p className="text-sm text-gray-600 mb-2">{advisor.title}</p>
-                      <p className="text-xs text-blue-600">{advisor.expertise}</p>
+                      <p className="text-xs text-purple-600">{advisor.expertise}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -341,161 +458,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Client Testimonials */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
-                What Our Clients Say
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="bg-white shadow-sm border-0">
-                  <CardContent className="p-8">
-                    <p className="text-gray-600 mb-6 italic">"{testimonial.quote}"</p>
-                    <div>
-                      <p className="font-semibold text-foreground">{testimonial.author}</p>
-                      <p className="text-sm text-gray-600">{testimonial.company}</p>
-                      <Badge variant="secondary" className="mt-2 text-xs">{testimonial.industry}</Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Awards & Recognition */}
-            <div>
-              <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Awards & Recognition</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {awards.map((award, index) => (
-                  <Card key={index} className="bg-white shadow-sm border-0 text-center">
-                    <CardContent className="p-6">
-                      <Award className="h-8 w-8 text-blue-600 mx-auto mb-4" />
-                      <h4 className="font-semibold text-foreground mb-2">{award.title}</h4>
-                      <p className="text-sm text-gray-600 mb-1">{award.organization}</p>
-                      <p className="text-xs text-blue-600">{award.year}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Partners & Investors */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
-                Partners & Investors
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Backed by leading investors and partnered with industry leaders to deliver 
-                world-class agentic AI solutions.
-              </p>
-            </div>
-
-            {/* Partners */}
-            <div className="mb-16">
-              {partners.map((category, index) => (
-                <div key={index} className="mb-12">
-                  <h3 className="text-xl font-semibold text-center mb-6 text-foreground">
-                    {category.category}
-                  </h3>
-                  <div className="flex flex-wrap justify-center items-center gap-8">
-                    {category.companies.map((company, companyIndex) => (
-                      <div key={companyIndex} className="text-gray-500 font-medium">
-                        {company}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Investors */}
-            <div className="bg-gray-50 rounded-lg p-12 text-center">
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Investors</h3>
-              <div className="flex flex-wrap justify-center items-center gap-8">
-                {investors.map((investor, index) => (
-                  <div key={index} className="text-gray-600 font-medium">
-                    {investor}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-        {/* Contact Information */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
-                Get in Touch
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Ready to transform your compliance operations? Contact us to learn more 
-                about our agentic AI solutions.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {offices.map((office, index) => (
-                <Card key={index} className="bg-gray-50 shadow-sm border-0">
-                  <CardHeader>
-                    <CardTitle className="text-xl font-semibold flex items-center">
-                      <MapPin className="h-5 w-5 mr-2 text-blue-600" />
-                      {office.city}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <p className="text-sm text-gray-600">{office.address}</p>
-                      <div className="flex items-center space-x-2">
-                        <Phone className="h-4 w-4 text-gray-500" />
-                        <span className="text-sm text-gray-600">{office.phone}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Mail className="h-4 w-4 text-gray-500" />
-                        <span className="text-sm text-gray-600">{office.email}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Social Media & CTA */}
-            <div className="text-center">
-              <div className="flex justify-center space-x-6 mb-8">
-                <Button variant="outline" size="sm">
-                  <Linkedin className="h-4 w-4 mr-2" />
-                  LinkedIn
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Twitter className="h-4 w-4 mr-2" />
-                  Twitter
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Github className="h-4 w-4 mr-2" />
-                  GitHub
-                </Button>
-              </div>
-              
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
-                Schedule a Meeting
-                <Calendar className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-        </section>
       </main>
-      <Footer />
     </div>
   );
 };

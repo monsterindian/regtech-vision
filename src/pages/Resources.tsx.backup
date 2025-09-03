@@ -378,21 +378,21 @@ const Resources = () => {
                 <div className="grid grid-cols-3 gap-8 animate-fade-in-up delay-800">
                   <div className="text-center group">
                     <div className="text-3xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">
-                      99.2%
+                      10,000+
                     </div>
-                    <p className="text-sm text-gray-600">Fraud Detection Accuracy</p>
+                    <p className="text-sm text-gray-600">Downloads</p>
                   </div>
                   <div className="text-center group">
                     <div className="text-3xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
-                      75%
+                      50+
                     </div>
-                    <p className="text-sm text-gray-600">Compliance Violation Reduction</p>
+                    <p className="text-sm text-gray-600">Research Papers</p>
                   </div>
                   <div className="text-center group">
                     <div className="text-3xl font-bold text-indigo-600 mb-2 group-hover:scale-110 transition-transform duration-300">
-                      300%
+                      500+
                     </div>
-                    <p className="text-sm text-gray-600">Data Processing Increase</p>
+                    <p className="text-sm text-gray-600">Institutions</p>
                   </div>
                 </div>
               </div>
@@ -418,6 +418,7 @@ const Resources = () => {
                       <Badge variant="outline" className="text-xs px-3 py-1 text-blue-600 border-blue-200">
                         Risk & Compliance
                       </Badge>
+                      <span className="text-sm text-gray-500">32 pages</span>
                     </div>
 
                     <h4 className="text-xl font-bold text-gray-900 mb-2">
@@ -454,26 +455,31 @@ const Resources = () => {
                           <ArrowRight className="ml-2 h-5 w-5" />
                         </Button>
                       </DialogTrigger>
-                                            <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white to-blue-50/30 border-0 shadow-2xl">
-                        {/* Consistent Header Design */}
-                        <div className="relative -m-6 mb-6 p-8 bg-gradient-to-r from-slate-50 via-white to-blue-50 rounded-t-lg border-b border-gray-200">
+                      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white to-blue-50/30 border-0 shadow-2xl">
+                        {/* Enhanced Header with Gradient Background */}
+                        <div className="relative -m-6 mb-6 p-8 bg-gradient-to-r from-[#0052CC] to-[#00A3CC] text-white rounded-t-lg">
+                          <div className="absolute inset-0 bg-black/10 rounded-t-lg"></div>
                           <div className="relative z-10">
                             <DialogHeader>
-                              <DialogTitle className="text-3xl font-bold text-gray-900 mb-3 leading-tight">
+                              <DialogTitle className="text-3xl font-bold text-white mb-3 leading-tight">
                                 Agentic AI: Revolutionizing Risk Management & Compliance in Financial Services
                               </DialogTitle>
                               <div className="flex items-center space-x-3 mb-4">
                                 <Badge
-                                  className="text-purple-600 border-purple-200 text-sm px-3 py-1"
+                                  className="bg-white/20 backdrop-blur-sm text-white border-white/30 text-sm px-3 py-1"
                                 >
                                   AI Revolution
                                 </Badge>
                                 <Badge className="bg-[#FF7A00] text-white border-0 text-sm px-3 py-1">
                                   Risk & Compliance
                                 </Badge>
+                                <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                                  <FileText className="w-4 h-4 text-white" />
+                                  <span className="text-sm text-white font-medium">32 pages</span>
+                                </div>
                               </div>
-                              <p className="text-gray-600 font-medium text-lg">Global Risk Management Institute, 2025</p>
-                              <p className="text-gray-700 mt-3 leading-relaxed">Comprehensive analysis of how autonomous AI agents are transforming risk assessment, compliance automation, and regulatory oversight across global financial institutions.</p>
+                              <p className="text-blue-100 font-medium text-lg">Global Risk Management Institute, 2025</p>
+                              <p className="text-blue-100 mt-3 leading-relaxed">Comprehensive analysis of how autonomous AI agents are transforming risk assessment, compliance automation, and regulatory oversight across global financial institutions.</p>
                             </DialogHeader>
                           </div>
                         </div>
@@ -545,6 +551,265 @@ const Resources = () => {
                         </div>
                       </DialogContent>
                     </Dialog>
+                      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white to-blue-50/30 border-0 shadow-2xl">
+                        {/* Enhanced Header with Gradient Background */}
+                        <div className="relative -m-6 mb-6 p-8 bg-gradient-to-r from-[#0052CC] to-[#00A3CC] text-white rounded-t-lg">
+                          <div className="absolute inset-0 bg-black/10 rounded-t-lg"></div>
+                          <div className="relative z-10">
+                            <DialogHeader>
+                              <DialogTitle className="text-3xl font-bold text-white mb-3 leading-tight">
+                                Agentic AI: Revolutionizing Risk Management & Compliance in Financial Services
+                              </DialogTitle>
+                              <div className="flex items-center space-x-3 mb-4">
+                                <Badge
+                                  className="bg-white/20 backdrop-blur-sm text-white border-white/30 text-sm px-3 py-1"
+                                >
+                                  AI Revolution
+                                </Badge>
+                                <Badge className="bg-[#FF7A00] text-white border-0 text-sm px-3 py-1">
+                                  Risk & Compliance
+                                </Badge>
+                                <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                                  <FileText className="w-4 h-4 text-white" />
+                                  <span className="text-sm text-white font-medium">32 pages</span>
+                                </div>
+                              </div>
+                              <p className="text-blue-100 font-medium text-lg">Global Risk Management Institute, 2025</p>
+                              <p className="text-blue-100 mt-3 leading-relaxed">Comprehensive analysis of how autonomous AI agents are transforming risk assessment, compliance automation, and regulatory oversight across global financial institutions.</p>
+                            </DialogHeader>
+                          </div>
+                        </div>
+
+                        <div className="space-y-8 px-2">
+                          {/* Executive Summary */}
+                          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+                            <div className="flex items-center mb-4">
+                              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+                                <FileText className="w-5 h-5 text-white" />
+                              </div>
+                              <h3 className="text-xl font-bold text-gray-900">Executive Summary</h3>
+                            </div>
+                            <p className="text-gray-700 leading-relaxed text-lg">
+                              Agentic AI represents a paradigm shift in financial services risk management and compliance. This comprehensive research examines how autonomous AI agents are revolutionizing traditional approaches to risk assessment, regulatory compliance, and operational oversight. Through advanced machine learning, real-time processing capabilities, and adaptive decision-making frameworks, agentic AI systems are delivering unprecedented levels of accuracy, efficiency, and proactive risk mitigation across global financial institutions.
+                            </p>
+                          </div>
+
+                          {/* Key Findings */}
+                          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+                            <div className="flex items-center mb-4">
+                              <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+                                <BarChart3 className="w-5 h-5 text-white" />
+                              </div>
+                              <h3 className="text-xl font-bold text-gray-900">Key Research Findings</h3>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div className="bg-white rounded-lg p-4 shadow-sm border border-green-200">
+                                <div className="flex items-start space-x-3">
+                                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-0.5">
+                                    <CheckCircle className="w-4 h-4 text-white" />
+                                  </div>
+                                  <p className="text-gray-700 font-medium leading-relaxed">92% improvement in risk detection accuracy through autonomous AI agents</p>
+                                </div>
+                              </div>
+                              <div className="bg-white rounded-lg p-4 shadow-sm border border-green-200">
+                                <div className="flex items-start space-x-3">
+                                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-0.5">
+                                    <CheckCircle className="w-4 h-4 text-white" />
+                                  </div>
+                                  <p className="text-gray-700 font-medium leading-relaxed">75% reduction in compliance violation incidents across surveyed institutions</p>
+                                </div>
+                              </div>
+                              <div className="bg-white rounded-lg p-4 shadow-sm border border-green-200">
+                                <div className="flex items-start space-x-3">
+                                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-0.5">
+                                    <CheckCircle className="w-4 h-4 text-white" />
+                                  </div>
+                                  <p className="text-gray-700 font-medium leading-relaxed">60% faster regulatory reporting through automated compliance systems</p>
+                                </div>
+                              </div>
+                              <div className="bg-white rounded-lg p-4 shadow-sm border border-green-200">
+                                <div className="flex items-start space-x-3">
+                                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-0.5">
+                                    <CheckCircle className="w-4 h-4 text-white" />
+                                  </div>
+                                  <p className="text-gray-700 font-medium leading-relaxed">$2.8M average annual savings per institution through AI-driven risk mitigation</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Detailed Sections */}
+                          <div className="bg-gradient-to-r from-purple-50 to-violet-50 rounded-xl p-6 border border-purple-100">
+                            <div className="flex items-center mb-6">
+                              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-violet-600 rounded-lg flex items-center justify-center mr-3">
+                                <BookOpen className="w-5 h-5 text-white" />
+                              </div>
+                              <h3 className="text-xl font-bold text-gray-900">Research Analysis</h3>
+                            </div>
+                            <div className="space-y-6">
+                              <div className="bg-white rounded-lg p-6 shadow-sm border border-purple-200">
+                                <div className="flex items-start space-x-4">
+                                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
+                                    <span className="text-white font-bold text-sm">1</span>
+                                  </div>
+                                  <div className="flex-1">
+                                    <h4 className="font-bold text-gray-900 mb-3 text-lg">Autonomous Risk Assessment Frameworks</h4>
+                                    <p className="text-gray-700 leading-relaxed">
+                                      Agentic AI systems employ sophisticated machine learning algorithms to continuously assess risk across multiple dimensions including credit risk, operational risk, market risk, and compliance risk. These autonomous agents process vast amounts of structured and unstructured data in real-time, identifying patterns and anomalies that traditional rule-based systems often miss. The research demonstrates that agentic AI achieves 92% accuracy in risk prediction, compared to 68% for traditional systems, while processing data 300% faster.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-white rounded-lg p-6 shadow-sm border border-purple-200">
+                                <div className="flex items-start space-x-4">
+                                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
+                                    <span className="text-white font-bold text-sm">2</span>
+                                  </div>
+                                  <div className="flex-1">
+                                    <h4 className="font-bold text-gray-900 mb-3 text-lg">Real-Time Compliance Monitoring Systems</h4>
+                                    <p className="text-gray-700 leading-relaxed">
+                                      Traditional compliance monitoring relies on periodic sampling and manual review processes that can miss emerging risks. Agentic AI systems provide continuous, real-time monitoring of transactions, customer behavior, and regulatory changes. The research shows that these systems reduce compliance violation incidents by 75% through proactive identification and automated remediation of potential issues before they escalate into regulatory violations.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-white rounded-lg p-6 shadow-sm border border-purple-200">
+                                <div className="flex items-start space-x-4">
+                                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
+                                    <span className="text-white font-bold text-sm">3</span>
+                                  </div>
+                                  <div className="flex-1">
+                                    <h4 className="font-bold text-gray-900 mb-3 text-lg">Predictive Regulatory Change Adaptation</h4>
+                                    <p className="text-gray-700 leading-relaxed">
+                                      Regulatory environments are constantly evolving, creating significant challenges for financial institutions. Agentic AI systems use natural language processing and machine learning to monitor regulatory developments across jurisdictions and automatically adapt compliance frameworks. The study found that institutions using agentic AI for regulatory monitoring achieve 60% faster compliance with new regulations and reduce adaptation costs by 45%.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-white rounded-lg p-6 shadow-sm border border-purple-200">
+                                <div className="flex items-start space-x-4">
+                                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
+                                    <span className="text-white font-bold text-sm">4</span>
+                                  </div>
+                                  <div className="flex-1">
+                                    <h4 className="font-bold text-gray-900 mb-3 text-lg">Operational Risk Mitigation Strategies</h4>
+                                    <p className="text-gray-700 leading-relaxed">
+                                      Agentic AI extends beyond traditional risk categories to address operational risks including cyber threats, internal fraud, and process failures. Through behavioral analytics and anomaly detection, these systems identify potential operational issues before they impact business continuity. Research participants reported an average of $2.8M annual savings through AI-driven operational risk mitigation, with 85% of institutions achieving zero major operational incidents.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Case Studies */}
+                          <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 border border-orange-100">
+                            <div className="flex items-center mb-4">
+                              <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-amber-600 rounded-lg flex items-center justify-center mr-3">
+                                <Target className="w-5 h-5 text-white" />
+                              </div>
+                              <h3 className="text-xl font-bold text-gray-900">Case Study Analysis</h3>
+                            </div>
+                            <div className="space-y-4">
+                              <div className="bg-white rounded-lg p-6 shadow-sm border border-orange-200">
+                                <h4 className="font-bold text-gray-900 mb-3">Major European Bank Implementation</h4>
+                                <p className="text-gray-700 leading-relaxed mb-3">
+                                  A leading European bank implemented agentic AI for cross-border transaction monitoring across 15 jurisdictions. The system achieved 94% accuracy in detecting suspicious activities while reducing false positives by 78%. Annual compliance costs decreased by €3.2M, with regulatory fines reduced by 90%.
+                                </p>
+                                <div className="grid grid-cols-2 gap-4 text-sm">
+                                  <div className="bg-orange-50 p-3 rounded">
+                                    <span className="font-semibold text-orange-800">Before:</span> 2,400 false positives daily
+                                  </div>
+                                  <div className="bg-green-50 p-3 rounded">
+                                    <span className="font-semibold text-green-800">After:</span> 520 false positives daily
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-white rounded-lg p-6 shadow-sm border border-orange-200">
+                                <h4 className="font-bold text-gray-900 mb-3">North American Investment Firm</h4>
+                                <p className="text-gray-700 leading-relaxed mb-3">
+                                  An investment management firm deployed agentic AI for real-time portfolio risk assessment and regulatory reporting. The system automated 85% of SEC filing processes, reducing preparation time from 3 weeks to 2 days while improving accuracy from 98.2% to 99.8%.
+                                </p>
+                                <div className="grid grid-cols-2 gap-4 text-sm">
+                                  <div className="bg-orange-50 p-3 rounded">
+                                    <span className="font-semibold text-orange-800">Manual Process:</span> 21 days average
+                                  </div>
+                                  <div className="bg-green-50 p-3 rounded">
+                                    <span className="font-semibold text-green-800">AI Automated:</span> 2 days average
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Methodology */}
+                          <div className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 border border-teal-100">
+                            <div className="flex items-center mb-4">
+                              <div className="w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center mr-3">
+                                <Award className="w-5 h-5 text-white" />
+                              </div>
+                              <h3 className="text-xl font-bold text-gray-900">Research Methodology</h3>
+                            </div>
+                            <div className="bg-white rounded-lg p-4 shadow-sm border border-teal-200">
+                              <p className="text-gray-700 leading-relaxed text-lg">
+                                This comprehensive research was conducted through a multi-method approach including quantitative surveys of 200+ financial institutions across North America, Europe, and Asia-Pacific regions, qualitative interviews with C-level executives and compliance officers, and detailed case study analysis of 15 agentic AI implementations. Performance metrics were validated through third-party audits and regulatory compliance assessments conducted over a 24-month period.
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Conclusions */}
+                          <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 border border-indigo-100">
+                            <div className="flex items-center mb-4">
+                              <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
+                                <TrendingUp className="w-5 h-5 text-white" />
+                              </div>
+                              <h3 className="text-xl font-bold text-gray-900">Conclusions & Future Outlook</h3>
+                            </div>
+                            <div className="bg-white rounded-lg p-4 shadow-sm border border-indigo-200">
+                              <p className="text-gray-700 leading-relaxed text-lg">
+                                Agentic AI represents the most significant advancement in financial services risk management and compliance since the introduction of automated trading systems. The research demonstrates that institutions adopting agentic AI achieve superior risk mitigation, regulatory compliance, and operational efficiency compared to traditional approaches. Looking forward, the next phase of development will focus on multi-agent collaboration, enhanced explainability, and integration with emerging technologies like quantum computing and advanced blockchain systems.
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Enhanced CTA */}
+                          <div className="relative bg-gradient-to-r from-[#0052CC] to-[#00A3CC] rounded-xl p-8 text-white overflow-hidden">
+                            <div className="absolute inset-0 bg-black/10"></div>
+                            <div className="absolute top-4 right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+                            <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+                            <div className="relative z-10">
+                              <div className="flex items-center mb-4">
+                                <div className="w-12 h-12 bg-[#FF7A00] rounded-lg flex items-center justify-center mr-4">
+                                  <Users className="w-6 h-6 text-white" />
+                                </div>
+                                <h4 className="text-2xl font-bold text-white">Ready to Transform Your Risk Management?</h4>
+                              </div>
+                              <p className="text-blue-100 mb-6 text-lg leading-relaxed">
+                                Discover how agentic AI can revolutionize your compliance operations. Our experts can help you design and implement the right solution for your organization.
+                              </p>
+                              <div className="flex flex-col sm:flex-row gap-4">
+                                <Link to="/contact">
+                                  <Button size="lg" className="bg-[#FF7A00] hover:bg-[#E56A00] text-white px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                                    Schedule Risk Assessment
+                                    <ArrowRight className="ml-2 h-5 w-5" />
+                                  </Button>
+                                </Link>
+                                <Link to="/contact">
+                                  <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-6 py-3 font-semibold hover:bg-white hover:text-[#0052CC] transition-all duration-300">
+                                    <Calendar className="mr-2 h-5 w-5" />
+                                    Book Expert Consultation
+                                  </Button>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </div>
               </div>
@@ -584,6 +849,7 @@ const Resources = () => {
                         <Badge variant="outline" className="text-xs px-3 py-1 text-blue-600 border-blue-200">
                           {resource.type}
                         </Badge>
+                        <span className="text-sm text-gray-500">{resource.pages}</span>
                       </div>
                       
                       <h3 className="text-2xl font-bold text-gray-900 mb-3">{resource.title}</h3>
@@ -602,25 +868,30 @@ const Resources = () => {
                             </Button>
                           </DialogTrigger>
                           <DialogContent className="max-w-5xl max-h-[85vh] overflow-y-auto bg-gradient-to-br from-white to-blue-50/30 border-0 shadow-2xl">
-                            {/* Consistent Header Design */}
-                            <div className="relative -m-6 mb-6 p-8 bg-gradient-to-r from-slate-50 via-white to-blue-50 rounded-t-lg border-b border-gray-200">
+                            {/* Enhanced Header with Gradient Background */}
+                            <div className="relative -m-6 mb-6 p-8 bg-gradient-to-r from-[#0052CC] to-[#00A3CC] text-white rounded-t-lg">
+                              <div className="absolute inset-0 bg-black/10 rounded-t-lg"></div>
                               <div className="relative z-10">
                                 <DialogHeader>
-                                  <DialogTitle className="text-3xl font-bold text-gray-900 mb-3 leading-tight">
+                                  <DialogTitle className="text-3xl font-bold text-white mb-3 leading-tight">
                                     {resource.title}
                                   </DialogTitle>
                                   <div className="flex items-center space-x-3 mb-4">
                                     <Badge 
-                                      className="text-purple-600 border-purple-200 text-sm px-3 py-1"
+                                      className="bg-white/20 backdrop-blur-sm text-white border-white/30 text-sm px-3 py-1"
                                     >
                                       {resource.category}
                                     </Badge>
                                     <Badge className="bg-[#FF7A00] text-white border-0 text-sm px-3 py-1">
                                       {resource.type}
                                     </Badge>
+                                    <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                                      <FileText className="w-4 h-4 text-white" />
+                                      <span className="text-sm text-white font-medium">{resource.pages}</span>
+                                    </div>
                                   </div>
-                                  <p className="text-gray-600 font-medium text-lg">{resource.source}</p>
-                                  <p className="text-gray-700 mt-3 leading-relaxed">{resource.description}</p>
+                                  <p className="text-blue-100 font-medium text-lg">{resource.source}</p>
+                                  <p className="text-blue-100 mt-3 leading-relaxed">{resource.description}</p>
                                 </DialogHeader>
                               </div>
                             </div>
@@ -710,22 +981,33 @@ const Resources = () => {
                                 </div>
                               </div>
 
-                              {/* Consistent CTA Section */}
-                              <div className="bg-gradient-to-r from-slate-50 via-white to-blue-50 rounded-xl p-8 border border-gray-200">
-                                <div className="flex items-center mb-4">
-                                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mr-4">
-                                    <Users className="w-6 h-6 text-white" />
+                              {/* Enhanced CTA */}
+                              <div className="relative bg-gradient-to-r from-[#0052CC] to-[#00A3CC] rounded-xl p-8 text-white overflow-hidden">
+                                <div className="absolute inset-0 bg-black/10"></div>
+                                <div className="absolute top-4 right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+                                <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+                                <div className="relative z-10">
+                                  <div className="flex items-center mb-4">
+                                    <div className="w-12 h-12 bg-[#FF7A00] rounded-lg flex items-center justify-center mr-4">
+                                      <Users className="w-6 h-6 text-white" />
+                                    </div>
+                                    <h4 className="text-2xl font-bold text-white">Interested in Learning More?</h4>
                                   </div>
-                                  <h4 className="text-2xl font-bold text-gray-900">Interested in Learning More?</h4>
-                                </div>
-                                <p className="text-gray-600 mb-6 text-lg leading-relaxed">Contact our experts to discuss how these insights apply to your organization and explore implementation strategies.</p>
-                                <div className="flex flex-col sm:flex-row gap-4">
-                                  <Link to="/contact">
-                                    <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                                      Schedule Consultation
-                                      <ArrowRight className="ml-2 h-5 w-5" />
-                                    </Button>
-                                  </Link>
+                                  <p className="text-blue-100 mb-6 text-lg leading-relaxed">Contact our experts to discuss how these insights apply to your organization and explore implementation strategies.</p>
+                                  <div className="flex flex-col sm:flex-row gap-4">
+                                    <Link to="/contact">
+                                      <Button size="lg" className="bg-[#FF7A00] hover:bg-[#E56A00] text-white px-6 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                                        Schedule Consultation
+                                        <ArrowRight className="ml-2 h-5 w-5" />
+                                      </Button>
+                                    </Link>
+                                    <Link to="/contact">
+                                      <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-6 py-3 font-semibold hover:bg-white hover:text-[#0052CC] transition-all duration-300">
+                                        <Calendar className="mr-2 h-5 w-5" />
+                                        Book Expert Call
+                                      </Button>
+                                    </Link>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -890,16 +1172,22 @@ const Resources = () => {
               </div>
 
               {/* Main CTA Buttons */}
-              <div className="flex justify-center">
-                <Link to="/contact">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <Calendar className="mr-2 h-5 w-5" />
-                    Schedule Consultation
-                  </Button>
-                </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Get Started Today
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-white border-2 border-purple-200 text-purple-600 hover:bg-purple-50 font-semibold px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Schedule Consultation
+                </Button>
               </div>
             </div>
           </div>

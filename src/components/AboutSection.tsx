@@ -1,8 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { 
-  Award, 
   Users, 
   Globe, 
   Shield,
@@ -14,17 +12,10 @@ import {
 
 const AboutSection = () => {
   const achievements = [
-    { icon: Building2, label: "Financial Institutions", value: "500+" },
-    { icon: Globe, label: "Countries Served", value: "45+" },
-    { icon: Users, label: "Compliance Professionals", value: "10K+" },
-    { icon: Shield, label: "Transactions Monitored Daily", value: "50M+" }
-  ];
-
-  const certifications = [
-    { name: "ISO 27001", status: "Certified" },
-    { name: "SOC 2 Type II", status: "Compliant" },
-    { name: "GDPR", status: "Compliant" },
-    { name: "PCI DSS", status: "Level 1" }
+    { icon: Building2, label: "Beta Partners", value: "15+" },
+    { icon: Globe, label: "Countries Targeted", value: "25+" },
+    { icon: Users, label: "Team Members", value: "12" },
+    { icon: Shield, label: "Security Audits", value: "3" }
   ];
 
   const values = [
@@ -105,32 +96,6 @@ const AboutSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="bg-muted/30 rounded-2xl p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold mb-2 text-neutral-dark">
-              Security & Compliance Certifications
-            </h3>
-            <p className="text-neutral-dark/60">
-              Trusted by regulators and financial institutions worldwide
-            </p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-card rounded-lg p-4 border border-border/50 min-w-[160px] text-center">
-                <div className="flex items-center justify-center mb-2">
-                  <Award className="h-5 w-5 text-gold mr-2" />
-                  <span className="font-semibold text-neutral-dark">{cert.name}</span>
-                </div>
-                <Badge variant="secondary" className="bg-success/10 text-success hover:bg-success/20">
-                  {cert.status}
-                </Badge>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

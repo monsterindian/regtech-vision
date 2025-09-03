@@ -1,5 +1,4 @@
 // Header is rendered globally from App.tsx
-import Footer from "@/components/Footer";
 import PageHero from "@/components/shared/PageHero";
 import StatsSection from "@/components/shared/StatsSection";
 import CTASection from "@/components/shared/CTASection";
@@ -198,51 +197,50 @@ const Platform = () => {
   <div className="min-h-screen bg-white">
       <main className="pt-28">
         {/* 1. ENHANCED HERO SECTION */}
-        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#0052CC] to-[#00A3CC]">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-40 right-20 w-24 h-24 bg-white rounded-full blur-2xl animate-pulse delay-1000"></div>
-            <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white rounded-full blur-3xl animate-pulse delay-2000"></div>
-            <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-white rounded-full blur-2xl animate-pulse delay-500"></div>
+        <section className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full mix-blend-multiply filter blur-xl animate-float delay-1000"></div>
+            <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-float delay-2000"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:14px_24px]"></div>
           </div>
 
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-6xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight animate-fade-in-up">
-                Enterprise-Ready
-                <br />
-                <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                  Agentic AI Platform
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-6 py-3 mb-8 animate-fade-in-up">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold">
+                  ⚡ Enterprise Agentic AI Platform
                 </span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-                Built for scale, security, and performance. Our platform delivers enterprise-grade agentic AI 
-                capabilities with bank-level security and compliance.
-              </p>
-              
-              {/* Platform Metrics */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12 animate-fade-in-up delay-400">
-                {platformMetrics.map((metric, index) => (
-                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                    <div className="flex items-center justify-center mb-3">
-                      <div className="w-10 h-10 bg-[#FF7A00] rounded-lg flex items-center justify-center mr-3">
-                        <metric.icon className="w-5 h-5 text-white" />
-                      </div>
-                    </div>
-                    <div className="text-2xl font-bold text-white mb-1">{metric.metric}</div>
-                    <div className="text-blue-100 text-sm font-medium mb-2">{metric.label}</div>
-                    <div className="text-blue-200 text-xs">{metric.description}</div>
-                  </div>
-                ))}
               </div>
 
-              {/* Trust Indicator */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 max-w-md mx-auto animate-fade-in-up delay-600">
-                <div className="text-blue-100 text-sm">
-                  Trusted by 500+ financial institutions worldwide for mission-critical compliance operations
-                </div>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up delay-200">
+                Enterprise-Ready
+                <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"> Agentic AI Platform</span>
+              </h1>
+
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12 animate-fade-in-up delay-400">
+                Built for scale, security, and performance. Our platform delivers enterprise-grade agentic AI
+                capabilities with bank-level security and compliance.
+              </p>
+
+              {/* Platform Metrics */}
+              <div className="grid md:grid-cols-4 gap-6 mt-12 animate-fade-in-up delay-600">
+                {platformMetrics.map((metric, index) => (
+                  <div
+                    key={index}
+                    className="p-6 rounded-xl bg-white shadow-md border border-gray-100 text-center"
+                  >
+                    <metric.icon className="h-8 w-8 text-purple-600 mx-auto mb-3 fill-current" />
+                    <div className="text-2xl font-bold text-gray-900 mb-2">
+                      {metric.metric}
+                    </div>
+                    <div className="text-sm font-semibold text-gray-900 mb-2">{metric.label}</div>
+                    <div className="text-xs text-gray-600 leading-relaxed">
+                      {metric.description}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -252,52 +250,47 @@ const Platform = () => {
         <AgenticArchitecture />
 
         {/* 3. FEATURES - Core Platform Capabilities */}
-        <FeaturesSection
-          title="Comprehensive Platform Capabilities"
-          subtitle="Everything you need to deploy, manage, and scale agentic AI across your entire compliance infrastructure."
-          features={platformFeatures}
-          variant="detailed"
-          columns={2}
-          backgroundVariant="gray"
-        />
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-6 py-3 mb-8">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold">
+                  ⚡ Comprehensive Platform Capabilities
+                </span>
+              </div>
 
-        {/* 4. SECURITY - Bank-Grade Security */}
-        <section className="py-20 bg-[#1E293B]">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16 animate-fade-in-up">
-              <h2 className="text-4xl font-bold mb-6 text-white">
-                Bank-Grade Security & Compliance
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                Comprehensive Platform Capabilities
               </h2>
-              <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-                Our platform is built with security-first principles, meeting the most stringent 
-                requirements of global financial institutions and regulatory bodies.
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Everything you need to deploy, manage, and scale agentic AI across your entire compliance infrastructure.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {securityFeatures.map((feature, index) => (
-                <Card key={index} className="bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {platformFeatures.map((feature, index) => (
+                <Card key={index} className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
                   <CardHeader>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-[#FF7A00] rounded-lg flex items-center justify-center">
-                        <feature.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <CardTitle className="text-xl font-semibold text-white">{feature.title}</CardTitle>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
+                      <feature.icon className="h-6 w-6 text-white" />
                     </div>
+                    <CardTitle className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-blue-200 mb-4">{feature.description}</p>
-                    <div className="space-y-2 mb-4">
-                      {feature.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
-                          <span className="text-sm text-blue-100">{benefit}</span>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
+                    
+                    <div className="space-y-3 mb-6">
+                      {feature.benefits.slice(0, 2).map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-gray-700 leading-relaxed">{benefit}</span>
                         </div>
                       ))}
                     </div>
+
                     <div className="flex flex-wrap gap-2">
-                      {feature.tags.map((tag, tagIndex) => (
-                        <Badge key={tagIndex} className="bg-white/20 text-white border-white/30 text-xs">
+                      {feature.tags.slice(0, 2).map((tag, tagIndex) => (
+                        <Badge key={tagIndex} className="bg-purple-100 text-purple-700 border-purple-200 text-xs font-medium">
                           {tag}
                         </Badge>
                       ))}
@@ -306,57 +299,93 @@ const Platform = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
 
-            {/* Security Certifications */}
-            <div className="relative bg-gradient-to-r from-[#FF7A00] to-[#E56A00] rounded-2xl p-12 text-center overflow-hidden animate-fade-in-up delay-400">
-              <div className="absolute inset-0 bg-black/10"></div>
-              <div className="absolute top-4 right-4 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
-              <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-6 text-white">
-                  Security Certifications & Standards
-                </h3>
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  {securityCertifications.map((cert, index) => (
-                    <Badge key={index} className="bg-white/20 backdrop-blur-sm text-white border-white/30 px-4 py-2 text-sm">
-                      <Award className="h-3 w-3 mr-2" />
-                      {cert}
-                    </Badge>
-                  ))}
-                </div>
-                <p className="text-orange-100 max-w-2xl mx-auto text-lg">
-                  Independently verified security controls and compliance frameworks ensure 
-                  your data and operations meet the highest industry standards.
-                </p>
+        {/* 4. SECURITY - Bank-Grade Security */}
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-6 py-3 mb-8">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold">
+                  🛡️ Bank-Grade Security & Compliance
+                </span>
               </div>
+
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                Bank-Grade Security & Compliance
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Our platform is built with security-first principles, meeting the most stringent
+                requirements of global financial institutions and regulatory bodies.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {securityFeatures.map((feature, index) => (
+                <Card key={index} className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
+                  <CardHeader>
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center">
+                        <feature.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <CardTitle className="text-xl font-semibold text-gray-900">{feature.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 mb-4">{feature.description}</p>
+                    <div className="space-y-2 mb-4">
+                      {feature.benefits.map((benefit, benefitIndex) => (
+                        <div key={benefitIndex} className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          <span className="text-sm text-gray-700">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {feature.tags.map((tag, tagIndex) => (
+                        <Badge key={tagIndex} className="bg-purple-100 text-purple-700 border-purple-200 text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
         {/* 5. INTEGRATION - Examples and Documentation */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4">
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-foreground">
+              <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-6 py-3 mb-8">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold">
+                  🔗 Seamless Integration & Developer Experience
+                </span>
+              </div>
+
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">
                 Seamless Integration & Developer Experience
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive APIs and pre-built integrations for rapid deployment 
+                Comprehensive APIs and pre-built integrations for rapid deployment
                 into your existing technology stack.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
               {integrationExamples.map((integration, index) => (
-                <Card key={index} className="bg-white shadow-sm border-0">
+                <Card key={index} className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
                   <CardHeader>
-                    <CardTitle className="text-lg font-semibold">{integration.system}</CardTitle>
+                    <CardTitle className="text-lg font-semibold text-gray-900">{integration.system}</CardTitle>
                     <p className="text-gray-600 text-sm">{integration.description}</p>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="text-sm font-medium text-foreground mb-3">Sample Endpoints:</h4>
+                        <h4 className="text-sm font-medium text-gray-900 mb-3">Sample Endpoints:</h4>
                         <div className="space-y-2">
                           {integration.endpoints.map((endpoint, endpointIndex) => (
                             <code key={endpointIndex} className="block bg-gray-900 text-green-400 p-2 rounded text-xs">
@@ -365,13 +394,13 @@ const Platform = () => {
                           ))}
                         </div>
                       </div>
-                      
+
                       <div>
-                        <h4 className="text-sm font-medium text-foreground mb-3">Key Features:</h4>
+                        <h4 className="text-sm font-medium text-gray-900 mb-3">Key Features:</h4>
                         <div className="space-y-1">
                           {integration.features.map((feature, featureIndex) => (
                             <div key={featureIndex} className="flex items-center space-x-2">
-                              <CheckCircle className="h-3 w-3 text-blue-600 flex-shrink-0" />
+                              <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" />
                               <span className="text-xs text-gray-600">{feature}</span>
                             </div>
                           ))}
@@ -382,23 +411,51 @@ const Platform = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
 
-            {/* Developer Resources CTA */}
-            <div className="bg-blue-50 rounded-lg p-12 text-center">
-              <h3 className="text-3xl font-bold mb-4 text-foreground">
-                Developer Resources & Documentation
-              </h3>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Access comprehensive API documentation, SDKs, code samples, and integration 
-                guides to accelerate your implementation.
+        {/* Final CTA */}
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-6 py-3 mb-8">
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold">
+                  🚀 Ready to Deploy Enterprise Agentic AI?
+                </span>
+              </div>
+
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Ready to Deploy Your
+                <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"> Enterprise Agentic AI?</span>
+              </h2>
+
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
+                See our platform in action with a technical deep-dive demo. Our solutions architects will show you how to integrate agentic AI into your infrastructure.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+              {/* Benefits */}
+              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+                <div className="text-center">
+                  <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-3" />
+                  <p className="text-gray-700 font-medium">Technical architecture review</p>
+                </div>
+                <div className="text-center">
+                  <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-3" />
+                  <p className="text-gray-700 font-medium">Integration planning session</p>
+                </div>
+                <div className="text-center">
+                  <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-3" />
+                  <p className="text-gray-700 font-medium">Security & compliance assessment</p>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex justify-center">
                 <CTASection
                   title=""
                   subtitle=""
                   buttons={[
-                    { text: "View API Documentation", variant: 'primary', icon: Code },
-                    { text: "Download SDKs", variant: 'secondary' }
+                    { text: "Schedule Platform Demo", variant: 'primary', icon: Calendar, href: '/contact' }
                   ]}
                   backgroundVariant="blue"
                   size="sm"
@@ -407,25 +464,7 @@ const Platform = () => {
             </div>
           </div>
         </section>
-
-        {/* Final CTA */}
-        <CTASection
-          title="Ready to Deploy Enterprise Agentic AI?"
-          subtitle="See our platform in action with a technical deep-dive demo. Our solutions architects will show you how to integrate agentic AI into your infrastructure."
-          buttons={[
-            { text: "Schedule Platform Demo", variant: 'primary', icon: Calendar, href: '/contact' },
-            { text: "Speak with Solutions Architect", variant: 'secondary', href: '/contact' }
-          ]}
-          benefits={[
-            { text: "Technical architecture review" },
-            { text: "Integration planning session" },
-            { text: "Security & compliance assessment" }
-          ]}
-          backgroundVariant="blue"
-          size="lg"
-        />
       </main>
-      <Footer />
     </div>
   );
 };

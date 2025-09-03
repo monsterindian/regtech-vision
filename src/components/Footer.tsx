@@ -4,24 +4,6 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const footerSections = [
     {
-      title: "Solutions",
-      links: [
-        { name: "KYC Automation", href: "/solutions" },
-        { name: "Lending Compliance", href: "/solutions" }, 
-        { name: "Transaction Monitoring", href: "/solutions" },
-        { name: "Risk Management", href: "/solutions" }
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Documentation", href: "/resources" },
-        { name: "API Reference", href: "/resources" },
-        { name: "Case Studies", href: "/resources" },
-        { name: "Security", href: "/resources" }
-      ]
-    },
-    {
       title: "Company",
       links: [
         { name: "About Us", href: "/about" },
@@ -31,30 +13,33 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-neutral-dark text-white py-16">
+    <footer className="bg-muted-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
           {/* Company Info */}
           <div>
             <h3 className="text-lg font-bold text-white mb-4">Gaigentic AI</h3>
-            <p className="text-sm text-neutral-dark/70 mb-6 leading-relaxed">
+            <p className="text-sm text-muted-300 mb-6 leading-relaxed">
               Autonomous AI agents for financial compliance excellence. 
               Transforming BFSI operations with intelligent automation.
             </p>
             
             <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm text-neutral-dark/70">
+              <div className="flex items-center space-x-2 text-sm text-muted-300">
                 <Mail className="h-4 w-4" />
                 <span>info@gaigentic.ai</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-neutral-dark/70">
+              <div className="flex items-center space-x-2 text-sm text-muted-300">
                 <Phone className="h-4 w-4" />
                 <span>+31 6 20343034 / +91 9841206769</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-neutral-dark/70">
-                <MapPin className="h-4 w-4" />
-                <span>Amsterdam • Chennai</span>
+              <div className="flex items-start space-x-2 text-sm text-muted-300">
+                <MapPin className="h-4 w-4 mt-0.5" />
+                <div>
+                  <div>Amsterdam • Chennai</div>
+                  <div className="text-xs mt-1">HQ: Gustav Mahlerplein 2, 1082MA<br />Amsterdam, Netherlands</div>
+                </div>
               </div>
             </div>
           </div>
@@ -66,7 +51,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <Link to={link.href} className="text-sm text-neutral-dark/70 hover:text-primary transition-colors">
+                    <Link to={link.href} className="text-sm text-muted-300 hover:text-primary transition-colors">
                       {link.name}
                     </Link>
                   </li>
@@ -77,21 +62,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-neutral-dark/20 pt-8">
+        <div className="border-t border-muted-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-neutral-dark/70">
+            <p className="text-sm text-muted-300">
               © 2025 Gaigentic AI. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-sm text-neutral-dark/70 hover:text-primary transition-colors">
+              <Link to="/privacy-policy" className="text-sm text-muted-300 hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-sm text-neutral-dark/70 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/terms-of-service" className="text-sm text-muted-300 hover:text-primary transition-colors">
                 Terms of Service
-              </a>
-              <a href="#" className="text-sm text-neutral-dark/70 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/security" className="text-sm text-muted-300 hover:text-primary transition-colors">
                 Security
-              </a>
+              </Link>
             </div>
           </div>
         </div>

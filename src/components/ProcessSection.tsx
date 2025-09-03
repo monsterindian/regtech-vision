@@ -3,8 +3,7 @@ import {
   Search, 
   CheckCircle, 
   Eye,
-  Database,
-  ArrowRight
+  Database
 } from "lucide-react";
 
 const ProcessSection = () => {
@@ -64,13 +63,9 @@ const ProcessSection = () => {
                     <h3 className="text-xl font-semibold mb-3 text-neutral-dark">
                       {process.title}
                     </h3>
-                    <p className="text-neutral-dark/70 leading-relaxed mb-4">
+                    <p className="text-neutral-dark/70 leading-relaxed">
                       {process.description}
                     </p>
-                    <div className="flex items-center text-primary font-medium hover:text-primary/80 transition-colors cursor-pointer">
-                      Learn more
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </div>
                   </div>
                 </div>
               </CardContent>

@@ -190,13 +190,15 @@ const SolutionsPreview = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl"
-          >
-            Explore All Solutions
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/solutions">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl"
+            >
+              Explore All Solutions
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
 
       </div>

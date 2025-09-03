@@ -14,6 +14,14 @@ export interface DemoRequestData {
   complianceChallenges: string;
 }
 
+export interface ContactFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  company: string;
+  message: string;
+}
+
 export const sendDemoRequestEmail = async (formData: DemoRequestData): Promise<{ success: boolean; error?: string }> => {
   try {
     // Simulate API call delay
@@ -46,6 +54,33 @@ export const sendDemoRequestEmail = async (formData: DemoRequestData): Promise<{
     // Simulate occasional failures for testing (remove in production)
     if (Math.random() < 0.1) {
       throw new Error('Simulated network error');
+    }
+
+    return { success: true };
+
+  } catch (error) {
+    console.error('Email service error:', error);
+    return { 
+      success: false, 
+      error: error instanceof Error ? error.message : 'Network error occurred. Please try again.' 
+    };
+  }
+};
+
+export const sendContactFormEmail = async (formData: ContactFormData): Promise<{ success: boolean; error?: string }> => {
+  try {
+    const response = await fetch('http://localhost:3001/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || 'Failed to send contact form');
     }
 
     return { success: true };
