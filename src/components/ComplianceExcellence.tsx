@@ -57,10 +57,6 @@ const ComplianceExcellence = () => {
     }
   ];
 
-  const certifications = [
-    "SOC2 Type II", "ISO 27001", "PCI-DSS Level 1", "FedRAMP Ready", "GDPR Compliant", "HIPAA Compliant"
-  ];
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -128,20 +124,36 @@ const ComplianceExcellence = () => {
           </div>
         </div>
 
-        {/* Certifications */}
+        {/* Security & Compliance Commitment */}
         <div className="bg-white rounded-lg p-12 text-center">
           <h3 className="text-3xl font-bold mb-6 text-foreground">
-            Security & Compliance Certifications
+            Security & Compliance Commitment
           </h3>
           <p className="text-xl text-gray-600 mb-8">
-            Independently verified security and compliance standards
+            Building security and compliance into our platform from day one
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {certifications.map((cert, index) => (
-              <Badge key={index} variant="secondary" className="bg-gray-100 text-gray-700 px-4 py-2 text-sm">
-                {cert}
-              </Badge>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-6 w-6 text-blue-600" />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Security-First Design</h4>
+              <p className="text-gray-600 text-sm">Every feature is built with security and privacy as foundational principles.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FileCheck className="h-6 w-6 text-green-600" />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Regulatory Ready</h4>
+              <p className="text-gray-600 text-sm">Designed to meet current and future compliance requirements as we scale.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-6 w-6 text-purple-600" />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Expert Team</h4>
+              <p className="text-gray-600 text-sm">Led by compliance and security experts with deep financial industry experience.</p>
+            </div>
           </div>
         </div>
       </div>

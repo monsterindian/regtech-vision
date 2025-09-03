@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Lock, Eye, Server, Key, AlertTriangle, CheckCircle, Database } from "lucide-react";
+import { Shield, Lock, Eye, Server, Key, AlertTriangle, CheckCircle, Database, Target } from "lucide-react";
 
 const Security = () => {
   return (
@@ -197,38 +197,57 @@ const Security = () => {
             </CardContent>
           </Card>
 
-          {/* Compliance & Certifications */}
+          {/* Security Commitment & Roadmap */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
-                Compliance & Certifications
+                Security Commitment & Roadmap
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 mb-6">
-                We maintain industry-leading security certifications and undergo regular independent audits:
+                As a young startup, we're committed to building security into every aspect of our platform from day one. Here's our approach to security excellence:
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Badge className="bg-blue-100 text-blue-800 mb-2">In Progress</Badge>
-                  <h5 className="font-semibold text-gray-900">ISO 27001</h5>
-                  <p className="text-gray-600 text-sm">Information Security</p>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Security-First Architecture</h4>
+                    <p className="text-gray-600 text-sm">We design with security in mind from the ground up, implementing industry best practices and zero-trust principles in every component.</p>
+                  </div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Badge className="bg-green-100 text-green-800 mb-2">Compliant</Badge>
-                  <h5 className="font-semibold text-gray-900">GDPR</h5>
-                  <p className="text-gray-600 text-sm">Data Protection</p>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Eye className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Transparent Security Practices</h4>
+                    <p className="text-gray-600 text-sm">We believe in open communication about our security measures and are committed to regular independent security assessments.</p>
+                  </div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Badge className="bg-purple-100 text-purple-800 mb-2">Planned</Badge>
-                  <h5 className="font-semibold text-gray-900">SOC 2</h5>
-                  <p className="text-gray-600 text-sm">Trust Services</p>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Target className="h-4 w-4 text-purple-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Certification Roadmap</h4>
+                    <p className="text-gray-600 text-sm">We're actively working towards industry-standard certifications including ISO 27001, NIST frameworks, and other relevant compliance standards as we scale.</p>
+                  </div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Badge className="bg-orange-100 text-orange-800 mb-2">Completed</Badge>
-                  <h5 className="font-semibold text-gray-900">Security Audit</h5>
-                  <p className="text-gray-600 text-sm">Annual Assessment</p>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Database className="h-4 w-4 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Privacy by Design</h4>
+                    <p className="text-gray-600 text-sm">Data protection and privacy are core to our mission. We implement GDPR-compliant practices and maintain strict data handling procedures.</p>
+                  </div>
                 </div>
               </div>
             </CardContent>

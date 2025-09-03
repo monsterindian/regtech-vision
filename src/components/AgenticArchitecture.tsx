@@ -23,7 +23,7 @@ const AgenticArchitecture = () => {
     {
       icon: Lock,
       title: "Enterprise Security",
-      description: "End-to-end encryption, zero-trust architecture, and SOC2 Type II compliance."
+      description: "End-to-end encryption, zero-trust architecture, and ISO 27001 compliance."
     },
     {
       icon: Gauge,

@@ -130,15 +130,15 @@ const Platform = () => {
     },
     {
       icon: FileCheck,
-      title: "Compliance & Audit",
-      description: "Immutable audit trails, automated compliance reporting, and real-time monitoring for regulatory adherence.",
+      title: "Security Monitoring & Compliance",
+      description: "Built-in security monitoring, audit trails, and compliance-ready architecture designed for future regulatory requirements.",
       benefits: [
-        "Immutable audit logs",
-        "Automated compliance checks",
-        "Real-time monitoring",
-        "Regulatory reporting"
+        "Comprehensive audit logging",
+        "Security event monitoring",
+        "Compliance-ready framework",
+        "Future certification preparation"
       ],
-      tags: ["Audit", "Compliance", "SOC2", "ISO27001"]
+      tags: ["Audit", "Compliance", "Security", "Monitoring"]
     },
     {
       icon: Server,
@@ -152,11 +152,6 @@ const Platform = () => {
       ],
       tags: ["Network Security", "IDS", "Threat Response"]
     }
-  ];
-
-  // Security Certifications
-  const securityCertifications = [
-    "SOC2 Type II", "ISO 27001", "PCI-DSS Level 1", "FedRAMP Ready", "GDPR Compliant", "HIPAA Compliant"
   ];
 
   // 5. INTEGRATION - Examples and Documentation
