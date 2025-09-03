@@ -56,13 +56,26 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link
-                to="/"
-                className="text-xl font-bold text-foreground hover:text-primary transition-colors flex items-center gap-1"
-                aria-label="Gaigentic AI home"
-              >
-                <span className="leading-none">Gaigentic</span>
-                <span className="text-red-600 font-extrabold leading-none" style={{ fontSize: '0.95em' }}>AI</span>
+              <Link to="/" className="flex items-center" aria-label="Gaigentic AI home">
+                <div className="h-8 w-auto relative">
+                  <img
+                    src="https://i.ibb.co/DH06Ghnf/Ligh-Mode-logo.jpg"
+                    alt="Gaigentic AI"
+                    className="h-8 w-auto object-contain"
+                    onError={(e) => {
+                      const img = e.target as HTMLImageElement;
+                      img.style.display = 'none';
+                      const fallback = img.parentElement?.querySelector('.logo-fallback') as HTMLElement | null;
+                      if (fallback) fallback.style.display = 'inline-flex';
+                    }}
+                  />
+                  <span className="logo-fallback hidden inline-flex items-baseline font-extrabold text-xl leading-none">
+                    <span className="text-xl text-foreground">G</span>
+                    <span className="text-red-600 text-xs font-extrabold -translate-y-0.5 ml-0.5">ai</span>
+                    <span className="text-xl text-foreground ml-0.5">igentic</span>
+                    <span className="ml-3 text-sm font-semibold text-foreground">AI</span>
+                  </span>
+                </div>
               </Link>
             </div>
 
