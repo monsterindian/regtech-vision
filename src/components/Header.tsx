@@ -56,16 +56,18 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link 
-                to="/" 
-                className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+              <Link
+                to="/"
+                className="text-xl font-bold text-foreground hover:text-primary transition-colors flex items-center gap-1"
+                aria-label="Gaigentic AI home"
               >
-                Gaigentic AI
+                <span className="leading-none">Gaigentic</span>
+                <span className="text-red-600 font-extrabold leading-none" style={{ fontSize: '0.95em' }}>AI</span>
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-6">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -87,7 +89,7 @@ const Header = () => {
             {/* CTA Button removed as requested */}
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center">
               <Button
                 variant="ghost"
                 size="sm"

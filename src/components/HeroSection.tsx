@@ -40,7 +40,7 @@ const HeroSection = () => {
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up delay-200">
               Transform Your
               <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"> Risk and Compliance </span>
-              with Autonomous Agentic AI
+              with Agentic AI
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 max-w-2xl animate-fade-in-up delay-400">

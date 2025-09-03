@@ -19,7 +19,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">Gaigentic AI</h3>
+            <h3 className="text-lg font-bold text-white mb-4">
+              <span>Gaigentic</span>
+              <span className="text-red-400 ml-1">AI</span>
+            </h3>
             <p className="text-sm text-muted-300 mb-6 leading-relaxed">
               Autonomous AI agents for financial compliance excellence. 
               Transforming BFSI operations with intelligent automation.
