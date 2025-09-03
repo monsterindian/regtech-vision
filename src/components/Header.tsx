@@ -51,17 +51,17 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
+  <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50 overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link to="/" className="flex items-center" aria-label="Gaigentic AI home">
-                <div className="h-8 w-auto relative">
+            <div className="flex-shrink-0 min-w-0">
+              <Link to="/" className="flex items-center min-w-0" aria-label="Gaigentic AI home">
+        <div className="h-8 w-auto relative max-w-[120px] md:max-w-[160px]">
                   <img
                     src="https://i.ibb.co/DH06Ghnf/Ligh-Mode-logo.jpg"
                     alt="Gaigentic AI"
-                    className="h-8 w-auto object-contain"
+          className="h-7 md:h-8 w-auto object-contain max-w-full"
                     onError={(e) => {
                       const img = e.target as HTMLImageElement;
                       img.style.display = 'none';
@@ -137,7 +137,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg mx-2 ${
+                  className={`block px-3 sm:px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg ${
                     isActivePath(item.href)
                       ? 'text-primary bg-neutral-light'
                       : 'text-neutral-dark/60 hover:text-neutral-dark hover:bg-neutral-light/50'
