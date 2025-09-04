@@ -97,7 +97,7 @@ const About = () => {
   ];
 
   const companyStats = [
-    { metric: "30+", label: "Years Experience", description: "Combined expertise in finance and AI" },
+    { metric: "200+", label: "Years Combined Experience", description: "Combined expertise in finance and AI" },
     { metric: "Seed", label: "Funding Stage", description: "Early-stage startup focused on innovation" },
     { metric: "10+", label: "Pilot Programs", description: "Working with select financial institutions" },
     { metric: "15+", label: "Team Members", description: "AI experts and compliance professionals" },
@@ -204,9 +204,9 @@ const About = () => {
                 <div className="grid grid-cols-3 gap-8 animate-fade-in-up delay-800">
                   <div className="text-center group">
                     <div className="text-3xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">
-                      30+
+                      200+
                     </div>
-                    <p className="text-sm text-gray-600">Years Experience</p>
+                    <p className="text-sm text-gray-600">Years Combined Experience</p>
                   </div>
                   <div className="text-center group">
                     <div className="text-3xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
