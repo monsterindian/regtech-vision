@@ -97,7 +97,7 @@ const About = () => {
   ];
 
   const companyStats = [
-    { metric: "2025", label: "Founded", description: "Started with a vision to automate compliance" },
+    { metric: "30+", label: "Years Experience", description: "Combined expertise in finance and AI" },
     { metric: "Seed", label: "Funding Stage", description: "Early-stage startup focused on innovation" },
     { metric: "10+", label: "Pilot Programs", description: "Working with select financial institutions" },
     { metric: "15+", label: "Team Members", description: "AI experts and compliance professionals" },
@@ -197,16 +197,16 @@ const About = () => {
                 </h1>
 
                 <p className="text-xl text-gray-600 mb-8 max-w-2xl animate-fade-in-up delay-400">
-                  We're a 2025-founded startup pioneering autonomous AI agents that transform how financial institutions approach compliance, making regulatory adherence <strong>seamless, intelligent, and cost-effective</strong>.
+                  We're industry veterans with decades of experience in financial compliance and AI, pioneering autonomous AI agents that transform how financial institutions approach compliance, making regulatory adherence <strong>seamless, intelligent, and cost-effective</strong>.
                 </p>
 
                 {/* Trust Indicators with Animation */}
                 <div className="grid grid-cols-3 gap-8 animate-fade-in-up delay-800">
                   <div className="text-center group">
                     <div className="text-3xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">
-                      2025
+                      30+
                     </div>
-                    <p className="text-sm text-gray-600">Founded</p>
+                    <p className="text-sm text-gray-600">Years Experience</p>
                   </div>
                   <div className="text-center group">
                     <div className="text-3xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
@@ -239,11 +239,11 @@ const About = () => {
                   <div className="space-y-4">
                     <div className="flex items-center p-4 rounded-lg border-2 border-green-200 bg-green-50">
                       <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4 bg-green-500 text-white">
-                        <Award className="w-4 h-4" />
+                        <Users className="w-4 h-4" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-semibold text-gray-900">Early-Stage Startup</div>
-                        <div className="text-sm text-gray-600">Founded in 2025 with innovative vision</div>
+                        <div className="font-semibold text-gray-900">Industry Veterans</div>
+                        <div className="text-sm text-gray-600">Decades of combined experience in finance and AI</div>
                       </div>
                     </div>
 
@@ -309,7 +309,7 @@ const About = () => {
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
                   To transform financial compliance through autonomous AI agents that eliminate manual processes, 
                   reduce operational costs, and ensure perfect regulatory adherence across BFSI operations.
-                  As a 2025-founded startup, we're building the future of compliance automation from the ground up.
+                  As industry veterans with decades of experience, we're building the future of compliance automation from the ground up.
                 </p>
                 
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Vision</h3>
