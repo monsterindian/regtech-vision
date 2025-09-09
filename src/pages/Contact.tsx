@@ -69,7 +69,7 @@ const Contact = () => {
     {
       icon: Award,
       title: "Proven Results",
-      description: "Join 500+ satisfied institutions"
+  description: "Trusted by early adopters"
     }
   ];
 
@@ -165,7 +165,7 @@ const Contact = () => {
                 </h1>
 
                 <p className="text-xl text-gray-600 mb-8 max-w-2xl animate-fade-in-up delay-400">
-                  Join hundreds of financial institutions already using our AI-powered compliance platform. <strong>Schedule a personalized demo</strong> and see how we can help you achieve regulatory excellence.
+                  Be among the first to experience our AI-powered compliance platform. <strong>Schedule a personalized demo</strong> to explore how we can help you achieve regulatory excellence.
                 </p>
 
                 {/* Trust Indicators with Animation */}
