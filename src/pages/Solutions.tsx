@@ -107,6 +107,21 @@ const Solutions = () => {
     }
   ];
 
+  // Shared data for comparison section
+  const comparisonRows = [
+    { dimension: 'Processing Time', manual: '5–7 days', ai: 'Same‑day', benefit: 'Up to 85× faster' },
+    { dimension: 'Cost', manual: 'High operational cost', ai: '−75%', benefit: 'Significant cost reduction' },
+    { dimension: 'Accuracy', manual: '60–85%', ai: '99.9%', benefit: 'Fewer errors and rework' },
+    { dimension: 'Audit Preparation', manual: 'Weeks', ai: 'Hours', benefit: 'Always‑ready compliance' },
+    { dimension: 'Oversight', manual: 'Human‑only', ai: '24/7 autonomous', benefit: 'Continuous monitoring' },
+    { dimension: 'Reporting', manual: 'Manual compilation', ai: 'Automated', benefit: 'Instant reports' },
+    { dimension: 'False Positives', manual: 'High', ai: '−90%', benefit: 'Fewer manual reviews' },
+    { dimension: 'Case Throughput', manual: 'Limited', ai: 'High (auto‑scale)', benefit: 'Scales with demand' },
+    { dimension: 'Audit Trail', manual: 'Fragmented logs', ai: 'Complete/immutable', benefit: 'Always‑ready audit' },
+    { dimension: 'Data Egress', manual: 'Multi‑vendor egress', ai: 'None (on‑prem)', benefit: 'Stronger data control' },
+    { dimension: 'Integration Effort', manual: 'Custom builds', ai: 'Low‑code connectors', benefit: 'Faster time‑to‑value' },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
 
@@ -230,8 +245,25 @@ const Solutions = () => {
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">A concise comparison of outcomes when moving from manual compliance to agentic AI.</p>
           </div>
 
-          {/* Comparison table */}
-          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-0 overflow-hidden">
+          {/* Mobile (cards) */}
+          <div className="md:hidden space-y-4">
+            {comparisonRows.map((row) => (
+              <div key={row.dimension} className="bg-white border border-slate-200 rounded-2xl shadow-sm p-4">
+                <div className="font-semibold text-slate-900 mb-3">{row.dimension}</div>
+                <div className="grid grid-cols-3 gap-2 text-sm items-start">
+                  <div className="text-slate-600">Manual</div>
+                  <div className="col-span-2"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">{row.manual}</span></div>
+                  <div className="text-slate-600">Agentic AI</div>
+                  <div className="col-span-2"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">{row.ai}</span></div>
+                  <div className="text-slate-600">Benefit</div>
+                  <div className="col-span-2"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">{row.benefit}</span></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop (table) */}
+          <div className="hidden md:block bg-white border border-slate-200 rounded-2xl shadow-sm p-0 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-slate-200">
                 <thead className="bg-slate-50">
@@ -243,73 +275,14 @@ const Solutions = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-sm text-slate-800">
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Processing Time</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">5–7 days</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Same‑day</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Up to 85× faster</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Cost</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">High operational cost</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">−75%</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Significant cost reduction</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Accuracy</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">60–85%</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">99.9%</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Fewer errors and rework</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Audit Preparation</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Weeks</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Hours</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Always‑ready compliance</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Oversight</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Human‑only</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">24/7 autonomous</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Continuous monitoring</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Reporting</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Manual compilation</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Automated</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Instant reports</span></td>
-                  </tr>
-                  {/* Additional rows for depth */}
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">False Positives</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">High</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">−90%</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Fewer manual reviews</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Case Throughput</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Limited</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">High (auto‑scale)</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Scales with demand</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Audit Trail</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Fragmented logs</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Complete/immutable</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Always‑ready audit</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Data Egress</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Multi‑vendor egress</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">None (on‑prem)</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Stronger data control</span></td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60">
-                    <td className="px-6 py-4 font-medium text-slate-900">Integration Effort</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Custom builds</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Low‑code connectors</span></td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Faster time‑to‑value</span></td>
-                  </tr>
+                  {comparisonRows.map((row) => (
+                    <tr key={row.dimension} className="hover:bg-slate-50/60">
+                      <td className="px-6 py-4 font-medium text-slate-900">{row.dimension}</td>
+                      <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">{row.manual}</span></td>
+                      <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">{row.ai}</span></td>
+                      <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">{row.benefit}</span></td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
