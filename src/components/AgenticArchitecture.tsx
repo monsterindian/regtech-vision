@@ -10,7 +10,11 @@ import {
   CheckCircle,
   Cloud,
   Lock,
-  Gauge
+  Gauge,
+  Route,
+  Workflow,
+  ShieldCheck,
+  BookOpen
 } from "lucide-react";
 
 const AgenticArchitecture = () => {
@@ -48,46 +52,65 @@ const AgenticArchitecture = () => {
 
         {/* Architecture Diagram */}
         <div className="mb-20">
-          <div className="bg-gray-50 rounded-lg p-12">
+          <div className="bg-gray-50 rounded-lg p-8 md:p-12">
             {/* Central Orchestrator */}
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-600 text-white rounded-full mb-4">
                 <Bot className="h-10 w-10" />
               </div>
               <h3 className="text-xl font-semibold text-foreground">Orchestrator Agent</h3>
-              <p className="text-gray-600">Central Coordination</p>
+              <p className="text-gray-600">Plans, routes, and validates tasks across specialists</p>
+            </div>
+
+            {/* Flow steps */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                <div className="flex items-center gap-2 mb-2"><Route className="h-4 w-4 text-blue-600" /><span className="text-sm font-medium text-foreground">Task Planning</span></div>
+                <p className="text-sm text-gray-600">Breaks requests into atomic steps, defines success criteria and guardrails.</p>
+              </div>
+              <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                <div className="flex items-center gap-2 mb-2"><Workflow className="h-4 w-4 text-blue-600" /><span className="text-sm font-medium text-foreground">Policy‑Aware Routing</span></div>
+                <p className="text-sm text-gray-600">Routes to agents with least‑privilege data access; redacts where needed.</p>
+              </div>
+              <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                <div className="flex items-center gap-2 mb-2"><ShieldCheck className="h-4 w-4 text-blue-600" /><span className="text-sm font-medium text-foreground">Human‑in‑the‑Loop</span></div>
+                <p className="text-sm text-gray-600">Optional approvals and reviews for sensitive workflows.</p>
+              </div>
             </div>
 
             {/* Specialist Agents */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center mb-4 mx-auto">
-                  <Users className="h-8 w-8 text-gray-600" />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { icon: Users, title: 'KYC Agent', desc: 'Identity & document verification, sanctions checks' },
+                { icon: CreditCard, title: 'Lending Agent', desc: 'Eligibility, affordability, document extraction' },
+                { icon: Activity, title: 'Monitoring Agent', desc: 'Transaction monitoring, AML rule assistance' },
+                { icon: Shield, title: 'Risk Agent', desc: 'Policy checks, explainability, audit artifacts' },
+              ].map((a, i) => (
+                <div key={i} className="text-center p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                  <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                    <a.icon className="h-8 w-8 text-gray-600" />
+                  </div>
+                  <h4 className="font-semibold text-foreground">{a.title}</h4>
+                  <p className="text-sm text-gray-600">{a.desc}</p>
                 </div>
-                <h4 className="font-semibold text-foreground">KYC Agent</h4>
-                <p className="text-sm text-gray-600">Identity Verification</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center mb-4 mx-auto">
-                  <CreditCard className="h-8 w-8 text-gray-600" />
+              ))}
+            </div>
+
+            {/* Governance strip */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { icon: Database, label: 'Data Access', text: 'Read‑only connectors, data minimization' },
+                { icon: BookOpen, label: 'Policies', text: 'Role‑based controls, retention policies' },
+                { icon: Zap, label: 'Observability', text: 'Audit logs, traces, and metrics' },
+              ].map((g, idx) => (
+                <div key={idx} className="p-3 bg-white rounded-lg shadow-sm border border-gray-100 flex items-start gap-3">
+                  <g.icon className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <div>
+                    <div className="text-sm font-medium text-foreground">{g.label}</div>
+                    <div className="text-xs text-gray-600">{g.text}</div>
+                  </div>
                 </div>
-                <h4 className="font-semibold text-foreground">Lending Agent</h4>
-                <p className="text-sm text-gray-600">Credit Assessment</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center mb-4 mx-auto">
-                  <Activity className="h-8 w-8 text-gray-600" />
-                </div>
-                <h4 className="font-semibold text-foreground">Monitoring Agent</h4>
-                <p className="text-sm text-gray-600">Transaction Analysis</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center mb-4 mx-auto">
-                  <Shield className="h-8 w-8 text-gray-600" />
-                </div>
-                <h4 className="font-semibold text-foreground">Risk Agent</h4>
-                <p className="text-sm text-gray-600">Compliance Monitoring</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
