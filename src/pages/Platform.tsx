@@ -3,7 +3,7 @@ import PageHero from "@/components/shared/PageHero";
 import StatsSection from "@/components/shared/StatsSection";
 import CTASection from "@/components/shared/CTASection";
 import { FeaturesSection } from "@/components/shared/FeatureCard";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AgenticArchitecture from "@/components/AgenticArchitecture";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -30,6 +30,8 @@ import {
   GitBranch,
   Building2
 } from "lucide-react";
+import AgentConsole from "@/components/AgentConsole";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 const Platform = () => {
   // 1. OVERVIEW - Platform Performance Metrics
@@ -198,6 +200,7 @@ const Platform = () => {
 
   // LLM mode toggle state
   const [llmMode, setLlmMode] = useState<'onprem' | 'hosted'>('onprem');
+  const reduceMotion = usePrefersReducedMotion();
 
   return (
   <div className="min-h-screen bg-white">
@@ -330,11 +333,12 @@ const Platform = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6">
+        <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-6">
                 <svg viewBox="0 0 980 280" className="w-full h-[260px]">{/* Outer on‑prem boundary */}
                   <rect x="10" y="10" width="960" height="260" rx="14" ry="14" fill="none" stroke="#CBD5E1" strokeWidth="2" strokeDasharray="6 6"/>
                   {/* Inner boundary for workload zone */}
-                  <rect x="30" y="30" width="790" height="220" rx="12" ry="12" fill="none" stroke="#E2E8F0" strokeWidth="1.5" strokeDasharray="5 6"/>
+          <rect x="30" y="30" width="790" height="220" rx="12" ry="12" fill="none" stroke="#E2E8F0" strokeWidth="1.5" strokeDasharray="5 6">
+          </rect>
 
                   {/* Gaigentic Platform */}
                   <rect x="60" y="40" width="240" height="200" rx="12" fill="#7C3AED" fillOpacity="0.08" stroke="#7C3AED" strokeWidth="1.5"/>
@@ -374,7 +378,7 @@ const Platform = () => {
                   {llmMode === 'hosted' ? (
                     <g>
                       <line x1="820" y1="120" x2="840" y2="120" stroke="#F59E0B" strokeWidth="2.5" strokeDasharray="5 6" style={{ transition: 'opacity 250ms ease' }} />
-                      <circle cx="820" cy="120" r="6" fill="#FEF3C7" stroke="#F59E0B"/>
+                      <circle cx="820" cy="120" r="6" fill="#FEF3C7" stroke="#F59E0B" />
                     </g>
                   ) : (
                     <g>
@@ -384,6 +388,12 @@ const Platform = () => {
                   )}
                 </svg>
               </div>
+              {/* Agent at work mini-console */}
+              <div className="px-6 pb-6">
+                <AgentConsole />
+              </div>
+              {/* Scroll stepper - highlights key blocks while scrolling */}
+              <PlatformStepper reduceMotion={reduceMotion} />
               <div className="px-6 pb-6 text-xs text-gray-600 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 {llmMode === 'onprem' ? (
                   <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-blue-600" /><span>On‑prem LLM: data never leaves your perimeter.</span></div>
@@ -498,8 +508,8 @@ const Platform = () => {
                       </ul>
                     </div>
                     <div className="flex flex-wrap justify-center gap-2">
-                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-blue-100 text-blue-700 border-blue-200">Owner: Sec/IT</Badge>
-                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-emerald-100 text-emerald-700 border-emerald-200">Exit: Precision &gt; 85%</Badge>
+                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-blue-100 text-blue-700 border-blue-200 whitespace-nowrap">Owner: Sec/IT</Badge>
+                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-emerald-100 text-emerald-700 border-emerald-200 whitespace-nowrap">Exit: Precision &gt; 85%</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -539,8 +549,8 @@ const Platform = () => {
                       </ul>
                     </div>
                     <div className="flex flex-wrap justify-center gap-2">
-                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-blue-100 text-blue-700 border-blue-200">Owner: Ops</Badge>
-                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-emerald-100 text-emerald-700 border-emerald-200">Exit: KPIs met</Badge>
+                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-blue-100 text-blue-700 border-blue-200 whitespace-nowrap">Owner: Ops</Badge>
+                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-emerald-100 text-emerald-700 border-emerald-200 whitespace-nowrap">Exit: KPIs met</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -580,8 +590,8 @@ const Platform = () => {
                       </ul>
                     </div>
                     <div className="flex flex-wrap justify-center gap-2">
-                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-blue-100 text-blue-700 border-blue-200">Owner: Platform</Badge>
-                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-emerald-100 text-emerald-700 border-emerald-200">SLOs: 99.9%+</Badge>
+                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-blue-100 text-blue-700 border-blue-200 whitespace-nowrap">Owner: Platform</Badge>
+                      <Badge className="inline-flex items-center justify-center px-3 py-1 bg-emerald-100 text-emerald-700 border-emerald-200 whitespace-nowrap">SLOs: 99.9%+</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -765,3 +775,75 @@ const Platform = () => {
 };
 
 export default Platform;
+
+// Lightweight scroll stepper component for Platform page
+function PlatformStepper({ reduceMotion }: { reduceMotion: boolean }) {
+  const steps = [
+    { id: "gaigentic", title: "Gaigentic Platform", desc: "APIs, orchestration, connectors" },
+    { id: "guardrails", title: "Guardrails & Policy", desc: "RBAC, audit, approvals" },
+    { id: "data", title: "Approved Data", desc: "Vector store, temporal access" },
+    { id: "llm", title: "LLM Path", desc: "On‑prem or hosted with controls" },
+  ];
+
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const sections = Array.from(el.querySelectorAll('[data-step]')) as HTMLElement[];
+    const io = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) {
+          const idx = Number(visible.target.getAttribute('data-index'));
+          if (!Number.isNaN(idx)) setActiveIdx(idx);
+        }
+      },
+      { root: null, threshold: [0.25, 0.5, 0.75] }
+    );
+    sections.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div className="px-6 pb-6">
+      <div className="grid lg:grid-cols-2 gap-6 items-start">
+        {/* Sticky steps list */}
+        <div className="top-24 lg:sticky">
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+            <div className="text-sm font-semibold text-slate-700 mb-3">How requests flow</div>
+            <ol className="space-y-2">
+              {steps.map((s, i) => (
+                <li key={s.id} className={`flex items-start gap-3 p-2 rounded-lg ${i === activeIdx ? 'bg-white shadow-sm border border-slate-200' : ''}`}>
+                  <span className={`mt-1 h-2.5 w-2.5 rounded-full ${i === activeIdx ? 'bg-blue-600' : 'bg-slate-300'}`} />
+                  <div>
+                    <div className="text-sm font-medium text-slate-900">{i + 1}. {s.title}</div>
+                    <div className="text-xs text-slate-600">{s.desc}</div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+        {/* Scrollable explainers */}
+        <div ref={containerRef} className="space-y-4 max-h-[320px] overflow-y-auto pr-1">
+          {steps.map((s, i) => (
+            <div
+              key={s.id}
+              data-step
+              data-index={i}
+              className={`rounded-xl border ${i === activeIdx ? 'border-blue-200' : 'border-slate-200'} bg-white p-4 transition-colors`}
+            >
+              <div className="text-sm font-semibold text-slate-900 mb-1">{s.title}</div>
+              <p className="text-xs text-slate-600 mb-3">{s.desc}</p>
+              <div className={`h-1 rounded ${i === activeIdx ? 'bg-gradient-to-r from-purple-500 to-blue-500' : 'bg-slate-100'}`}/>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,15 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Lock, Eye, Server, Key, AlertTriangle, CheckCircle, Database, Target } from "lucide-react";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 const Security = () => {
+  const reduceMotion = usePrefersReducedMotion();
   return (
     <div className="min-h-screen bg-white pt-28">
       <main className="max-w-4xl mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
-            <Shield className="h-12 w-12 text-blue-600 mr-4" />
+            <Shield className={`h-12 w-12 text-blue-600 mr-4 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:rotate-6'}`} />
             <h1 className="text-4xl font-bold text-gray-900">Security Overview</h1>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -24,8 +26,8 @@ const Security = () => {
           {/* Security Philosophy */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <Shield className="h-5 w-5 mr-2 text-blue-600" />
+              <CardTitle className="flex items-center group">
+                <Shield className={`h-5 w-5 mr-2 text-blue-600 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:scale-110'}`} />
                 Our Security Philosophy
               </CardTitle>
             </CardHeader>
@@ -35,18 +37,18 @@ const Security = () => {
                 We implement a defense-in-depth strategy that protects your data at every layer.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <Lock className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                <div className="text-center p-4 bg-blue-50 rounded-lg group">
+                  <Lock className={`h-8 w-8 text-blue-600 mx-auto mb-2 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:-translate-y-0.5'}`} />
                   <h4 className="font-semibold text-blue-900">Zero Trust</h4>
                   <p className="text-blue-700 text-sm">Never trust, always verify</p>
                 </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <Key className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                <div className="text-center p-4 bg-green-50 rounded-lg group">
+                  <Key className={`h-8 w-8 text-green-600 mx-auto mb-2 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:-translate-y-0.5'}`} />
                   <h4 className="font-semibold text-green-900">Encryption</h4>
                   <p className="text-green-700 text-sm">End-to-end data protection</p>
                 </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <Eye className="h-8 w-8 text-purple-600 mx-auto mb-2" />
+                <div className="text-center p-4 bg-purple-50 rounded-lg group">
+                  <Eye className={`h-8 w-8 text-purple-600 mx-auto mb-2 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:-translate-y-0.5'}`} />
                   <h4 className="font-semibold text-purple-900">Transparency</h4>
                   <p className="text-purple-700 text-sm">Open security practices</p>
                 </div>
@@ -57,8 +59,8 @@ const Security = () => {
           {/* Infrastructure Security */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <Server className="h-5 w-5 mr-2 text-green-600" />
+              <CardTitle className="flex items-center group">
+                <Server className={`h-5 w-5 mr-2 text-green-600 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:scale-110'}`} />
                 Infrastructure Security
               </CardTitle>
             </CardHeader>
@@ -90,8 +92,8 @@ const Security = () => {
           {/* Data Protection */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <Database className="h-5 w-5 mr-2 text-purple-600" />
+              <CardTitle className="flex items-center group">
+                <Database className={`h-5 w-5 mr-2 text-purple-600 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:scale-110'}`} />
                 Data Protection & Encryption
               </CardTitle>
             </CardHeader>
@@ -132,8 +134,8 @@ const Security = () => {
           {/* Access Control */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <Key className="h-5 w-5 mr-2 text-orange-600" />
+              <CardTitle className="flex items-center group">
+                <Key className={`h-5 w-5 mr-2 text-orange-600 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:scale-110'}`} />
                 Access Control & Authentication
               </CardTitle>
             </CardHeader>
@@ -167,8 +169,8 @@ const Security = () => {
           {/* Security Monitoring */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <Eye className="h-5 w-5 mr-2 text-blue-600" />
+              <CardTitle className="flex items-center group">
+                <Eye className={`h-5 w-5 mr-2 text-blue-600 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:scale-110'}`} />
                 Security Monitoring & Incident Response
               </CardTitle>
             </CardHeader>
@@ -200,8 +202,8 @@ const Security = () => {
           {/* Security Commitment & Roadmap */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+              <CardTitle className="flex items-center group">
+                <CheckCircle className={`h-5 w-5 mr-2 text-green-600 ${reduceMotion ? '' : 'transition-transform duration-300 group-hover:scale-110'}`} />
                 Security Commitment & Roadmap
               </CardTitle>
             </CardHeader>

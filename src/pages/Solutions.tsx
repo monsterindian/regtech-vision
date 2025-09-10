@@ -4,9 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Users, DollarSign, Target, Clock, Shield, TrendingUp, Settings, Grid3X3, Layers, Zap, Gauge, Puzzle, TrendingDown, Crosshair, Rocket } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 const Solutions = () => {
   const [activeTab, setActiveTab] = useState("overview");
+  const reduceMotion = usePrefersReducedMotion();
 
   const platformMetrics = [
     { icon: Puzzle, value: "Modular", label: "Design", description: "Flexible, scalable architecture that adapts to your specific compliance needs" },
@@ -155,26 +158,27 @@ const Solutions = () => {
                 </Link>
               </div>
 
-              {/* Trust Indicators with Animation */}
-              <div className="grid grid-cols-3 gap-8 animate-fade-in-up delay-800">
-                <div className="text-center group">
-                  <div className="text-3xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">
-                    75%
-                  </div>
-                  <p className="text-sm text-gray-600">Cost Reduction</p>
-                </div>
-                <div className="text-center group">
-                  <div className="text-3xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
-                    99.9%
-                  </div>
-                  <p className="text-sm text-gray-600">Accuracy Rate</p>
-                </div>
-                <div className="text-center group">
-                  <div className="text-3xl font-bold text-indigo-600 mb-2 group-hover:scale-110 transition-transform duration-300">
-                    4
-                  </div>
-                  <p className="text-sm text-gray-600">Core Solutions</p>
-                </div>
+              {/* Animated KPI chips */}
+              <div className="grid grid-cols-3 gap-4 animate-fade-in-up delay-800">
+                {[
+                  { value: '75%', label: 'Cost Reduction', color: 'from-purple-600 to-fuchsia-600' },
+                  { value: '99.9%', label: 'Accuracy Rate', color: 'from-blue-600 to-cyan-600' },
+                  { value: '4', label: 'Core Solutions', color: 'from-indigo-600 to-purple-600' },
+                ].map((chip, i) => (
+                  <motion.div
+                    key={chip.label}
+                    initial={{ rotateX: 90, opacity: 0 }}
+                    whileInView={{ rotateX: 0, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+                    className="text-center group"
+                  >
+                    <div className={`text-2xl font-bold text-white mb-2 group-hover:scale-105 transition-transform duration-300 inline-block rounded-full px-4 py-1 bg-gradient-to-r ${chip.color}`}>
+                      {chip.value}
+                    </div>
+                    <p className="text-sm text-gray-600">{chip.label}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
 
@@ -205,9 +209,80 @@ const Solutions = () => {
                     </div>
                   ))}
                 </div>
+
+                {/* Manual vs Agentic slider removed per request */}
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Before vs After: Life With Agentic AI */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-6 py-3 mb-6">
+              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold">
+                Before vs After — What Changes With Agentic AI
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">Clear, Credible Comparison</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">A concise comparison of outcomes when moving from manual compliance to agentic AI.</p>
+          </div>
+
+          {/* Comparison table */}
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-0 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-slate-200">
+                <thead className="bg-slate-50">
+                  <tr>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Dimension</th>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Manual</th>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Agentic AI</th>
+                    <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Benefit</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-sm text-slate-800">
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Processing Time</td>
+                    <td className="px-6 py-4">5–7 days</td>
+                    <td className="px-6 py-4">Same‑day</td>
+                    <td className="px-6 py-4">Up to 85× faster</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Cost</td>
+                    <td className="px-6 py-4">High operational cost</td>
+                    <td className="px-6 py-4">−75%</td>
+                    <td className="px-6 py-4">Significant cost reduction</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Accuracy</td>
+                    <td className="px-6 py-4">60–85%</td>
+                    <td className="px-6 py-4">99.9%</td>
+                    <td className="px-6 py-4">Fewer errors and rework</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Audit Preparation</td>
+                    <td className="px-6 py-4">Weeks</td>
+                    <td className="px-6 py-4">Hours</td>
+                    <td className="px-6 py-4">Always‑ready compliance</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Oversight</td>
+                    <td className="px-6 py-4">Human‑only</td>
+                    <td className="px-6 py-4">24/7 autonomous</td>
+                    <td className="px-6 py-4">Continuous monitoring</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Reporting</td>
+                    <td className="px-6 py-4">Manual compilation</td>
+                    <td className="px-6 py-4">Automated</td>
+                    <td className="px-6 py-4">Instant reports</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

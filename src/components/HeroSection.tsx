@@ -16,6 +16,19 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+      {/* Optional background video slot */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden
+      >
+        {/* Provide a lightweight mp4/webm via public/assets if available; will silently fail if none */}
+        <source src="/assets/hero-loop.mp4" type="video/mp4" />
+        <source src="/assets/hero-loop.webm" type="video/webm" />
+      </video>
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
@@ -163,6 +176,16 @@ const HeroSection = () => {
               >
                 {isPlaying ? "Running Demo..." : "Run Demo Again"}
               </Button>
+
+              {/* Timed captions overlay */}
+              <div className="mt-4 text-xs text-gray-500 min-h-[18px]">
+                {isPlaying && (
+                  currentDemo === 0 ? 'Agent receives case' :
+                  currentDemo === 1 ? 'Guardrails: RBAC and policy checks' :
+                  currentDemo === 2 ? 'Audit trail saved (immutable log)' :
+                  currentDemo >= 3 ? 'KPIs tick up: time ↓, accuracy ↑' : ''
+                )}
+              </div>
             </div>
           </div>
 

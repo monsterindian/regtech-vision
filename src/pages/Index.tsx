@@ -3,16 +3,18 @@ import HeroSection from "@/components/HeroSection";
 import SolutionsPreview from "@/components/SolutionsPreview";
 import ProcessSection from "@/components/ProcessSection";
 import AboutSection from "@/components/AboutSection";
+import StickyCTA from "@/components/StickyCTA";
 
 const Index = () => {
   return (
   <div className="min-h-screen bg-white">
-      <main className="pt-16 md:pt-0">
+  <main className="pt-16 md:pt-0">
         <HeroSection />
         <SolutionsPreview />
         <ProcessSection />
         <AboutSection />
       </main>
+  <StickyCTA />
     </div>
   );
 };

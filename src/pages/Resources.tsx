@@ -28,6 +28,7 @@ import {
   X,
   Eye
 } from "lucide-react";
+// Media tabs removed per request
 
 const Resources = () => {
   const [selectedResource, setSelectedResource] = useState(null);
@@ -328,7 +329,7 @@ const Resources = () => {
   <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <main className="pt-28">
         
-        {/* HERO SECTION */}
+  {/* HERO SECTION */}
         <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
           {/* Animated Background Elements */}
           <div className="absolute inset-0">
@@ -397,7 +398,7 @@ const Resources = () => {
                 </div>
               </div>
 
-              {/* Right Content - Featured Resource */}
+              {/* Right Content - Featured Resource + Media Tabs */}
               <div className="relative animate-fade-in-up delay-1000">
                 <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
                   <div className="flex items-center justify-between mb-6">
@@ -408,6 +409,8 @@ const Resources = () => {
                       <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                     </div>
                   </div>
+
+                  {/* Media removed per request */}
 
                   {/* Featured Resource Preview */}
                   <div className="space-y-4">
