@@ -5,11 +5,9 @@ import { ArrowRight, CheckCircle, Users, DollarSign, Target, Clock, Shield, Tren
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 const Solutions = () => {
   const [activeTab, setActiveTab] = useState("overview");
-  const reduceMotion = usePrefersReducedMotion();
 
   const platformMetrics = [
     { icon: Puzzle, value: "Modular", label: "Design", description: "Flexible, scalable architecture that adapts to your specific compliance needs" },
@@ -221,6 +219,7 @@ const Solutions = () => {
       {/* Before vs After: Life With Agentic AI */}
       <section className="py-20">
         <div className="container mx-auto px-6">
+          {/* Drag to reveal slider removed per request */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-6 py-3 mb-6">
               <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-semibold">
@@ -246,39 +245,70 @@ const Solutions = () => {
                 <tbody className="divide-y divide-slate-100 text-sm text-slate-800">
                   <tr className="hover:bg-slate-50/60">
                     <td className="px-6 py-4 font-medium text-slate-900">Processing Time</td>
-                    <td className="px-6 py-4">5–7 days</td>
-                    <td className="px-6 py-4">Same‑day</td>
-                    <td className="px-6 py-4">Up to 85× faster</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">5–7 days</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Same‑day</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Up to 85× faster</span></td>
                   </tr>
                   <tr className="hover:bg-slate-50/60">
                     <td className="px-6 py-4 font-medium text-slate-900">Cost</td>
-                    <td className="px-6 py-4">High operational cost</td>
-                    <td className="px-6 py-4">−75%</td>
-                    <td className="px-6 py-4">Significant cost reduction</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">High operational cost</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">−75%</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Significant cost reduction</span></td>
                   </tr>
                   <tr className="hover:bg-slate-50/60">
                     <td className="px-6 py-4 font-medium text-slate-900">Accuracy</td>
-                    <td className="px-6 py-4">60–85%</td>
-                    <td className="px-6 py-4">99.9%</td>
-                    <td className="px-6 py-4">Fewer errors and rework</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">60–85%</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">99.9%</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Fewer errors and rework</span></td>
                   </tr>
                   <tr className="hover:bg-slate-50/60">
                     <td className="px-6 py-4 font-medium text-slate-900">Audit Preparation</td>
-                    <td className="px-6 py-4">Weeks</td>
-                    <td className="px-6 py-4">Hours</td>
-                    <td className="px-6 py-4">Always‑ready compliance</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Weeks</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Hours</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Always‑ready compliance</span></td>
                   </tr>
                   <tr className="hover:bg-slate-50/60">
                     <td className="px-6 py-4 font-medium text-slate-900">Oversight</td>
-                    <td className="px-6 py-4">Human‑only</td>
-                    <td className="px-6 py-4">24/7 autonomous</td>
-                    <td className="px-6 py-4">Continuous monitoring</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Human‑only</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">24/7 autonomous</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Continuous monitoring</span></td>
                   </tr>
                   <tr className="hover:bg-slate-50/60">
                     <td className="px-6 py-4 font-medium text-slate-900">Reporting</td>
-                    <td className="px-6 py-4">Manual compilation</td>
-                    <td className="px-6 py-4">Automated</td>
-                    <td className="px-6 py-4">Instant reports</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Manual compilation</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Automated</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Instant reports</span></td>
+                  </tr>
+                  {/* Additional rows for depth */}
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">False Positives</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">High</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">−90%</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Fewer manual reviews</span></td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Case Throughput</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Limited</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">High (auto‑scale)</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Scales with demand</span></td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Audit Trail</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Fragmented logs</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Complete/immutable</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Always‑ready audit</span></td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Data Egress</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Multi‑vendor egress</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">None (on‑prem)</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Stronger data control</span></td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/60">
+                    <td className="px-6 py-4 font-medium text-slate-900">Integration Effort</td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 text-rose-700 px-2.5 py-1">Custom builds</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 px-2.5 py-1">Low‑code connectors</span></td>
+                    <td className="px-6 py-4"><span className="inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 px-2.5 py-1">Faster time‑to‑value</span></td>
                   </tr>
                 </tbody>
               </table>
