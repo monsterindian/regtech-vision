@@ -393,40 +393,6 @@ const Platform = () => {
                 <div className="flex items-center gap-2"><GitBranch className="h-4 w-4 text-purple-600" /><span>Integrates alongside existing systems—no modifications required.</span></div>
                 <div className="flex items-center gap-2"><Power className="h-4 w-4 text-emerald-600" /><span>Safe to enable/disable without downtime.</span></div>
               </div>
-              {/* Code snippet: policy-based redaction example */}
-              <div className="px-6 pb-6">
-                <div className="rounded-lg bg-gray-900 text-gray-100 p-4 overflow-x-auto">
-                  <div className="text-xs text-gray-400 mb-2">TypeScript • outbound policy enforcement</div>
-                  <pre className="text-xs leading-relaxed"><code>{`// redactOutbound.ts
-type Policy = { pii: boolean; secrets: boolean; patternMasks: Record<string, string> };
-
-export function redactOutbound(input: string, policy: Policy) {
-  let out = input;
-  if (policy.pii) {
-    // Mask emails and phone numbers
-    out = out
-      .replace(/([a-zA-Z0-9_.+-]+)@([a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)/g, '***@***')
-      .replace(/\b\+?\d[\d\s\-()]{6,}\b/g, '********');
-  }
-  if (policy.secrets) {
-    out = out.replace(/(api_key|token|secret)\s*[:=]\s*['\"][^'\"]+['\"]/gi, '$1: "********"');
-  }
-  for (const [pattern, mask] of Object.entries(policy.patternMasks)) {
-    out = out.replace(new RegExp(pattern, 'gi'), mask);
-  }
-  return out;
-}
-
-// Usage when llmMode === 'hosted'
-const sanitized = redactOutbound(JSON.stringify(payload), {
-  pii: true,
-  secrets: true,
-  patternMasks: { '(account|iban)\\s*[:=]\\s*[A-Z0-9]+' : 'account: ****' }
-});
-// send sanitized to external LLM with zero-retention headers
-`}</code></pre>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -502,8 +468,8 @@ const sanitized = redactOutbound(JSON.stringify(payload), {
               <Card className="bg-white shadow-lg border-0">
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-xl font-semibold text-gray-900">1) Proof of Concept (2–4 weeks)</CardTitle>
-                    <Badge className="inline-flex items-center justify-center px-3 py-1 bg-purple-100 text-purple-700 border-purple-200">Low Risk</Badge>
+                    <CardTitle className="text-xl font-semibold text-gray-900">1) POC (2–4 weeks)</CardTitle>
+                    <Badge className="inline-flex items-center justify-center px-3 py-1 bg-purple-100 text-purple-700 border-purple-200 whitespace-nowrap">Low Risk</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -544,7 +510,7 @@ const sanitized = redactOutbound(JSON.stringify(payload), {
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-xl font-semibold text-gray-900">2) Pilot (4–8 weeks)</CardTitle>
-                    <Badge className="inline-flex items-center justify-center px-3 py-1 bg-blue-100 text-blue-700 border-blue-200">Controlled</Badge>
+                    <Badge className="inline-flex items-center justify-center px-3 py-1 bg-blue-100 text-blue-700 border-blue-200 whitespace-nowrap">Controlled</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -585,7 +551,7 @@ const sanitized = redactOutbound(JSON.stringify(payload), {
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-xl font-semibold text-gray-900">3) Production (8+ weeks)</CardTitle>
-                    <Badge className="inline-flex items-center justify-center px-3 py-1 bg-emerald-100 text-emerald-700 border-emerald-200">Scale</Badge>
+                    <Badge className="inline-flex items-center justify-center px-3 py-1 bg-emerald-100 text-emerald-700 border-emerald-200 whitespace-nowrap">Scale</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
