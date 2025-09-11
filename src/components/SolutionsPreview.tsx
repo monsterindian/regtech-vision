@@ -78,7 +78,9 @@ const SolutionsPreview = () => {
           <div className="flex items-center justify-center mb-8">
             <div className="text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">How Our AI Agents Work Together</h3>
-              <div className="flex items-center space-x-8 p-6 bg-white rounded-2xl shadow-lg">
+              
+              {/* Desktop Layout */}
+              <div className="hidden md:flex items-center space-x-8 p-6 bg-white rounded-2xl shadow-lg">
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-2">
                     <Brain className="h-8 w-8 text-white" />
@@ -105,6 +107,34 @@ const SolutionsPreview = () => {
                     <Shield className="h-8 w-8 text-white" />
                   </div>
                   <span className="text-sm font-semibold">Protect</span>
+                </div>
+              </div>
+
+              {/* Mobile Layout */}
+              <div className="md:hidden grid grid-cols-2 gap-6 p-6 bg-white rounded-2xl shadow-lg max-w-sm mx-auto">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-2">
+                    <Brain className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold text-center">Collect</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-2">
+                    <TrendingUp className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold text-center">Analyze</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-2">
+                    <Eye className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold text-center">Monitor</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mb-2">
+                    <Shield className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="text-sm font-semibold text-center">Protect</span>
                 </div>
               </div>
             </div>
