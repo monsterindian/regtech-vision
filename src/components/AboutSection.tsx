@@ -12,10 +12,10 @@ import {
 
 const AboutSection = () => {
   const achievements = [
-    { icon: Building2, label: "Beta Partners", value: "15+" },
-    { icon: Globe, label: "Countries Targeted", value: "25+" },
-    { icon: Users, label: "Team Members", value: "12" },
-    { icon: Shield, label: "Security Audits", value: "3" }
+    { icon: Building2, label: "Beta Partners", value: "3" },
+    { icon: Globe, label: "Regions Targeted", value: "2" },
+    { icon: Users, label: "Team Members", value: "4" },
+    { icon: Shield, label: "Agent Infrastructure", value: "5" }
   ];
 
   const values = [
