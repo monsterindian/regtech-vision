@@ -1,5 +1,6 @@
 // Header is rendered globally from App.tsx
 import HeroSection from "@/components/HeroSection";
+import GaigenticLabsSection from "@/components/GaigenticLabsSection";
 import SolutionsPreview from "@/components/SolutionsPreview";
 import ProcessSection from "@/components/ProcessSection";
 import AboutSection from "@/components/AboutSection";
@@ -10,6 +11,7 @@ const Index = () => {
   <div className="min-h-screen bg-white">
   <main className="pt-16 md:pt-0">
         <HeroSection />
+        <GaigenticLabsSection />
         <SolutionsPreview />
         <ProcessSection />
         <AboutSection />
